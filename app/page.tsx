@@ -93,7 +93,7 @@ export default function Home() {
         <h6 className="text-stone-400 text-center">Currently working with:</h6>
         <div className="flex items-end justify-center gap-12 md:gap-24 overflow-hidden">
           <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
-          <Image alt="Oon & Bazul Logo" src={"/logos/O&B.png"} width={300} height={0} className="w-24 md:w-48 h-auto"/>
+          {/* <Image alt="Oon & Bazul Logo" src={"/logos/O&B.png"} width={300} height={0} className="w-24 md:w-48 h-auto"/> */}
           <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
           <Image alt="EY Logo" src={"/logos/EY.png"} width={300} height={0} className="w-8 md:w-16 h-auto"/>
         </div>
