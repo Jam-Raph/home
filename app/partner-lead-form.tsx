@@ -61,19 +61,25 @@ export function PartnerLeadForm() {
     setIsSubmitting(true);
 
     try {
-      // TODO: Replace with your API call (e.g., POST /api/partner-leads)
-      await fetch("/api/form", {
+      const res = await fetch("/api/form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
 
-      await new Promise((r) => setTimeout(r, 600)); // demo-only
+      if(!res.ok) {
+        toast.error("We could not recive your message", {
+          description: "Please try again in a moment or contact us at raphael.lim@jamraph.com",
+          duration: 2000
+        })
+      }
 
-      toast.success("Submitted!", {
-        description:
-          "Thanks — we’ve received your details and will be in touch shortly.",
-      });
+      else {
+        toast.success("Submitted!", {
+          description:
+            "Thanks — we’ve received your details and will be in touch shortly.",
+        });
+      }
 
       setForm({
         firstName: "",

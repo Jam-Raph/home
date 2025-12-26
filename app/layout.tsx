@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${helvatica.className} bg-stone-50 overflow-x-clip`}>
         {children}
-        <Toaster richColors />
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );
