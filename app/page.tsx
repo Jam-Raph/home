@@ -70,7 +70,7 @@ export default function Home() {
 
   
   return (
-    <div className="mx-auto flex flex-col h-full container gap-32 p-4">
+    <div className="mx-auto flex flex-col h-full container gap-12 p-4">
       {/* Navbar */}
       <Navbar/>
         <DotPattern className="rounded-full -z-10" glow/>
@@ -85,12 +85,12 @@ export default function Home() {
               <Button className="bg-brand-primary text-white cursor-pointer px-6" onClick={() => smoothScroll("contact")}>Book a demo</Button>
               <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6" onClick={() => smoothScroll("pillar")}>See how it works</Button>
             </div>
-            <p className="text-stone-400 text-sm">Working with KGP, Delta, and EY</p>
+            {/* <p className="text-stone-400 text-sm">Working with KGP, Delta, and EY</p> */}
           </div>
         </div>
-        <BlurFade delay={0.05} inView>
-          <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/>
-        </BlurFade>
+          {/* <BlurFade delay={0.05} inView>
+            <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/>
+          </BlurFade> */}
 
       </section>
 
@@ -114,6 +114,16 @@ export default function Home() {
         
         {/* Box */}
         <div className="flex flex-col items-center h-full gap-[144px]">
+          {/* B14 Form */}
+          <BlurFade delay={0.15} inView>
+            <TwoBox
+              title="Fill up repetitive forms in minutes not hours"
+              description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
+              videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/b14%20freezeframe.mp4"
+              alt={false}
+              />
+          </BlurFade>
+          
          {/* Magic Prompt */}
          <BlurFade delay={0.15} inView>
            <TwoBox
@@ -130,16 +140,6 @@ export default function Home() {
             title="Chat with your documents"
             description="Upload case files and have AI-powered conversations with them. Get instant answers from your documents"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo-cropped%20%281%29.mp4"
-            />
-         </BlurFade>
-
-         {/* B14 Form */}
-         <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Fill up repetitive forms in minutes not hours"
-            description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/trimed-cropped-b14.mp4"
-            alt={false}
             />
          </BlurFade>
 
