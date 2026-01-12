@@ -18,12 +18,12 @@ const team = [
   {
     src: "/headshots/darren.png",
     name: "Darren",
-    role: "Co-lead dev",
+    role: "Co-lead Dev",
   },
   {
     src: "/headshots/liediana.png",
     name: "Liediana",
-    role: "Head of finance",
+    role: "Head of Finance",
   },
 ]
 
