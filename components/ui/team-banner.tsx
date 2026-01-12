@@ -1,0 +1,124 @@
+"use client"
+
+import Image from "next/image"
+import { BlurFade } from "./blur-fade"
+import { Trophy } from "lucide-react"
+
+const team = [
+  {
+    src: "/headshots/jamison.png",
+    name: "Jamison",
+    role: "CEO",
+  },
+  {
+    src: "/headshots/raphael.png",
+    name: "Raphael",
+    role: "CTO",
+  },
+  {
+    src: "/headshots/darren.png",
+    name: "Darren",
+    role: "Co-lead dev",
+  },
+  {
+    src: "/headshots/liediana.png",
+    name: "Liediana",
+    role: "Head of finance",
+  },
+]
+
+const awards = [
+  {
+    src: "/awards/smu-lit-2025-first-place.JPG",
+    alt: "Jam & Raph team winning SMU LIT 2025",
+    title: "SMU LIT 2025",
+    place: "1st Place",
+  },
+  {
+    src: "/awards/base-first-place.jpeg",
+    alt: "Jam & Raph team winning BASE Hackathon",
+    title: "BASE Hackathon",
+    place: "1st Place",
+  },
+  {
+    src: "/awards/smu-lit-2024-second-place.jpeg",
+    alt: "Jam & Raph team at SMU LIT 2024",
+    title: "SMU LIT 2024",
+    place: "2nd Place",
+  },
+]
+
+export function TeamBanner() {
+  return (
+    <section className="w-full py-16">
+      <div className="container mx-auto">
+        {/* Header */}
+        <BlurFade delay={0.1} inView>
+          <div className="flex flex-col items-center gap-4 text-center mb-12">
+            <h2 className="text-3xl md:text-4xl text-stone-800">The People Behind Pillar</h2>
+            <p className="text-stone-500 text-base md:text-lg max-w-xl">
+              Builders passionate about transforming legal workflows with practical AI solutions
+            </p>
+          </div>
+        </BlurFade>
+
+        {/* Team Headshots */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-16">
+          {team.map((member, index) => (
+            <BlurFade key={member.name} delay={0.15 + index * 0.05} inView>
+              <div className="flex flex-col items-center gap-3">
+                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-stone-100 shadow-sm">
+                  <Image
+                    src={member.src}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="text-center">
+                  <p className="font-medium text-stone-800">{member.name}</p>
+                  <p className="text-sm text-stone-500">{member.role}</p>
+                </div>
+              </div>
+            </BlurFade>
+          ))}
+        </div>
+
+        {/* Awards Section */}
+        <BlurFade delay={0.3} inView>
+          <div className="flex flex-col items-center gap-4 text-center mb-8">
+            <div className="flex items-center gap-2">
+              <Trophy className="h-5 w-5 text-amber-500" />
+              <h3 className="text-xl md:text-2xl text-stone-700">Our Wins</h3>
+            </div>
+          </div>
+        </BlurFade>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {awards.map((award, index) => (
+            <BlurFade key={award.src} delay={0.35 + index * 0.1} inView>
+              <div className="group relative overflow-hidden rounded-2xl bg-stone-100 shadow-sm hover:shadow-lg transition-all duration-300">
+                <div className="aspect-[4/3] relative">
+                  <Image
+                    src={award.src}
+                    alt={award.alt}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-transparent to-transparent" />
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5">
+                  <div className="flex items-center gap-2">
+                    <Trophy className="h-4 w-4 text-amber-400" />
+                    <span className="text-sm font-medium text-amber-400">{award.place}</span>
+                  </div>
+                  <p className="text-lg font-semibold text-white">{award.title}</p>
+                </div>
+              </div>
+            </BlurFade>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -25,6 +25,7 @@ import { PartnerLeadForm } from "./partner-lead-form"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { StatsBanner } from "@/components/ui/stats-banner"
 import { CTABanner } from "@/components/ui/cta-banner"
+import { TeamBanner } from "@/components/ui/team-banner"
 import { Footer } from "./footer"
 import { smoothScroll } from "@/lib/utils"
 
@@ -130,7 +131,7 @@ export default function Home() {
             title="Enhance your prompts with AI"
             description="Transform simple questions into detailed, structured prompts that get you better answers"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/magic-prompt-demo-cropped.mp4"
-            alt={false}
+            videoBG={"bg-[#D4D4CC]"}
             />
          </BlurFade>
 
@@ -140,6 +141,7 @@ export default function Home() {
             title="Chat with your documents"
             description="Upload case files and have AI-powered conversations with them. Get instant answers from your documents"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo-cropped%20%281%29.mp4"
+            alt={false}
             />
          </BlurFade>
 
@@ -153,9 +155,6 @@ export default function Home() {
             videoBG={"bg-[#D4D4CC]"}
             />
           </BlurFade>
-
-
-          {/* AI assistant */}
 
         </div>
       </section>
@@ -230,6 +229,8 @@ export default function Home() {
       </section>
 
       <CTABanner />
+
+      <TeamBanner />
 
       <PartnerLeadForm/>
       <Footer/>
