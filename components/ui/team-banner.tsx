@@ -62,7 +62,7 @@ export function TeamBanner() {
         {/* Header */}
         <BlurFade delay={0.1} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl text-stone-800">The People Behind Pillar</h2>
+            <h2 className="text-3xl md:text-4xl text-stone-800">The founding team behind Pillar</h2>
           </div>
         </BlurFade>
 
