@@ -37,7 +37,7 @@ const awards = [
   {
     src: "/awards/base-first-place.jpeg",
     alt: "Jam & Raph team winning BASE Hackathon",
-    title: "BASE Hackathon",
+    title: "NTU x Base Web3",
     place: "1st Place",
   },
   {
@@ -89,7 +89,7 @@ export function TeamBanner() {
           <div className="flex flex-col items-center gap-4 text-center mb-8">
             <div className="flex items-center gap-2">
               <Trophy className="h-5 w-5 text-amber-500" />
-              <h3 className="text-xl md:text-2xl text-stone-700">Our Wins</h3>
+              <h3 className="text-xl md:text-2xl text-stone-700">Our Hackathon Wins</h3>
             </div>
           </div>
         </BlurFade>
