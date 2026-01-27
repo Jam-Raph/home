@@ -86,12 +86,15 @@ export default function Home() {
               <Button className="bg-brand-primary text-white cursor-pointer px-6" onClick={() => smoothScroll("contact")}>Book a demo</Button>
               <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6" onClick={() => smoothScroll("pillar")}>See how it works</Button>
             </div>
-            {/* <p className="text-stone-400 text-sm">Working with KGP, Delta, and EY</p> */}
           </div>
         </div>
-          {/* <BlurFade delay={0.05} inView>
-            <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/>
-          </BlurFade> */}
+          <BlurFade delay={0.05} inView>
+            {/* <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/> */}
+            <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" autoPlay muted loop>
+              <source src="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/Form%20B14%20and%20Share%20transfer%20demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </BlurFade>
 
       </section>
 
@@ -99,7 +102,7 @@ export default function Home() {
         <h6 className="text-stone-400 text-center text-sm uppercase tracking-wider">Currently working with</h6>
         <div className="flex items-end justify-center gap-12 md:gap-24 overflow-hidden">
           <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
-          {/* <Image alt="Oon & Bazul Logo" src={"/logos/O&B.png"} width={300} height={0} className="w-24 md:w-48 h-auto"/> */}
+          <Image alt="SMU Logo" src={"/logos/SMU.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
           <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
           <Image alt="EY Logo" src={"/logos/EY.png"} width={300} height={0} className="w-8 md:w-16 h-auto"/>
         </div>
@@ -114,24 +117,34 @@ export default function Home() {
         </div>
         
         {/* Box */}
-        <div className="flex flex-col items-center h-full gap-[144px]">
+        <div className="flex flex-col items-center h-full gap-36">
           {/* B14 Form */}
           <BlurFade delay={0.15} inView>
             <TwoBox
               title="Fill up repetitive forms in minutes not hours"
               description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
-              videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/b14%20freezeframe.mp4"
+              videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/form-b14-demo.mp4"
               alt={false}
               />
           </BlurFade>
+
+          {/* Form filler */}
+         <BlurFade delay={0.15} inView>
+           <TwoBox
+            title="Fill up commonly used forms with any template"
+            description="Save time by filling up common form templates from your organisation with different source documents."
+            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/form-filler.mp4"
+            videoBG={"bg-[#D4D4CC]"}
+            />
+         </BlurFade>
           
          {/* Magic Prompt */}
          <BlurFade delay={0.15} inView>
            <TwoBox
             title="Enhance your prompts with AI"
             description="Transform simple questions into detailed, structured prompts that get you better answers"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/magic-prompt-demo-cropped.mp4"
-            videoBG={"bg-[#D4D4CC]"}
+            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo.mp4"
+            alt={false}
             />
          </BlurFade>
 
@@ -140,8 +153,8 @@ export default function Home() {
            <TwoBox
             title="Chat with your documents"
             description="Upload case files and have AI-powered conversations with them. Get instant answers from your documents"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo-cropped%20%281%29.mp4"
-            alt={false}
+            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo.mp4"
+            videoBG={"bg-[#D4D4CC]"}
             />
          </BlurFade>
 
@@ -152,7 +165,7 @@ export default function Home() {
             title="Generate articles based on judgements from multiple jurisdictions"
             description="Publicise your law firm by leveraging AI to draft up articles on current legal judgments"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/trimed-article-gen.mov"
-            videoBG={"bg-[#D4D4CC]"}
+            alt={false}
             />
           </BlurFade>
 

@@ -3,6 +3,7 @@ import 'dotenv/config'
 
 const teleKey = process.env.TELE_KEY
 const teleChatID = process.env.TELE_CHAT_ID
+const teleChatID2 = process.env.TELE_CHAT_ID_2
 export async function POST(request: Request) {
     // Parse the request body
     const body = await request.json();
@@ -17,6 +18,17 @@ export async function POST(request: Request) {
         method: "POST",
         body: JSON.stringify({
             chat_id: teleChatID, 
+            text: message
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+
+    const res2 = await fetch(`https://api.telegram.org/bot${teleKey}/sendMessage`, {
+        method: "POST",
+        body: JSON.stringify({
+            chat_id: teleChatID2, 
             text: message
         }),
         headers: {
