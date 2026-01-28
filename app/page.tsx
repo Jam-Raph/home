@@ -78,8 +78,8 @@ export default function Home() {
       <section className="flex flex-col items-center w-full gap-12 pt-24 relative" id="hero">
         <div className="flex flex-col items-center gap-12">
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-6xl text-center">Eliminate the busywork. Focus on the arguments</h1>
-            <p className="text-stone-400 text-sm md:text-lg text-center">Enhance your legal workflows with our AI powered solutions that are made to increase productivity and save time without cutting corners</p>
+            <h1 className="text-4xl md:text-6xl text-center">Leave the form filling to us</h1>
+            <p className="text-stone-400 text-sm md:text-lg text-center">Eliminate the busywork with AI powered solutions</p>
           </div>
           <div className="flex flex-col items-center gap-4">
             <div className="flex flex-col sm:flex-row gap-3">
