@@ -91,7 +91,7 @@ export default function Home() {
           <BlurFade delay={0.05} inView>
             {/* <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/> */}
             <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" autoPlay muted loop>
-              <source src="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/Form%20B14%20and%20Share%20transfer%20demo.mp4" type="video/mp4" />
+              <source src="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/form-filler-demo-2x.mov" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </BlurFade>
