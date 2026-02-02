@@ -139,14 +139,14 @@ export default function Home() {
          </BlurFade>
           
          {/* Project */}
-         <BlurFade delay={0.15} inView>
+         {/* <BlurFade delay={0.15} inView>
            <TwoBox
             title="Chat with your documents"
             description="Upload case files and have AI-powered conversations with them. Get instant answers from your documents"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo.mp4"
             alt={false}
             />
-         </BlurFade>
+         </BlurFade> */}
 
          {/* Magic Prompt */}
          <BlurFade delay={0.15} inView>
@@ -154,7 +154,7 @@ export default function Home() {
             title="Enhance your prompts with AI"
             description="Transform simple questions into detailed, structured prompts that get you better answers"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/magic-prompt-demo-cropped.mp4"
-            videoBG={"bg-[#D4D4CC]"}
+            alt={false}
             />
          </BlurFade>
 
@@ -165,7 +165,7 @@ export default function Home() {
             title="Generate articles based on judgements from multiple jurisdictions"
             description="Publicise your law firm by leveraging AI to draft up articles on current legal judgments"
             videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/trimed-article-gen.mov"
-            alt={false}
+            videoBG={"bg-[#D4D4CC]"}
             />
           </BlurFade>
 
