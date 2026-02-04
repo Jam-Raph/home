@@ -91,7 +91,7 @@ export default function Home() {
           <BlurFade delay={0.05} inView>
             {/* <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/> */}
             <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" autoPlay muted loop>
-              <source src="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/form-filler-demo-2x.mov" type="video/mp4" />
+              <source src="demos/form-filler-demo-2x.mov" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </BlurFade>
@@ -123,7 +123,7 @@ export default function Home() {
             <TwoBox
               title="Fill up repetitive forms in minutes not hours"
               description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
-              videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/form-b14-demo.mp4"
+              videoUrl="demos/form-b14-demo.mp4"
               alt={false}
               />
           </BlurFade>
@@ -133,7 +133,7 @@ export default function Home() {
            <TwoBox
             title="Fill up commonly used forms with any template"
             description="Save time by filling up common form templates from your organisation with different source documents."
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/form-filler.mp4"
+            videoUrl="demos/form-filler.mp4"
             videoBG={"bg-[#D4D4CC]"}
             />
          </BlurFade>
@@ -153,7 +153,7 @@ export default function Home() {
            <TwoBox
             title="Enhance your prompts with AI"
             description="Transform simple questions into detailed, structured prompts that get you better answers"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/magic-prompt-demo-cropped.mp4"
+            videoUrl="demos/magic-prompt-demo-cropped.mp4"
             alt={false}
             />
          </BlurFade>
@@ -164,7 +164,7 @@ export default function Home() {
             <TwoBox
             title="Generate articles based on judgements from multiple jurisdictions"
             description="Publicise your law firm by leveraging AI to draft up articles on current legal judgments"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/trimed-article-gen.mov"
+            videoUrl="demos/cropped-trimed-article-gen.mov"
             videoBG={"bg-[#D4D4CC]"}
             />
           </BlurFade>
