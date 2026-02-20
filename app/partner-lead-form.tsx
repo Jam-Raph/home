@@ -7,13 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
 
 type PartnerLeadFormState = {
   firstName: string;
@@ -99,18 +92,14 @@ export function PartnerLeadForm() {
   }
 
   return (
-    <section>
-      <div className="mx-auto max-w-3xl px-6">
-        <Card className="rounded-2xl border-stone-200 bg-stone-50" id="contact">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl md:text-4xl font-normal">Work with us</CardTitle>
-            <CardDescription className="text-base">
-              Share a few details and we’ll reach out.
-            </CardDescription>
-          </CardHeader>
+    <section className="px-6 py-16" id="contact">
+      <div className="mx-auto max-w-2xl">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2">Work with us</h2>
+          <p className="text-gray-600">Share a few details and we&apos;ll reach out.</p>
+        </div>
 
-          <CardContent>
-            <form onSubmit={onSubmit} className="space-y-6">
+        <form onSubmit={onSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="firstName">
@@ -123,7 +112,7 @@ export function PartnerLeadForm() {
                     placeholder="Jane"
                     autoComplete="given-name"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
 
@@ -138,7 +127,7 @@ export function PartnerLeadForm() {
                     placeholder="Tan"
                     autoComplete="family-name"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -156,7 +145,7 @@ export function PartnerLeadForm() {
                     placeholder="jane@company.com"
                     autoComplete="email"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   {emailInvalid ? (
                     <p className="text-sm text-destructive text-red-600">
@@ -173,7 +162,7 @@ export function PartnerLeadForm() {
                     onChange={update("phone")}
                     placeholder="+65 9123 4567"
                     autoComplete="tel"
-                    className="border-stone-200 bg-stone-50"
+                    className="border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
               </div>
@@ -189,7 +178,7 @@ export function PartnerLeadForm() {
                   placeholder="Pearson Hardman"
                   autoComplete="organization"
                   required
-                  className="border-stone-200 bg-stone-50"
+                  className="border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
 
@@ -203,7 +192,7 @@ export function PartnerLeadForm() {
                   value={form.note}
                   onChange={update("note")}
                   placeholder="Tell us what you’re trying to build, your timeline, and what success looks like."
-                  className="min-h-[140px] border-stone-200 bg-stone-50"
+                  className="min-h-[140px] border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   required
                 />
               </div>
@@ -217,14 +206,12 @@ export function PartnerLeadForm() {
                 <Button
                   type="submit"
                   disabled={isSubmitting || requiredMissing || emailInvalid}
-                  className="w-full bg-brand-primary text-white hover:bg-brand-primary/90 sm:w-auto"
+                  className="w-full sm:w-auto px-8 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors"
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
               </div>
             </form>
-          </CardContent>
-        </Card>
       </div>
     </section>
   );
