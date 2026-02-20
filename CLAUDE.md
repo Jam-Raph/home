@@ -38,3 +38,30 @@ This is a Next.js 16 marketing/landing page for "Jam & Raph" (a legal tech start
 ### Path Aliases
 
 `@/*` maps to project root (e.g., `@/components/ui/button` resolves to `./components/ui/button`)
+
+### Component Naming Convention
+
+- Components with `figma-` prefix are based on Figma designs (e.g., `figma-hero-section.tsx`, `figma-stats-section.tsx`)
+
+### Key Page Components (in order)
+
+1. `Navbar` - Fixed navigation header
+2. `FigmaHeroSection` - Hero with video tabs (red gradient)
+3. `FigmaHowItWorks` - 3-step process section
+4. `FigmaStatsSection` - Stats + bento grid with testimonials/achievements
+5. `FigmaSavingsCalculator` - Interactive calculator (red gradient)
+6. `FeatureShowcase` - Prompt enhancer & Article generator demos
+7. `FeatureCards` - 3 feature cards (Form Filler, Prompt Enhancer, Article Generator)
+8. Security section - Inline in page.tsx (red gradient)
+9. FAQ section - Inline accordion
+10. `CTABanner` - Call to action
+11. `TeamBanner` - Team headshots (red gradient)
+12. `HackathonWins` - Award photos (red gradient)
+13. `PartnerLeadForm` - Contact form
+14. `Footer`
+
+### Styling Patterns
+
+- **Red gradient sections**: `bg-[radial-gradient(circle_at_center,_#B11226_0%,_#8E1624_45%,_#4A0B14_100%)]`
+- **Full-width breakout**: `w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]`
+- **Dotted background**: Main container uses `bg-gray-50 bg-[radial-gradient(#0000001f_1px,transparent_1px)] bg-[size:18px_18px]`

@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import Navbar from "@/components/ui/navbar"
-import TwoBox from "@/components/ui/two-box"
 import Image from "next/image"
 import {
   ShieldCheck,
@@ -18,14 +17,19 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-import { BlurFade } from "@/components/ui/blur-fade";
 
 import { PartnerLeadForm } from "./partner-lead-form"
 
 import { DotPattern } from "@/components/ui/dot-pattern"
-import { StatsBanner } from "@/components/ui/stats-banner"
 import { CTABanner } from "@/components/ui/cta-banner"
+import { FeatureCards } from "@/components/ui/feature-cards"
+import { FeatureShowcase } from "@/components/ui/figma-feature-showcase"
+import { FigmaHeroSection } from "@/components/ui/figma-hero-section"
+import { FigmaHowItWorks } from "@/components/ui/figma-how-it-works"
+import { FigmaStatsSection } from "@/components/ui/figma-stats-section"
+import { FigmaSavingsCalculator } from "@/components/ui/figma-savings-calculator"
 import { TeamBanner } from "@/components/ui/team-banner"
+import { HackathonWins } from "@/components/ui/hackathon-wins"
 import { Footer } from "./footer"
 import { smoothScroll } from "@/lib/utils"
 
@@ -71,167 +75,96 @@ export default function Home() {
 
   
   return (
-    <div className="mx-auto flex flex-col h-full container gap-12 p-4">
+    <div className="mx-auto flex flex-col h-full container gap-12 p-4 bg-gray-50 bg-[radial-gradient(#0000001f_1px,transparent_1px)] bg-[size:18px_18px]">
       {/* Navbar */}
       <Navbar/>
-        <DotPattern className="rounded-full -z-10" glow/>
-      <section className="flex flex-col items-center w-full gap-12 pt-24 relative" id="hero">
-        <div className="flex flex-col items-center gap-12">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-6xl text-center">Leave the form filling to us</h1>
-            <p className="text-stone-400 text-sm md:text-lg text-center">Eliminate the busywork with AI powered solutions</p>
+
+      <div className="bg-[radial-gradient(circle_at_center,_#B11226_0%,_#8E1624_45%,_#4A0B14_100%)] w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] -mt-12 pt-12">
+      <FigmaHeroSection
+        videos={[
+          { id: 1, title: "Original document", description: "Upload your source documents", url: "/demos/form-b14-demo.mp4" },
+          { id: 2, title: "Pillar processing", description: "AI extracts and fills forms", url: "/demos/form-filler.mp4" },
+          { id: 3, title: "Finalised form", description: "Review and export", url: "/demos/magic-prompt-demo-cropped.mp4" },
+        ]}
+      />
+      </div>
+
+      <FigmaHowItWorks />
+
+      <FigmaStatsSection />
+
+      <FigmaSavingsCalculator />
+
+      <section className="px-6 py-16">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl font-semibold mb-12 text-center">
+            Form filling is just the beginning
+          </h2>
+
+          <div className="space-y-24">
+          <FeatureShowcase
+            name="Prompt enhancer"
+            imagePosition="right"
+            videos={[
+              { id: 1, title: "Original prompt", description: "Your initial prompt", url: "/demos/magic-prompt-demo-cropped.mp4" },
+              { id: 2, title: "Enhanced prompt", description: "AI-improved prompt", url: "/demos/magic-prompt-demo-cropped.mp4" }
+            ]}
+          />
+          <FeatureShowcase
+            name="Article generator"
+            imagePosition="left"
+            videos={[
+              { id: 3, title: "Original judgement", description: "Source legal judgement", url: "/demos/cropped-trimed-article-gen.mov" },
+              { id: 4, title: "Generated article", description: "AI-generated article", url: "/demos/cropped-trimed-article-gen.mov" }
+            ]}
+          />
           </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button className="bg-brand-primary text-white cursor-pointer px-6" onClick={() => smoothScroll("contact")}>Book a demo</Button>
-              <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6" onClick={() => smoothScroll("pillar")}>See how it works</Button>
-            </div>
-          </div>
-        </div>
-          <BlurFade delay={0.05} inView>
-            {/* <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/> */}
-            <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" autoPlay muted loop>
-              <source src="demos/form-filler-demo-2x.mov" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </BlurFade>
-
-      </section>
-
-      <section className="flex flex-col gap-4" id="partners">
-        <h6 className="text-stone-400 text-center text-sm uppercase tracking-wider">Currently working with</h6>
-        <div className="flex items-end justify-center gap-12 md:gap-24 overflow-hidden">
-          <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
-          <Image alt="SMU Logo" src={"/logos/smu.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
-          <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
-          <Image alt="EY Logo" src={"/logos/EY.png"} width={300} height={0} className="w-8 md:w-16 h-auto"/>
-        </div>
-      </section>
-
-      <StatsBanner />
-
-      <section className="flex flex-col gap-5">
-        <div className="flex flex-col items-center gap-4" id="pillar">
-          <h1 className="text-4xl md:text-6xl text-center">Pillar</h1>
-          <p className="text-stone-400">Our proprietary software built for the everyday law firms who require practical, scalable AI – not enterprise complexity</p>
-        </div>
-        
-        {/* Box */}
-        <div className="flex flex-col items-center h-full gap-36">
-          {/* B14 Form */}
-          <BlurFade delay={0.15} inView>
-            <TwoBox
-              title="Fill up repetitive forms in minutes not hours"
-              description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
-              videoUrl="demos/form-b14-demo.mp4"
-              alt={false}
-              />
-          </BlurFade>
-
-          {/* Form filler */}
-         <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Fill up commonly used forms with any template"
-            description="Save time by filling up common form templates from your organisation with different source documents."
-            videoUrl="demos/form-filler.mp4"
-            videoBG={"bg-[#D4D4CC]"}
-            />
-         </BlurFade>
-          
-         {/* Project */}
-         {/* <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Chat with your documents"
-            description="Upload case files and have AI-powered conversations with them. Get instant answers from your documents"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo.mp4"
-            alt={false}
-            />
-         </BlurFade> */}
-
-         {/* Magic Prompt */}
-         <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Enhance your prompts with AI"
-            description="Transform simple questions into detailed, structured prompts that get you better answers"
-            videoUrl="demos/magic-prompt-demo-cropped.mp4"
-            alt={false}
-            />
-         </BlurFade>
-
-          {/* Article generator */}
-
-          <BlurFade delay={0.15} inView>
-            <TwoBox
-            title="Generate articles based on judgements from multiple jurisdictions"
-            description="Publicise your law firm by leveraging AI to draft up articles on current legal judgments"
-            videoUrl="demos/cropped-trimed-article-gen.mov"
-            videoBG={"bg-[#D4D4CC]"}
-            />
-          </BlurFade>
-
         </div>
       </section>
 
-      <section className="w-full bg-stone-100 py-16 -mx-4 px-4 rounded-3xl" id="security">
-        <div className="container mx-auto">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <h2 className="text-4xl md:text-5xl text-stone-800">Security &amp; Privacy</h2>
-            <p className="text-stone-500">
-              We&apos;re built for sensitive documents.
-            </p>
-          </div>
+      <FeatureCards />
 
-          <article className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+      <section className="px-6 py-16 bg-[radial-gradient(circle_at_center,_#B11226_0%,_#8E1624_45%,_#4A0B14_100%)] w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]" id="security">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-white font-semibold mb-2 text-4xl md:text-5xl">Security &amp; Privacy</h2>
+          <p className="text-white mb-12">We&apos;re built for sensitive documents.</p>
+
+          <div className="grid md:grid-cols-4 gap-8">
             {points.map((p) => {
               const Icon = p.icon;
               return (
-                <div
-                  key={p.title}
-                  className="rounded-2xl bg-white/80 p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-lg bg-stone-100 p-2">
-                      <Icon className="h-6 w-6 text-stone-600" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-base font-semibold leading-snug text-stone-800">
-                        {p.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-stone-500">
-                        {p.description}
-                      </p>
-                    </div>
+                <div key={p.title} className="text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-lg mb-4">
+                    <Icon className="w-6 h-6 text-gray-700" />
                   </div>
+                  <h3 className="font-semibold mb-2 text-sm text-white">{p.title}</h3>
+                  <p className="text-xs text-gray-300">{p.description}</p>
                 </div>
               );
             })}
-          </article>
+          </div>
         </div>
       </section>
 
-      <section id="faq">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <h2 className="text-4xl md:text-5xl text-stone-800">
-            FAQ
-          </h2>
-          <p className="max-w-2xl text-base md:text-lg text-stone-500">
-            Quick answers to the questions we hear most often.
-          </p>
-        </div>
+      <section id="faq" className="px-6 py-16">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-semibold mb-2">FAQ</h2>
+            <p className="text-gray-600">Quick answers to the questions we hear most often.</p>
+          </div>
 
-        <div className="mt-12">
-          <div className="rounded-2xl bg-stone-100 p-4 md:p-6">
-            <Accordion type="single" collapsible className="w-full">
+          <div className="space-y-4">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((item, idx) => (
                 <AccordionItem
                   key={item.q}
                   value={`item-${idx}`}
-                  className="border-stone-200 px-2 md:px-4"
+                  className="border border-gray-200 rounded-lg px-2"
                 >
-                  <AccordionTrigger className="text-left text-base md:text-lg text-stone-700 hover:text-stone-900">
+                  <AccordionTrigger className="text-left font-medium px-4 hover:bg-gray-50 transition-colors">
                     {item.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm md:text-base text-stone-500 leading-relaxed">
+                  <AccordionContent className="text-sm text-gray-600 px-4 pb-4">
                     {item.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -243,7 +176,10 @@ export default function Home() {
 
       <CTABanner />
 
-      <TeamBanner />
+      <div className="bg-[radial-gradient(circle_at_center,_#B11226_0%,_#8E1624_45%,_#4A0B14_100%)] w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+        <TeamBanner />
+        <HackathonWins />
+      </div>
 
       <PartnerLeadForm/>
       <Footer/>
