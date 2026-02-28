@@ -37,6 +37,7 @@ const awards = [
     alt: "Jam & Raph team winning SMU Legal Innovation and Tech 2025",
     title: "SMU Legal Innovation and Tech 2025",
     place: "1st Place",
+    prize: "$1,500 SGD",
     link: "https://www.linkedin.com/posts/jus-mundi_between-ai-agents-shouting-objection-and-ugcPost-7389949606601850880-QN61"
   },
   {
@@ -44,6 +45,7 @@ const awards = [
     alt: "Jam & Raph team winning 1st Runner Up at SMU Hult Prize 2026",
     title: "SMU Hult Prize 2026",
     place: "1st Runner Up",
+    prize: "$5,000 SGD",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7425846342385668096"
   },
   {
@@ -51,6 +53,7 @@ const awards = [
     alt: "Jam & Raph team winning BASE Hackathon",
     title: "NTU x Base Web3",
     place: "1st Place",
+    prize: "$1,000 SGD",
     link: "https://www.linkedin.com/posts/blockchain-at-ntu_ntu-ntublockchain-base-activity-7370449056969633792-ua_9"
   },
   {
@@ -58,6 +61,7 @@ const awards = [
     alt: "Jam & Raph team at SMU Legal Innovation and Tech 2024",
     title: "SMU Legal Innovation and Tech 2024",
     place: "2nd Place",
+    prize: "$2,500 SGD",
     link: "https://www.linkedin.com/posts/raphael-lim-437416213_sigmatech-generativeai-icp-activity-7228613456231288832-k94I"
   },
 ]
@@ -110,7 +114,7 @@ export function TeamBanner() {
           </div>
         </BlurFade>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {awards.map((award, index) => (
             <BlurFade key={award.src} delay={0.35 + index * 0.1} inView>
               <a
@@ -131,7 +135,7 @@ export function TeamBanner() {
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <div className="flex items-center gap-2">
                     <Trophy className="h-4 w-4 text-amber-400" />
-                    <span className="text-sm font-medium text-amber-400">{award.place}</span>
+                    <span className="text-sm font-medium text-amber-400">{award.place} · {award.prize}</span>
                   </div>
                   <p className="text-lg font-semibold text-white">{award.title}</p>
                 </div>
@@ -139,6 +143,12 @@ export function TeamBanner() {
             </BlurFade>
           ))}
         </div>
+
+        <BlurFade delay={0.75} inView>
+          <p className="text-center text-lg font-medium text-stone-600 mt-8">
+            Total Prize Money: $10,000 SGD
+          </p>
+        </BlurFade>
       </div>
     </section>
   )
