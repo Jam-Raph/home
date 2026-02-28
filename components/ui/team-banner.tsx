@@ -40,6 +40,13 @@ const awards = [
     link: "https://www.linkedin.com/posts/jus-mundi_between-ai-agents-shouting-objection-and-ugcPost-7389949606601850880-QN61"
   },
   {
+    src: "/awards/SMU_Hult_Prize_26.jpeg",
+    alt: "Jam & Raph team winning 1st Runner Up at SMU Hult Prize 2026",
+    title: "SMU Hult Prize 2026",
+    place: "1st Runner Up",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7425846342385668096"
+  },
+  {
     src: "/awards/base-first-place.jpeg",
     alt: "Jam & Raph team winning BASE Hackathon",
     title: "NTU x Base Web3",
@@ -103,7 +110,7 @@ export function TeamBanner() {
           </div>
         </BlurFade>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {awards.map((award, index) => (
             <BlurFade key={award.src} delay={0.35 + index * 0.1} inView>
               <a
