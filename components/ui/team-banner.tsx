@@ -60,7 +60,7 @@ const awards = [
     src: "/awards/smu-lit-2024-second-place.jpeg",
     alt: "Jam & Raph team at SMU Legal Innovation and Tech 2024",
     title: "SMU Legal Innovation and Tech 2024",
-    place: "2nd Place",
+    place: "1st Runner Up",
     prize: "$2,500 SGD",
     link: "https://www.linkedin.com/posts/raphael-lim-437416213_sigmatech-generativeai-icp-activity-7228613456231288832-k94I"
   },
