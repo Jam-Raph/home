@@ -22,7 +22,9 @@ import { BlurFade } from "@/components/ui/blur-fade";
 
 import { PartnerLeadForm } from "./partner-lead-form"
 
-import { DotPattern } from "@/components/ui/dot-pattern"
+import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
+import { AnimatedGradientText } from "@/components/ui/animated-gradient-text"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { StatsBanner } from "@/components/ui/stats-banner"
 import { CTABanner } from "@/components/ui/cta-banner"
 import { TeamBanner } from "@/components/ui/team-banner"
@@ -74,28 +76,48 @@ export default function Home() {
     <div className="mx-auto flex flex-col h-full container gap-12 p-4">
       {/* Navbar */}
       <Navbar/>
-        <DotPattern className="rounded-full -z-10" glow/>
-      <section className="flex flex-col items-center w-full gap-12 pt-24 relative" id="hero">
-        <div className="flex flex-col items-center gap-12">
-          <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-6xl text-center">Leave the form filling to us</h1>
-            <p className="text-stone-400 text-sm md:text-lg text-center">Eliminate the busywork with AI powered solutions</p>
+      <section className="relative py-24 sm:py-40 overflow-hidden" id="hero">
+        <AnimatedGridPattern
+          className="absolute inset-0 h-full w-full fill-brand-primary/10 stroke-brand-primary/10 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
+          numSquares={50}
+          maxOpacity={0.1}
+          duration={3}
+        />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-stone-900">
+            Leave the{" "}
+            <AnimatedGradientText
+              colorFrom="#7C1E15"
+              colorTo="#5C1610"
+              className="text-4xl sm:text-6xl font-bold"
+            >
+              form filling
+            </AnimatedGradientText>
+            {" "}to us
+          </h1>
+          <p className="mt-6 text-lg text-stone-500 max-w-2xl mx-auto">
+            Eliminate the busywork with AI powered solutions
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-3">
+            <ShimmerButton
+              background="#7C1E15"
+              shimmerColor="rgba(255,255,255,0.3)"
+              className="h-9 px-6 text-sm font-medium"
+              onClick={() => smoothScroll("contact")}
+            >
+              Book a demo
+            </ShimmerButton>
+            <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6" asChild><a href="/form-filler">See how it works</a></Button>
           </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Button className="bg-brand-primary text-white cursor-pointer px-6" onClick={() => smoothScroll("contact")}>Book a demo</Button>
-              <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6" onClick={() => smoothScroll("pillar")}>See how it works</Button>
-            </div>
+          <div className="mt-12">
+            <BlurFade delay={0.05} inView>
+              <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0 mx-auto" autoPlay muted loop>
+                <source src="jamraph-hero.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </BlurFade>
           </div>
         </div>
-          <BlurFade delay={0.05} inView>
-            {/* <Image loading="eager" alt="Pillar home page" width={1280} height={0} className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" src={"/pillar-home.png"}/> */}
-            <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0" autoPlay muted loop>
-              <source src="jamraph-hero.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </BlurFade>
-
       </section>
 
       <section className="flex flex-col gap-4" id="partners">
@@ -125,6 +147,7 @@ export default function Home() {
               description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
               videoUrl="demos/form-b14-demo.mp4"
               alt={false}
+              ctaHref="/form-filler"
               />
           </BlurFade>
 
@@ -135,6 +158,7 @@ export default function Home() {
             description="Save time by filling up common form templates from your organisation with different source documents."
             videoUrl="demos/form-filler.mp4"
             videoBG={"bg-[#D4D4CC]"}
+            ctaHref="/form-filler"
             />
          </BlurFade>
           
