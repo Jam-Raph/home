@@ -107,7 +107,7 @@ export default function Home() {
             >
               Book a demo
             </ShimmerButton>
-            <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6" asChild><a href="/form-filler">See how it works</a></Button>
+            <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6 bg-white" asChild><a href="/form-filler">See how it works</a></Button>
           </div>
           <div className="mt-12">
             <BlurFade delay={0.05} inView>
