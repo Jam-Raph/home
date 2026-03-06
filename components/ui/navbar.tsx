@@ -28,7 +28,7 @@ export default function Navbar() {
     }
 
     return (
-        <section className="z-10 bg-white/50 backdrop-blur-md w-full max-w-3/4 px-2 rounded-xl flex justify-between md:justify-center items-center gap-10 fixed top-3 left-1/2 -translate-x-1/2 border border-stone-200">
+        <section className="z-50 bg-white/50 backdrop-blur-md w-full max-w-3/4 px-2 rounded-xl flex justify-between md:justify-center items-center gap-10 fixed top-3 left-1/2 -translate-x-1/2 border border-stone-200">
             <Link href="/" className="flex items-center gap-2">
                 <Image alt="company logo" width={30} height={0} className="h-auto w-auto" src="/J&R logo.png"></Image>
                 <h1>Jam & Raph</h1>
