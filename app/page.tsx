@@ -127,6 +127,7 @@ export default function Home() {
           <Image alt="SMU Logo" src={"/logos/smu.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
           <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
           <Image alt="EY Logo" src={"/logos/EY.png"} width={300} height={0} className="w-8 md:w-16 h-auto"/>
+          <Image alt="NVIDIA Inception Program" src={"/logos/nvidia-inception.png"} width={300} height={0} className="w-24 md:w-40 h-auto"/>
         </div>
       </section>
 
