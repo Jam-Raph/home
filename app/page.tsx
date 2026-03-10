@@ -122,7 +122,7 @@ export default function Home() {
 
       <section className="flex flex-col gap-4" id="partners">
         <h6 className="text-stone-400 text-center text-sm uppercase tracking-wider">Currently working with</h6>
-        <div className="flex items-end justify-center gap-12 md:gap-24 overflow-hidden">
+        <div className="flex items-end justify-center gap-6 md:gap-24 flex-wrap">
           <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
           <Image alt="SMU Logo" src={"/logos/smu.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
           <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
