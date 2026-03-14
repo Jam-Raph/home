@@ -76,14 +76,12 @@ export default function Home() {
 
       {/* Hero — full viewport with hero.jpg background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
-        <Image
+        <img
           src="/hero.jpg"
           alt="Marina Bay skyline painting"
-          fill
-          sizes="100vw"
-          quality={90}
-          className="object-cover"
-          priority
+          className="absolute inset-0 w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
