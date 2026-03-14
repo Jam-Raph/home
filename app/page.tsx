@@ -80,6 +80,8 @@ export default function Home() {
           src="/hero.jpg"
           alt="Marina Bay skyline painting"
           fill
+          sizes="100vw"
+          quality={90}
           className="object-cover"
           priority
         />
