@@ -5,10 +5,13 @@
 
 @theme {
     --font-sans: "Inter", "Helvetica Neue", "Arial", ui-sans-serif, system-ui, sans-serif;
-    --font-serif: var(--font-playfair), "Playfair Display", "Georgia", ui-serif, serif;
     --color-brand-primary: #C4A265;
     --color-brand-hover: #B08D4F;
     --color-surface-warm: #F9F8F6
+}
+
+@theme inline {
+    --font-serif: var(--font-playfair), "Playfair Display", "Georgia", ui-serif, serif;
 }
 
 @theme inline {
