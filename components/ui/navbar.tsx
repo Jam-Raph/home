@@ -26,10 +26,10 @@ export default function Navbar() {
     }
 
     return (
-        <section className="z-50 bg-white/80 backdrop-blur-xl w-full max-w-3/4 px-4 py-2 rounded-full flex justify-between md:justify-center items-center gap-10 fixed top-4 left-1/2 -translate-x-1/2 border border-white/40 shadow-lg shadow-black/5">
+        <section className="z-50 bg-white/50 backdrop-blur-xl w-full max-w-3/4 px-3 py-1.5 md:px-4 md:py-2 rounded-full flex justify-between md:justify-center items-center gap-10 fixed top-4 left-1/2 -translate-x-1/2 border border-white/30 shadow-lg shadow-black/5">
             <Link href="/" className="flex items-center gap-2">
-                <Image alt="company logo" width={30} height={0} className="h-auto w-auto" src="/J&R logo.png" />
-                <h1 className="text-stone-900 font-medium">Jam & Raph</h1>
+                <Image alt="company logo" width={24} height={0} className="h-auto w-auto md:w-[30px]" src="/J&R logo.png" />
+                <h1 className="text-stone-900 font-medium text-sm md:text-base">Jam & Raph</h1>
             </Link>
 
             {/* Full nav bar */}
@@ -48,7 +48,7 @@ export default function Navbar() {
             {/* Hamburger menu */}
             <div className="flex justify-between md:hidden">
                 <DropdownMenu>
-                    <DropdownMenuTrigger className="cursor-pointer text-stone-700"><Menu /></DropdownMenuTrigger>
+                    <DropdownMenuTrigger className="cursor-pointer text-stone-700"><Menu className="size-5" /></DropdownMenuTrigger>
                     <DropdownMenuContent className="bg-white/90 backdrop-blur-lg border-white/40">
                         <DropdownMenuItem><button onClick={() => navTo("pillar")}>Features</button></DropdownMenuItem>
                         <DropdownMenuItem><Link href="/security">Security</Link></DropdownMenuItem>
