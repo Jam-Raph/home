@@ -68,11 +68,12 @@ const awards = [
 
 export function TeamBanner() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-28">
       <div className="container mx-auto">
         {/* Header */}
         <BlurFade delay={0.1} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-12">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono">Our Team</p>
             <h2 className="text-3xl md:text-4xl text-stone-900 font-serif font-bold tracking-tight">The founding team behind Pillar</h2>
           </div>
         </BlurFade>

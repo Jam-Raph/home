@@ -31,7 +31,7 @@ export function Footer() {
 
             <div className="flex flex-wrap gap-2">
               <Button
-                className="bg-brand-primary text-white hover:bg-brand-hover rounded-full"
+                className="bg-brand-primary text-white hover:opacity-85 rounded-full transition-opacity"
                 onClick={() => smoothScroll("contact")}
               >
                 Work with us

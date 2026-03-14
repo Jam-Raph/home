@@ -22,9 +22,10 @@ const stats = [
 
 export function StatsBanner() {
   return (
-    <section className="w-full bg-surface-warm/70 backdrop-blur-sm py-20" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
+    <section className="w-full bg-surface-warm py-24" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
       <div className="container mx-auto px-4">
         <BlurFade delay={0.1} inView>
+          <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono text-center mb-8">By the Numbers</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-4">
             {stats.map((stat, index) => (
               <div key={index} className="flex flex-col items-center text-center">

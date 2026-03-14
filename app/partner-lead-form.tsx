@@ -96,8 +96,9 @@ export function PartnerLeadForm() {
   return (
     <section>
       <div className="mx-auto max-w-3xl px-6">
-        <div className="rounded-2xl bg-surface-warm/70 backdrop-blur-sm border border-stone-200/50 p-6 md:p-10" id="contact">
+        <div className="rounded-2xl bg-surface-warm p-8 md:p-12" id="contact">
           <div className="text-center mb-8">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono mb-4">Contact Us</p>
             <h2 className="text-3xl md:text-4xl font-serif font-normal text-stone-900">Work with us</h2>
             <p className="text-base text-muted-foreground mt-2">
               Share a few details and we&apos;ll reach out.
@@ -212,7 +213,7 @@ export function PartnerLeadForm() {
                 <Button
                   type="submit"
                   disabled={isSubmitting || requiredMissing || emailInvalid}
-                  className="w-full bg-brand-primary text-white hover:bg-brand-hover rounded-full sm:w-auto"
+                  className="w-full bg-brand-primary text-white hover:opacity-85 rounded-full transition-opacity sm:w-auto"
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>

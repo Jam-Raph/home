@@ -38,7 +38,7 @@ export default function Navbar() {
                 <Link href="/security" className="text-stone-600 hover:text-stone-900 transition-colors text-sm">Security</Link>
                 <button className="hover:cursor-pointer text-stone-600 hover:text-stone-900 transition-colors text-sm" onClick={() => navTo("faq")}>FAQ</button>
                 <button
-                    className="hover:cursor-pointer bg-brand-primary hover:bg-brand-hover text-white text-sm font-medium px-5 py-1.5 rounded-full transition-colors"
+                    className="hover:cursor-pointer bg-brand-primary hover:opacity-85 text-white text-sm font-medium px-5 py-1.5 rounded-full transition-opacity"
                     onClick={() => navTo("contact")}
                 >
                     Book a Demo

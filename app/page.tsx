@@ -89,12 +89,12 @@ export default function Home() {
             <h1 className="text-5xl sm:text-7xl font-serif font-bold tracking-tight text-white">
               Precision, Automated
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+            <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto">
               AI-powered legal workflows, built for modern firms
             </p>
-            <div className="mt-10">
+            <div className="mt-12">
               <button
-                className="bg-brand-primary hover:bg-brand-hover text-white text-base font-medium px-8 py-2 rounded-full transition-colors cursor-pointer"
+                className="bg-brand-primary hover:opacity-85 text-white text-base font-medium px-8 py-3 rounded-full transition-opacity cursor-pointer"
                 onClick={() => smoothScroll("contact")}
               >
                 Book a Demo
@@ -106,8 +106,8 @@ export default function Home() {
 
       {/* Partners */}
       <div className="container mx-auto px-4">
-        <section className="flex flex-col gap-4 py-20" id="partners">
-          <h6 className="text-stone-400 text-center text-sm uppercase tracking-wider">Currently working with</h6>
+        <section className="flex flex-col gap-4 py-28" id="partners">
+          <h6 className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono text-center">Currently working with</h6>
           <div className="flex items-end justify-center gap-6 md:gap-24 flex-wrap">
             <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
             <Image alt="SMU Logo" src={"/logos/smu.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
@@ -122,13 +122,14 @@ export default function Home() {
 
       <div className="container mx-auto px-4">
         {/* Pillar Features */}
-        <section className="flex flex-col gap-5 py-20">
+        <section className="flex flex-col gap-5 py-28">
           <div className="flex flex-col items-center gap-4" id="pillar">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono">Our Product</p>
             <h2 className="text-4xl md:text-6xl text-center text-stone-900 font-serif font-bold tracking-tight">Pillar</h2>
-            <p className="text-stone-500 text-center max-w-2xl">Our proprietary software built for the everyday law firms who require practical, scalable AI — not enterprise complexity</p>
+            <p className="text-stone-600 text-center max-w-2xl">Our proprietary software built for the everyday law firms who require practical, scalable AI — not enterprise complexity</p>
           </div>
 
-          <div className="flex flex-col items-center h-full gap-20 mt-12">
+          <div className="flex flex-col items-center h-full gap-24 mt-12">
             <BlurFade delay={0.15} inView>
               <TwoBox
                 title="Fill up repetitive forms in minutes not hours"
@@ -168,11 +169,12 @@ export default function Home() {
         </section>
 
         {/* Security & Privacy */}
-        <section className="w-full bg-surface-warm/80 backdrop-blur-sm py-16 px-4 rounded-3xl border border-stone-200/60" id="security">
+        <section className="w-full bg-surface-warm py-16 px-4 rounded-3xl" id="security">
           <div className="container mx-auto">
             <div className="flex flex-col items-center gap-4 text-center">
+              <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono">Trust & Security</p>
               <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-bold tracking-tight">Security &amp; Privacy</h2>
-              <p className="text-stone-500">
+              <p className="text-stone-600">
                 We&apos;re built for sensitive documents.
               </p>
             </div>
@@ -183,7 +185,7 @@ export default function Home() {
                 return (
                   <div
                     key={p.title}
-                    className="bg-white/50 backdrop-blur-sm rounded-xl p-6"
+                    className="bg-white rounded-xl p-8"
                   >
                     <div className="flex items-start gap-3">
                       <div className="rounded-lg bg-brand-primary/10 p-2">
@@ -206,18 +208,19 @@ export default function Home() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-20">
+        <section id="faq" className="py-28">
           <div className="flex flex-col items-center gap-4 text-center">
+            <p className="text-xs uppercase tracking-[0.2em] text-stone-400 font-medium font-mono">Common Questions</p>
             <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-bold tracking-tight">
               FAQ
             </h2>
-            <p className="max-w-2xl text-base md:text-lg text-stone-500">
+            <p className="max-w-2xl text-base md:text-lg text-stone-600">
               Quick answers to the questions we hear most often.
             </p>
           </div>
 
           <div className="mt-12">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-stone-200/40">
+            <div className="bg-surface-warm rounded-2xl p-6 md:p-8">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((item, idx) => (
                   <AccordionItem
