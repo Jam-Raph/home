@@ -68,12 +68,12 @@ const awards = [
 
 export function TeamBanner() {
   return (
-    <section className="w-full py-16">
+    <section className="w-full py-20">
       <div className="container mx-auto">
         {/* Header */}
         <BlurFade delay={0.1} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl text-stone-800">The founding team behind Pillar</h2>
+            <h2 className="text-3xl md:text-4xl text-stone-900 font-bold tracking-tight">The founding team behind Pillar</h2>
           </div>
         </BlurFade>
 
@@ -87,7 +87,7 @@ export function TeamBanner() {
                 rel="noreferrer"
                 className="flex flex-col items-center gap-3 group"
               >
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-stone-100 shadow-sm transition-shadow group-hover:shadow-md">
+                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-surface-warm shadow-sm transition-shadow group-hover:shadow-md">
                   <Image
                     src={member.src}
                     alt={member.name}
@@ -96,7 +96,7 @@ export function TeamBanner() {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-medium text-stone-800 group-hover:text-stone-600 transition-colors">{member.name}</p>
+                  <p className="font-medium text-stone-900 group-hover:text-stone-600 transition-colors">{member.name}</p>
                   <p className="text-sm text-stone-500">{member.role}</p>
                 </div>
               </a>
@@ -108,8 +108,8 @@ export function TeamBanner() {
         <BlurFade delay={0.3} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-8">
             <div className="flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-amber-500" />
-              <h3 className="text-xl md:text-2xl text-stone-700">Our Hackathon Wins</h3>
+              <Trophy className="h-5 w-5 text-brand-primary" />
+              <h3 className="text-xl md:text-2xl text-stone-900 font-semibold">Our Hackathon Wins</h3>
             </div>
           </div>
         </BlurFade>
@@ -121,7 +121,7 @@ export function TeamBanner() {
                 href={award.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative overflow-hidden rounded-2xl bg-stone-100 shadow-sm hover:shadow-lg transition-all duration-300 block"
+                className="group relative overflow-hidden rounded-2xl bg-surface-warm shadow-sm hover:shadow-lg transition-all duration-300 block"
               >
                 <div className="aspect-[4/3] relative">
                   <Image
@@ -134,8 +134,8 @@ export function TeamBanner() {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-5">
                   <div className="flex items-center gap-2">
-                    <Trophy className="h-4 w-4 text-amber-400" />
-                    <span className="text-sm font-medium text-amber-400">{award.place} · {award.prize}</span>
+                    <Trophy className="h-4 w-4 text-brand-primary" />
+                    <span className="text-sm font-medium text-brand-primary">{award.place} · {award.prize}</span>
                   </div>
                   <p className="text-lg font-semibold text-white">{award.title}</p>
                 </div>

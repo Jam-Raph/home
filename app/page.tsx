@@ -22,9 +22,6 @@ import { BlurFade } from "@/components/ui/blur-fade";
 
 import { PartnerLeadForm } from "./partner-lead-form"
 
-import { AnimatedGridPattern } from "@/components/ui/animated-grid-pattern"
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text"
-import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { StatsBanner } from "@/components/ui/stats-banner"
 import { CTABanner } from "@/components/ui/cta-banner"
 import { TeamBanner } from "@/components/ui/team-banner"
@@ -67,211 +64,190 @@ export default function Home() {
     },
     {
       q: "How does Pillar use my documents?",
-      a: "We store documents in our database (Supabase) and Claude’s file API for processing. These documents are removed after processing unless the feature requires persistent file storage i.e: Projects. These documents can only be accessed with the proper access level.",
+      a: "We store documents in our database (Supabase) and Claude's file API for processing. These documents are removed after processing unless the feature requires persistent file storage i.e: Projects. These documents can only be accessed with the proper access level.",
     },
   ];
 
-  
+
   return (
-    <div className="mx-auto flex flex-col h-full container gap-12 p-4">
+    <div className="mx-auto flex flex-col h-full">
       {/* Navbar */}
       <Navbar/>
-      <section className="relative py-24 sm:py-40 overflow-hidden" id="hero">
-        <AnimatedGridPattern
-          className="absolute inset-0 h-full w-full fill-brand-primary/10 stroke-brand-primary/10 [mask-image:radial-gradient(600px_circle_at_center,white,transparent)]"
-          numSquares={50}
-          maxOpacity={0.1}
-          duration={3}
+
+      {/* Hero — full viewport with hero.jpg background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
+        <Image
+          src="/hero.jpg"
+          alt="Marina Bay skyline painting"
+          fill
+          className="object-cover"
+          priority
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-stone-900">
-            Leave the{" "}
-            <AnimatedGradientText
-              colorFrom="#7C1E15"
-              colorTo="#5C1610"
-              className="text-4xl sm:text-6xl font-bold"
-            >
-              form filling
-            </AnimatedGradientText>
-            {" "}to us
-          </h1>
-          <p className="mt-6 text-lg text-stone-500 max-w-2xl mx-auto">
-            Eliminate the busywork with AI powered solutions
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-3">
-            <ShimmerButton
-              background="#7C1E15"
-              shimmerColor="rgba(255,255,255,0.3)"
-              className="h-9 px-6 text-sm font-medium"
-              onClick={() => smoothScroll("contact")}
-            >
-              Book a demo
-            </ShimmerButton>
-            <Button variant="outline" className="border-stone-300 text-stone-600 cursor-pointer px-6 bg-white" asChild><a href="/form-filler">See how it works</a></Button>
-          </div>
-          <div className="mt-12">
-            <BlurFade delay={0.05} inView>
-              <video className="w-auto h-auto rounded-lg border border-stone-200 shadow-lg z-0 mx-auto" autoPlay muted loop>
-                <source src="jamraph-hero.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </BlurFade>
-          </div>
+          <BlurFade delay={0.05} inView>
+            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white">
+              Precision, Automated
+            </h1>
+            <p className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
+              AI-powered legal workflows, built for modern firms
+            </p>
+            <div className="mt-10">
+              <button
+                className="bg-brand-primary hover:bg-brand-hover text-white text-base font-medium px-8 py-3 rounded-full transition-colors cursor-pointer"
+                onClick={() => smoothScroll("contact")}
+              >
+                Book a Demo
+              </button>
+            </div>
+          </BlurFade>
         </div>
       </section>
 
-      <section className="flex flex-col gap-4" id="partners">
-        <h6 className="text-stone-400 text-center text-sm uppercase tracking-wider">Currently working with</h6>
-        <div className="flex items-end justify-center gap-6 md:gap-24 flex-wrap">
-          <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
-          <Image alt="SMU Logo" src={"/logos/smu.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
-          <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
-          <Image alt="EY Logo" src={"/logos/EY.png"} width={300} height={0} className="w-8 md:w-16 h-auto"/>
-          <Image alt="NVIDIA Inception Program" src={"/logos/nvidia-inception.png"} width={300} height={0} className="w-24 md:w-40 h-auto"/>
-        </div>
-      </section>
+      {/* Partners */}
+      <div className="container mx-auto px-4">
+        <section className="flex flex-col gap-4 py-20" id="partners">
+          <h6 className="text-stone-400 text-center text-sm uppercase tracking-wider">Currently working with</h6>
+          <div className="flex items-end justify-center gap-6 md:gap-24 flex-wrap">
+            <Image alt="KGP Logo" src={"/logos/KGP.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
+            <Image alt="SMU Logo" src={"/logos/smu.png"} width={300} height={0} className="w-16 md:w-24 h-auto"/>
+            <Image alt="Delta Logo" src={"/logos/Delta.png"} width={300} height={0} className="w-16 md:w-32 h-auto"/>
+            <Image alt="EY Logo" src={"/logos/EY.png"} width={300} height={0} className="w-8 md:w-16 h-auto"/>
+            <Image alt="NVIDIA Inception Program" src={"/logos/nvidia-inception.png"} width={300} height={0} className="w-24 md:w-40 h-auto"/>
+          </div>
+        </section>
+      </div>
 
       <StatsBanner />
 
-      <section className="flex flex-col gap-5">
-        <div className="flex flex-col items-center gap-4" id="pillar">
-          <h1 className="text-4xl md:text-6xl text-center">Pillar</h1>
-          <p className="text-stone-400">Our proprietary software built for the everyday law firms who require practical, scalable AI – not enterprise complexity</p>
-        </div>
-        
-        {/* Box */}
-        <div className="flex flex-col items-center h-full gap-36">
-          {/* B14 Form */}
-          <BlurFade delay={0.15} inView>
-            <TwoBox
-              title="Fill up repetitive forms in minutes not hours"
-              description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
-              videoUrl="demos/form-b14-demo.mp4"
-              alt={false}
+      <div className="container mx-auto px-4">
+        {/* Pillar Features */}
+        <section className="flex flex-col gap-5 py-20">
+          <div className="flex flex-col items-center gap-4" id="pillar">
+            <h2 className="text-4xl md:text-6xl text-center text-stone-900 font-bold tracking-tight">Pillar</h2>
+            <p className="text-stone-500 text-center max-w-2xl">Our proprietary software built for the everyday law firms who require practical, scalable AI — not enterprise complexity</p>
+          </div>
+
+          <div className="flex flex-col items-center h-full gap-20 mt-12">
+            <BlurFade delay={0.15} inView>
+              <TwoBox
+                title="Fill up repetitive forms in minutes not hours"
+                description="Create a B14 form using the affidavit. Be the one who approves instead of doing menial task"
+                videoUrl="demos/form-b14-demo.mp4"
+                alt={false}
+                ctaHref="/form-filler"
+                />
+            </BlurFade>
+
+           <BlurFade delay={0.15} inView>
+             <TwoBox
+              title="Fill up commonly used forms with any template"
+              description="Save time by filling up common form templates from your organisation with different source documents."
+              videoUrl="demos/form-filler.mp4"
               ctaHref="/form-filler"
               />
-          </BlurFade>
+           </BlurFade>
 
-          {/* Form filler */}
-         <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Fill up commonly used forms with any template"
-            description="Save time by filling up common form templates from your organisation with different source documents."
-            videoUrl="demos/form-filler.mp4"
-            videoBG={"bg-[#D4D4CC]"}
-            ctaHref="/form-filler"
-            />
-         </BlurFade>
-          
-         {/* Project */}
-         {/* <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Chat with your documents"
-            description="Upload case files and have AI-powered conversations with them. Get instant answers from your documents"
-            videoUrl="https://qbokigvsybuh4l4g.public.blob.vercel-storage.com/project-demo.mp4"
-            alt={false}
-            />
-         </BlurFade> */}
+           <BlurFade delay={0.15} inView>
+             <TwoBox
+              title="Enhance your prompts with AI"
+              description="Transform simple questions into detailed, structured prompts that get you better answers"
+              videoUrl="demos/magic-prompt-demo-cropped.mp4"
+              alt={false}
+              />
+           </BlurFade>
 
-         {/* Magic Prompt */}
-         <BlurFade delay={0.15} inView>
-           <TwoBox
-            title="Enhance your prompts with AI"
-            description="Transform simple questions into detailed, structured prompts that get you better answers"
-            videoUrl="demos/magic-prompt-demo-cropped.mp4"
-            alt={false}
-            />
-         </BlurFade>
+            <BlurFade delay={0.15} inView>
+              <TwoBox
+              title="Generate articles based on judgements from multiple jurisdictions"
+              description="Publicise your law firm by leveraging AI to draft up articles on current legal judgments"
+              videoUrl="demos/cropped-trimed-article-gen.mov"
+              />
+            </BlurFade>
+          </div>
+        </section>
 
-          {/* Article generator */}
+        {/* Security & Privacy */}
+        <section className="w-full bg-surface-warm py-16 px-4 rounded-3xl" id="security">
+          <div className="container mx-auto">
+            <div className="flex flex-col items-center gap-4 text-center">
+              <h2 className="text-4xl md:text-5xl text-stone-900 font-bold tracking-tight">Security &amp; Privacy</h2>
+              <p className="text-stone-500">
+                We&apos;re built for sensitive documents.
+              </p>
+            </div>
 
-          <BlurFade delay={0.15} inView>
-            <TwoBox
-            title="Generate articles based on judgements from multiple jurisdictions"
-            description="Publicise your law firm by leveraging AI to draft up articles on current legal judgments"
-            videoUrl="demos/cropped-trimed-article-gen.mov"
-            videoBG={"bg-[#D4D4CC]"}
-            />
-          </BlurFade>
+            <article className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {points.map((p) => {
+                const Icon = p.icon;
+                return (
+                  <div
+                    key={p.title}
+                    className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+                  >
+                    <div className="flex items-start gap-3">
+                      <div className="rounded-lg bg-brand-primary/10 p-2">
+                        <Icon className="h-6 w-6 text-brand-primary" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-base font-semibold leading-snug text-stone-900">
+                          {p.title}
+                        </h3>
+                        <p className="text-sm leading-relaxed text-stone-500">
+                          {p.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </article>
+          </div>
+        </section>
 
-        </div>
-      </section>
-
-      <section className="w-full bg-stone-100 py-16 -mx-4 px-4 rounded-3xl" id="security">
-        <div className="container mx-auto">
+        {/* FAQ */}
+        <section id="faq" className="py-20">
           <div className="flex flex-col items-center gap-4 text-center">
-            <h2 className="text-4xl md:text-5xl text-stone-800">Security &amp; Privacy</h2>
-            <p className="text-stone-500">
-              We&apos;re built for sensitive documents.
+            <h2 className="text-4xl md:text-5xl text-stone-900 font-bold tracking-tight">
+              FAQ
+            </h2>
+            <p className="max-w-2xl text-base md:text-lg text-stone-500">
+              Quick answers to the questions we hear most often.
             </p>
           </div>
 
-          <article className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {points.map((p) => {
-              const Icon = p.icon;
-              return (
-                <div
-                  key={p.title}
-                  className="rounded-2xl bg-white/80 p-6 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="flex items-start gap-3">
-                    <div className="rounded-lg bg-stone-100 p-2">
-                      <Icon className="h-6 w-6 text-stone-600" />
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-base font-semibold leading-snug text-stone-800">
-                        {p.title}
-                      </h3>
-                      <p className="text-sm leading-relaxed text-stone-500">
-                        {p.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </article>
-        </div>
-      </section>
-
-      <section id="faq">
-        <div className="flex flex-col items-center gap-4 text-center">
-          <h2 className="text-4xl md:text-5xl text-stone-800">
-            FAQ
-          </h2>
-          <p className="max-w-2xl text-base md:text-lg text-stone-500">
-            Quick answers to the questions we hear most often.
-          </p>
-        </div>
-
-        <div className="mt-12">
-          <div className="rounded-2xl bg-stone-100 p-4 md:p-6">
-            <Accordion type="single" collapsible className="w-full">
-              {faqs.map((item, idx) => (
-                <AccordionItem
-                  key={item.q}
-                  value={`item-${idx}`}
-                  className="border-stone-200 px-2 md:px-4"
-                >
-                  <AccordionTrigger className="text-left text-base md:text-lg text-stone-700 hover:text-stone-900">
-                    {item.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-sm md:text-base text-stone-500 leading-relaxed">
-                    {item.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
+          <div className="mt-12">
+            <div className="rounded-2xl bg-surface-warm p-4 md:p-6">
+              <Accordion type="single" collapsible className="w-full">
+                {faqs.map((item, idx) => (
+                  <AccordionItem
+                    key={item.q}
+                    value={`item-${idx}`}
+                    className="border-stone-200 px-2 md:px-4"
+                  >
+                    <AccordionTrigger className="text-left text-base md:text-lg text-stone-700 hover:text-stone-900">
+                      {item.q}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm md:text-base text-stone-500 leading-relaxed">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <CTABanner />
 
-      <TeamBanner />
+      <div className="container mx-auto px-4">
+        <TeamBanner />
 
-      <PartnerLeadForm/>
+        <PartnerLeadForm/>
+      </div>
+
       <Footer/>
-    </div> 
+    </div>
   )
 }

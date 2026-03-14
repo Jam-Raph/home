@@ -4,7 +4,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --color-brand-primary: #7C1E15
+    --font-sans: "Inter", "Helvetica Neue", "Arial", ui-sans-serif, system-ui, sans-serif;
+    --color-brand-primary: #C4A265;
+    --color-brand-hover: #B08D4F;
+    --color-surface-warm: #F9F8F6
 }
 
 @theme inline {

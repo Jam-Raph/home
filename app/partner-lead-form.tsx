@@ -101,7 +101,7 @@ export function PartnerLeadForm() {
   return (
     <section>
       <div className="mx-auto max-w-3xl px-6">
-        <Card className="rounded-2xl border-stone-200 bg-stone-50" id="contact">
+        <Card className="rounded-2xl border-[#E5E5E5] bg-surface-warm" id="contact">
           <CardHeader className="text-center">
             <CardTitle className="text-3xl md:text-4xl font-normal">Work with us</CardTitle>
             <CardDescription className="text-base">
@@ -123,7 +123,7 @@ export function PartnerLeadForm() {
                     placeholder="Jane"
                     autoComplete="given-name"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-[#E5E5E5] bg-white"
                   />
                 </div>
 
@@ -138,7 +138,7 @@ export function PartnerLeadForm() {
                     placeholder="Tan"
                     autoComplete="family-name"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-[#E5E5E5] bg-white"
                   />
                 </div>
               </div>
@@ -156,7 +156,7 @@ export function PartnerLeadForm() {
                     placeholder="jane@company.com"
                     autoComplete="email"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-[#E5E5E5] bg-white"
                   />
                   {emailInvalid ? (
                     <p className="text-sm text-destructive text-red-600">
@@ -173,7 +173,7 @@ export function PartnerLeadForm() {
                     onChange={update("phone")}
                     placeholder="+65 9123 4567"
                     autoComplete="tel"
-                    className="border-stone-200 bg-stone-50"
+                    className="border-[#E5E5E5] bg-white"
                   />
                 </div>
               </div>
@@ -189,7 +189,7 @@ export function PartnerLeadForm() {
                   placeholder="Pearson Hardman"
                   autoComplete="organization"
                   required
-                  className="border-stone-200 bg-stone-50"
+                  className="border-[#E5E5E5] bg-white"
                 />
               </div>
 
@@ -203,7 +203,7 @@ export function PartnerLeadForm() {
                   value={form.note}
                   onChange={update("note")}
                   placeholder="Tell us what you’re trying to build, your timeline, and what success looks like."
-                  className="min-h-[140px] border-stone-200 bg-stone-50"
+                  className="min-h-[140px] border-[#E5E5E5] bg-white"
                   required
                 />
               </div>
@@ -217,7 +217,7 @@ export function PartnerLeadForm() {
                 <Button
                   type="submit"
                   disabled={isSubmitting || requiredMissing || emailInvalid}
-                  className="w-full bg-brand-primary text-white hover:bg-brand-primary/90 sm:w-auto"
+                  className="w-full bg-brand-primary text-white hover:bg-brand-hover rounded-full sm:w-auto"
                 >
                   {isSubmitting ? "Submitting..." : "Submit"}
                 </Button>
