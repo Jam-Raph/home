@@ -7,13 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+
+
 
 type PartnerLeadFormState = {
   firstName: string;
@@ -101,15 +96,15 @@ export function PartnerLeadForm() {
   return (
     <section>
       <div className="mx-auto max-w-3xl px-6">
-        <Card className="rounded-2xl border-[#E5E5E5] bg-surface-warm" id="contact">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl md:text-4xl font-normal">Work with us</CardTitle>
-            <CardDescription className="text-base">
-              Share a few details and we’ll reach out.
-            </CardDescription>
-          </CardHeader>
+        <div className="rounded-2xl bg-surface-warm/70 backdrop-blur-sm border border-stone-200/50 p-6 md:p-10" id="contact">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-serif font-normal text-stone-900">Work with us</h2>
+            <p className="text-base text-muted-foreground mt-2">
+              Share a few details and we&apos;ll reach out.
+            </p>
+          </div>
 
-          <CardContent>
+          <div>
             <form onSubmit={onSubmit} className="space-y-6">
               <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
                 <div className="space-y-2">
@@ -223,8 +218,8 @@ export function PartnerLeadForm() {
                 </Button>
               </div>
             </form>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

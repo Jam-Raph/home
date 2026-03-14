@@ -73,7 +73,7 @@ export function TeamBanner() {
         {/* Header */}
         <BlurFade delay={0.1} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl text-stone-900 font-bold tracking-tight">The founding team behind Pillar</h2>
+            <h2 className="text-3xl md:text-4xl text-stone-900 font-serif font-bold tracking-tight">The founding team behind Pillar</h2>
           </div>
         </BlurFade>
 
@@ -87,7 +87,7 @@ export function TeamBanner() {
                 rel="noreferrer"
                 className="flex flex-col items-center gap-3 group"
               >
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-surface-warm shadow-sm transition-shadow group-hover:shadow-md">
+                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-surface-warm">
                   <Image
                     src={member.src}
                     alt={member.name}
@@ -121,7 +121,7 @@ export function TeamBanner() {
                 href={award.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative overflow-hidden rounded-2xl bg-surface-warm shadow-sm hover:shadow-lg transition-all duration-300 block"
+                className="group relative overflow-hidden rounded-2xl bg-surface-warm transition-all duration-300 block"
               >
                 <div className="aspect-[4/3] relative">
                   <Image

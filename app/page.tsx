@@ -86,7 +86,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-black/10" />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <BlurFade delay={0.05} inView>
-            <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white">
+            <h1 className="text-5xl sm:text-7xl font-serif font-bold tracking-tight text-white">
               Precision, Automated
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl mx-auto">
@@ -94,7 +94,7 @@ export default function Home() {
             </p>
             <div className="mt-10">
               <button
-                className="bg-brand-primary hover:bg-brand-hover text-white text-base font-medium px-8 py-3 rounded-full transition-colors cursor-pointer"
+                className="bg-brand-primary hover:bg-brand-hover text-white text-base font-medium px-8 py-2 rounded-full transition-colors cursor-pointer"
                 onClick={() => smoothScroll("contact")}
               >
                 Book a Demo
@@ -124,7 +124,7 @@ export default function Home() {
         {/* Pillar Features */}
         <section className="flex flex-col gap-5 py-20">
           <div className="flex flex-col items-center gap-4" id="pillar">
-            <h2 className="text-4xl md:text-6xl text-center text-stone-900 font-bold tracking-tight">Pillar</h2>
+            <h2 className="text-4xl md:text-6xl text-center text-stone-900 font-serif font-bold tracking-tight">Pillar</h2>
             <p className="text-stone-500 text-center max-w-2xl">Our proprietary software built for the everyday law firms who require practical, scalable AI — not enterprise complexity</p>
           </div>
 
@@ -168,10 +168,10 @@ export default function Home() {
         </section>
 
         {/* Security & Privacy */}
-        <section className="w-full bg-surface-warm py-16 px-4 rounded-3xl" id="security">
+        <section className="w-full bg-surface-warm/80 backdrop-blur-sm py-16 px-4 rounded-3xl border border-stone-200/60" id="security">
           <div className="container mx-auto">
             <div className="flex flex-col items-center gap-4 text-center">
-              <h2 className="text-4xl md:text-5xl text-stone-900 font-bold tracking-tight">Security &amp; Privacy</h2>
+              <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-bold tracking-tight">Security &amp; Privacy</h2>
               <p className="text-stone-500">
                 We&apos;re built for sensitive documents.
               </p>
@@ -183,7 +183,7 @@ export default function Home() {
                 return (
                   <div
                     key={p.title}
-                    className="rounded-2xl bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+                    className="bg-white/50 backdrop-blur-sm rounded-xl p-6"
                   >
                     <div className="flex items-start gap-3">
                       <div className="rounded-lg bg-brand-primary/10 p-2">
@@ -208,7 +208,7 @@ export default function Home() {
         {/* FAQ */}
         <section id="faq" className="py-20">
           <div className="flex flex-col items-center gap-4 text-center">
-            <h2 className="text-4xl md:text-5xl text-stone-900 font-bold tracking-tight">
+            <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-bold tracking-tight">
               FAQ
             </h2>
             <p className="max-w-2xl text-base md:text-lg text-stone-500">
@@ -217,7 +217,7 @@ export default function Home() {
           </div>
 
           <div className="mt-12">
-            <div className="rounded-2xl bg-surface-warm p-4 md:p-6">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-stone-200/40">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((item, idx) => (
                   <AccordionItem
