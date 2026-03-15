@@ -232,7 +232,7 @@ export default function Home() {
           <BlurFade delay={0.2} inView>
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
               <p className="font-serif text-2xl md:text-3xl font-normal text-white/90 leading-[1.6] tracking-[0.01em]">
-                &ldquo;Impressive at targeting tasks that are universally burdensome for lawyers globally &mdash; more focused than Harvey or existing document automation platforms&rdquo;
+                &ldquo;Impressive at targeting tasks that are universally burdensome for lawyers globally &mdash; more focused than existing document automation platforms&rdquo;
               </p>
               <div className="mt-10 flex items-center gap-4">
                 <Image
