@@ -20,7 +20,7 @@ const team = [
   {
     src: "/headshots/darren.png",
     name: "Darren",
-    role: "Co-lead Dev",
+    role: "Co-lead Developer",
     link: "https://www.linkedin.com/in/darren-sim-296523243/"
   },
   {
@@ -68,17 +68,19 @@ const awards = [
 
 export function TeamBanner() {
   return (
-    <section className="w-full py-16">
+    <section className="w-full py-32">
       <div className="container mx-auto">
         {/* Header */}
         <BlurFade delay={0.1} inView>
-          <div className="flex flex-col items-center gap-4 text-center mb-12">
-            <h2 className="text-3xl md:text-4xl text-stone-800">The founding team behind Pillar</h2>
+          <div className="flex flex-col items-center gap-4 text-center mb-16">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Our Team</p>
+            <h2 className="text-3xl md:text-4xl text-stone-900 font-serif font-normal tracking-[0.05em]">The founding team behind Pillar</h2>
+            <p className="text-stone-600 max-w-xl leading-relaxed">Engineers and operators building practical AI tools for the legal industry.</p>
           </div>
         </BlurFade>
 
         {/* Team Headshots */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto mb-20">
           {team.map((member, index) => (
             <BlurFade key={member.name} delay={0.15 + index * 0.05} inView>
               <a
@@ -87,7 +89,7 @@ export function TeamBanner() {
                 rel="noreferrer"
                 className="flex flex-col items-center gap-3 group"
               >
-                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-stone-100 shadow-sm transition-shadow group-hover:shadow-md">
+                <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden bg-surface-warm">
                   <Image
                     src={member.src}
                     alt={member.name}
@@ -96,7 +98,7 @@ export function TeamBanner() {
                   />
                 </div>
                 <div className="text-center">
-                  <p className="font-medium text-stone-800 group-hover:text-stone-600 transition-colors">{member.name}</p>
+                  <p className="font-medium text-stone-900 group-hover:text-stone-600 transition-colors duration-300">{member.name}</p>
                   <p className="text-sm text-stone-500">{member.role}</p>
                 </div>
               </a>
@@ -106,38 +108,38 @@ export function TeamBanner() {
 
         {/* Awards Section */}
         <BlurFade delay={0.3} inView>
-          <div className="flex flex-col items-center gap-4 text-center mb-8">
+          <div className="flex flex-col items-center gap-4 text-center mb-12">
             <div className="flex items-center gap-2">
-              <Trophy className="h-5 w-5 text-amber-500" />
-              <h3 className="text-xl md:text-2xl text-stone-700">Our Hackathon Wins</h3>
+              <Trophy className="h-5 w-5 text-brand-primary" />
+              <h3 className="text-xl md:text-2xl text-stone-900 font-serif font-normal tracking-[0.05em]">Our Hackathon Wins</h3>
             </div>
           </div>
         </BlurFade>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-5xl mx-auto">
           {awards.map((award, index) => (
-            <BlurFade key={award.src} delay={0.35 + index * 0.1} inView>
+            <BlurFade key={award.title} delay={0.35 + index * 0.1} inView>
               <a
                 href={award.link}
                 target="_blank"
                 rel="noreferrer"
-                className="group relative overflow-hidden rounded-2xl bg-stone-100 shadow-sm hover:shadow-lg transition-all duration-300 block"
+                className="rounded-2xl bg-surface-warm/50 border border-transparent hover:border-stone-200 transition-all duration-300 block overflow-hidden"
               >
-                <div className="aspect-[4/3] relative">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={award.src}
                     alt={award.alt}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-900/70 via-transparent to-transparent" />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <div className="flex items-center gap-2">
-                    <Trophy className="h-4 w-4 text-amber-400" />
-                    <span className="text-sm font-medium text-amber-400">{award.place} · {award.prize}</span>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Trophy className="h-4 w-4 text-brand-primary" />
+                    <span className="text-sm font-medium text-brand-primary">{award.place}</span>
+                    <span className="text-xs text-stone-400 ml-auto">{award.prize}</span>
                   </div>
-                  <p className="text-lg font-semibold text-white">{award.title}</p>
+                  <p className="font-serif font-medium text-stone-900 text-sm leading-normal">{award.title}</p>
                 </div>
               </a>
             </BlurFade>
@@ -145,7 +147,7 @@ export function TeamBanner() {
         </div>
 
         <BlurFade delay={0.75} inView>
-          <p className="text-center text-lg font-medium text-stone-600 mt-8">
+          <p className="text-center text-lg font-medium text-stone-600 mt-12">
             Total Prize Money: $10,000 SGD
           </p>
         </BlurFade>

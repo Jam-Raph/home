@@ -2,18 +2,12 @@
 
 import * as React from "react";
 import { toast } from "sonner";
+import { CheckCircle2, Clock, Loader2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
 
 type PartnerLeadFormState = {
   firstName: string;
@@ -23,6 +17,13 @@ type PartnerLeadFormState = {
   note: string;
   phone?: string;
 };
+
+const benefits = [
+  "Automate repetitive legal forms in minutes",
+  "AI-powered article generation from court judgments",
+  "SOC 2 compliant infrastructure with private file storage",
+  "Dedicated onboarding and support",
+];
 
 export function PartnerLeadForm() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -68,7 +69,7 @@ export function PartnerLeadForm() {
       });
 
       if(!res.ok) {
-        toast.error("We could not recive your message", {
+        toast.error("We could not receive your message", {
           description: "Please try again in a moment or contact us at raphael.lim@jamraph.com",
           duration: 2000
         })
@@ -77,7 +78,7 @@ export function PartnerLeadForm() {
       else {
         toast.success("Submitted!", {
           description:
-            "Thanks — we’ve received your details and will be in touch shortly.",
+            "Thanks — we've received your details and will be in touch shortly.",
         });
       }
 
@@ -99,132 +100,151 @@ export function PartnerLeadForm() {
   }
 
   return (
-    <section>
-      <div className="mx-auto max-w-3xl px-6">
-        <Card className="rounded-2xl border-stone-200 bg-stone-50" id="contact">
-          <CardHeader className="text-center">
-            <CardTitle className="text-3xl md:text-4xl font-normal">Work with us</CardTitle>
-            <CardDescription className="text-base">
-              Share a few details and we’ll reach out.
-            </CardDescription>
-          </CardHeader>
+    <section className="pb-24">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="rounded-3xl bg-secondary-dark p-10 md:p-20" id="contact">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+            {/* Left — Benefits */}
+            <div className="flex flex-col justify-center">
+              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-4">Contact Us</p>
+              <h2 className="text-3xl md:text-4xl font-serif font-normal text-white mb-6">Work with us</h2>
+              <p className="text-base text-stone-400 mb-8 leading-relaxed">
+                Share a few details about your firm and we&apos;ll reach out to schedule a personalised demo.
+              </p>
 
-          <CardContent>
-            <form onSubmit={onSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <ul className="space-y-4 mb-8">
+                {benefits.map((b) => (
+                  <li key={b} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-white/60 shrink-0 mt-0.5" />
+                    <span className="text-sm text-stone-300">{b}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex items-center gap-2 text-stone-500">
+                <Clock className="h-4 w-4" />
+                <span className="text-sm">Typically responds within 24 hours</span>
+              </div>
+            </div>
+
+            {/* Right — Form */}
+            <div>
+              <form onSubmit={onSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName" className="text-white">
+                      First name <span className="text-stone-500">*</span>
+                    </Label>
+                    <Input
+                      id="firstName"
+                      value={form.firstName}
+                      onChange={update("firstName")}
+                      placeholder="Jane"
+                      autoComplete="given-name"
+                      required
+                      className="border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName" className="text-white">
+                      Last name <span className="text-stone-500">*</span>
+                    </Label>
+                    <Input
+                      id="lastName"
+                      value={form.lastName}
+                      onChange={update("lastName")}
+                      placeholder="Tan"
+                      autoComplete="family-name"
+                      required
+                      className="border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-white">
+                      Email <span className="text-stone-500">*</span>
+                    </Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      value={form.email}
+                      onChange={update("email")}
+                      placeholder="jane@company.com"
+                      autoComplete="email"
+                      required
+                      className="border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
+                    />
+                    {emailInvalid ? (
+                      <p className="text-sm text-red-500">
+                        Please enter a valid email.
+                      </p>
+                    ) : null}
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-white">Phone number (optional)</Label>
+                    <Input
+                      id="phone"
+                      value={form.phone}
+                      onChange={update("phone")}
+                      placeholder="+65 9123 4567"
+                      autoComplete="tel"
+                      className="border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-2">
-                  <Label htmlFor="firstName">
-                    First name <span className="text-muted-foreground">*</span>
+                  <Label htmlFor="organisation" className="text-white">
+                    Organisation <span className="text-stone-500">*</span>
                   </Label>
                   <Input
-                    id="firstName"
-                    value={form.firstName}
-                    onChange={update("firstName")}
-                    placeholder="Jane"
-                    autoComplete="given-name"
+                    id="organisation"
+                    value={form.organisation}
+                    onChange={update("organisation")}
+                    placeholder="Pearson Hardman"
+                    autoComplete="organization"
                     required
-                    className="border-stone-200 bg-stone-50"
+                    className="border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">
-                    Last name <span className="text-muted-foreground">*</span>
+                  <Label htmlFor="note" className="text-white">
+                    How can we help?{" "}
+                    <span className="text-stone-500">*</span>
                   </Label>
-                  <Input
-                    id="lastName"
-                    value={form.lastName}
-                    onChange={update("lastName")}
-                    placeholder="Tan"
-                    autoComplete="family-name"
+                  <Textarea
+                    id="note"
+                    value={form.note}
+                    onChange={update("note")}
+                    placeholder="Tell us what you're trying to build, your timeline, and what success looks like."
+                    className="min-h-[140px] border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
                     required
-                    className="border-stone-200 bg-stone-50"
                   />
                 </div>
-              </div>
 
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <div className="space-y-2">
-                  <Label htmlFor="email">
-                    Email <span className="text-muted-foreground">*</span>
-                  </Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    value={form.email}
-                    onChange={update("email")}
-                    placeholder="jane@company.com"
-                    autoComplete="email"
-                    required
-                    className="border-stone-200 bg-stone-50"
-                  />
-                  {emailInvalid ? (
-                    <p className="text-sm text-destructive text-red-600">
-                      Please enter a valid email.
-                    </p>
-                  ) : null}
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="text-sm text-stone-500">
+                    Fields marked with <span className="text-stone-500">*</span>{" "}
+                    are required.
+                  </p>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting || requiredMissing || emailInvalid}
+                    className="w-full bg-white text-stone-900 hover:bg-white/90 rounded-full transition-colors duration-300 sm:w-auto flex items-center gap-2 justify-center"
+                  >
+                    {isSubmitting ? <><Loader2 className="h-4 w-4 animate-spin" /> Submitting</> : "Submit"}
+                  </Button>
                 </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Phone number (optional)</Label>
-                  <Input
-                    id="phone"
-                    value={form.phone}
-                    onChange={update("phone")}
-                    placeholder="+65 9123 4567"
-                    autoComplete="tel"
-                    className="border-stone-200 bg-stone-50"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="organisation">
-                  Organisation <span className="text-muted-foreground">*</span>
-                </Label>
-                <Input
-                  id="organisation"
-                  value={form.organisation}
-                  onChange={update("organisation")}
-                  placeholder="Pearson Hardman"
-                  autoComplete="organization"
-                  required
-                  className="border-stone-200 bg-stone-50"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="note">
-                  Introductory note{" "}
-                  <span className="text-muted-foreground">*</span>
-                </Label>
-                <Textarea
-                  id="note"
-                  value={form.note}
-                  onChange={update("note")}
-                  placeholder="Tell us what you’re trying to build, your timeline, and what success looks like."
-                  className="min-h-[140px] border-stone-200 bg-stone-50"
-                  required
-                />
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <p className="text-sm text-muted-foreground">
-                  Fields marked with <span className="text-muted-foreground">*</span>{" "}
-                  are required.
-                </p>
-
-                <Button
-                  type="submit"
-                  disabled={isSubmitting || requiredMissing || emailInvalid}
-                  className="w-full bg-brand-primary text-white hover:bg-brand-primary/90 sm:w-auto"
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </Button>
-              </div>
-            </form>
-          </CardContent>
-        </Card>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

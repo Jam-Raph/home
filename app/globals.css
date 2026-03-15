@@ -4,13 +4,24 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --color-brand-primary: #7C1E15
+    --font-sans: "Inter", "Helvetica Neue", "Arial", ui-sans-serif, system-ui, sans-serif;
+    --color-brand-primary: #C9A84C;
+    --color-brand-hover: #D4AA4F;
+    --color-surface-warm: #F5F0E6;
+    --color-secondary-dark: #111111;
+    --color-surface-dark-card: #1A1A1A;
+}
+
+@theme inline {
+    --font-serif: var(--font-vogue), "Georgia", ui-serif, serif;
 }
 
 @theme inline {
     --animate-gradient: gradient 8s linear infinite;
     --animate-shimmer-slide: shimmer-slide var(--speed) ease-in-out infinite alternate;
     --animate-spin-around: spin-around calc(var(--speed) * 2) infinite linear;
+    --animate-slow-zoom: slow-zoom 20s ease-in-out infinite alternate;
+    --animate-scroll-x: scroll-x 30s linear infinite;
 
   @keyframes gradient {
     to {
@@ -28,4 +39,39 @@
     65%, 85% { transform: translateZ(0) rotate(270deg); }
     100% { transform: translateZ(0) rotate(360deg); }
   }
+  @keyframes slow-zoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+  }
+  @keyframes scroll-x {
+    to { transform: translateX(-50%); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Vogue serif — generous tracking for thin Vesence aesthetic */
+.font-serif {
+  letter-spacing: 0.03em;
+}
+
+h1, h2 {
+  letter-spacing: 0.05em;
+}
+
+/* Active press feedback on buttons */
+button:active, a:active {
+  transform: scale(0.97);
+}
+
+/* Pause marquee on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
 }
