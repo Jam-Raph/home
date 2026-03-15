@@ -134,7 +134,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
-            <h1 className="text-5xl sm:text-8xl font-serif font-normal tracking-[0.12em] leading-[0.95] sm:whitespace-nowrap text-white">
+            <h1 className="font-serif font-normal tracking-[0.12em] leading-[0.95] whitespace-nowrap text-white text-[clamp(2.5rem,8vw,6rem)]">
                 Precision, Automated
             </h1>
           </BlurFade>
