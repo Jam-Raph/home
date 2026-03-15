@@ -128,13 +128,13 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/5" />
         {/* Noise grain overlay */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <div className="relative z-10 mx-auto px-4 text-center">
           <BlurFade delay={0.05} inView blur="3px">
             <p className="text-xs uppercase tracking-[0.4em] text-white font-mono mb-6">Legal Tech by Jam & Raph</p>
           </BlurFade>
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
-            <h1 className="font-serif font-normal tracking-[0.12em] leading-[0.95] whitespace-nowrap text-white text-[clamp(2.5rem,8vw,6rem)]">
+            <h1 className="font-serif whitespace-nowrap text-white text-2xl md:text-6xl lg:text-7xl xl:text-8xl w-full">
                 Precision, Automated
             </h1>
           </BlurFade>
