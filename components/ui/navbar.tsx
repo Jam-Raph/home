@@ -71,8 +71,9 @@ export default function Navbar() {
         return () => { document.body.style.overflow = "" }
     }, [drawerOpen])
 
-    // On non-home pages, always show solid navbar (no dark hero behind it)
-    const showTransparent = isHome && atTop
+    // Pages with dark hero backgrounds get transparent navbar at top
+    const darkHeroPages = ["/", "/form-filler"]
+    const showTransparent = darkHeroPages.includes(pathname) && atTop
 
     return (
         <>

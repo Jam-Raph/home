@@ -21,7 +21,7 @@ type PartnerLeadFormState = {
 const benefits = [
   "Automate repetitive legal forms in minutes",
   "AI-powered article generation from court judgments",
-  "Enterprise-grade security with private file storage",
+  "SOC 2 compliant infrastructure with private file storage",
   "Dedicated onboarding and support",
 ];
 

@@ -68,7 +68,7 @@ export default function Home() {
     {
       title: "End-to-end encryption",
       description:
-        "TLS 1.3 in transit and AES-256 at rest. All data is encrypted within a secure private cloud environment.",
+        "TLS 1.3 in transit and AES-256 at rest. All data is encrypted within a SOC 2 compliant cloud environment via Supabase and AWS.",
       icon: Lock,
     },
   ];
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <BlurFade delay={0.05} inView blur="3px">
-            <p className="text-xs uppercase tracking-[0.4em] text-white/75 font-mono mb-6">Legal Tech by Jam & Raph</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-white font-mono mb-6">Legal Tech by Jam & Raph</p>
           </BlurFade>
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
@@ -139,29 +139,11 @@ export default function Home() {
             </h1>
           </BlurFade>
           <BlurFade delay={0.25} inView>
-            <p className="mt-10 text-lg sm:text-xl leading-[1.6] tracking-[0.01em] text-white/70 max-w-2xl mx-auto">
+            <p className="mt-10 text-lg sm:text-xl leading-[1.6] tracking-[0.01em] text-white max-w-2xl mx-auto">
               AI-powered legal workflows, built for modern firms
             </p>
           </BlurFade>
           <BlurFade delay={0.32} inView>
-            <div className="mt-8 flex items-center justify-center gap-6 sm:gap-8 text-white/50 text-sm">
-              <span className="flex items-center gap-2">
-                <span className="text-brand-primary font-serif font-medium text-lg">3hrs</span>
-                saved per B14 application
-              </span>
-              <span className="w-px h-4 bg-white/20" />
-              <span className="flex items-center gap-2">
-                <span className="text-brand-primary font-serif font-medium text-lg">4hrs</span>
-                saved per article draft
-              </span>
-              <span className="w-px h-4 bg-white/20" />
-              <span className="flex items-center gap-2">
-                <span className="text-brand-primary font-serif font-medium text-lg">3+</span>
-                firms working with us
-              </span>
-            </div>
-          </BlurFade>
-          <BlurFade delay={0.40} inView>
             <div className="mt-14 flex items-center justify-center gap-4 flex-wrap">
               <button
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
@@ -345,7 +327,7 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Trust & Security</p>
               <h2 className="text-4xl md:text-5xl text-white font-serif font-normal tracking-[0.05em] leading-[1.05]">Security &amp; Privacy</h2>
               <p className="text-stone-400 max-w-xl leading-relaxed">
-                We&apos;re built for sensitive documents. Your data never leaves your control — encrypted in transit and at rest, with access restricted to authorised users only.
+                We&apos;re built for sensitive documents. Your data runs on a SOC 2 compliant foundation — encrypted in transit and at rest, with access restricted to authorised users only.
               </p>
             </div>
 

@@ -11,7 +11,7 @@ const features = [
   {
     icon: Lock,
     title: "End-to-End Encryption",
-    description: "TLS 1.3 in transit, AES-256 at rest. All data encrypted within a secure private cloud environment.",
+    description: "TLS 1.3 in transit, AES-256 at rest. All data encrypted within a SOC 2 compliant cloud environment.",
   },
   {
     icon: Key,
@@ -40,7 +40,7 @@ const protectionSections = [
     icon: Server,
     title: "Infrastructure",
     items: [
-      "Hosted on audited cloud infrastructure (Supabase, Vercel)",
+      "Built on SOC 2 compliant infrastructure via Supabase and AWS",
       "Automated backups with point-in-time recovery",
       "24/7 uptime monitoring and incident response",
       "Regular vulnerability assessments and penetration testing",
@@ -60,9 +60,9 @@ const protectionSections = [
     icon: FileCheck,
     title: "Compliance",
     items: [
+      "SOC 2 compliant foundation through Supabase and AWS",
       "Data processing agreements available on request",
       "Configurable data retention policies",
-      "Regular third-party security assessments",
       "Incident response plan with defined SLAs",
     ],
   },
@@ -162,9 +162,9 @@ export default function SecurityPage() {
       <section className="relative py-24">
         <DotPattern className="opacity-[0.06] text-stone-400" />
         <div className="container mx-auto px-4 max-w-5xl relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <BlurFade delay={0.1} inView>
-              <div className="bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 lg:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+            <BlurFade delay={0.1} inView className="flex">
+              <div className="bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 lg:p-12 flex flex-col">
                 <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                   <ShieldCheck className="h-7 w-7 text-stone-700" />
                 </div>
@@ -175,14 +175,14 @@ export default function SecurityPage() {
               </div>
             </BlurFade>
 
-            <BlurFade delay={0.15} inView>
-              <div className="bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 lg:p-12">
+            <BlurFade delay={0.15} inView className="flex">
+              <div className="bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 lg:p-12 flex flex-col">
                 <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                   <Globe className="h-7 w-7 text-stone-700" />
                 </div>
                 <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Data Residency</h3>
                 <p className="text-stone-600 leading-relaxed">
-                  All data processing takes place within secure, audited cloud regions with full compliance to local data sovereignty laws. We ensure your data stays where your firm needs it — with complete transparency on hosting locations and data flows.
+                  All data processing runs on SOC 2 compliant infrastructure via Supabase and AWS, with full compliance to local data sovereignty laws. We ensure your data stays where your firm needs it — with complete transparency on hosting locations and data flows.
                 </p>
               </div>
             </BlurFade>

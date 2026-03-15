@@ -39,22 +39,41 @@ export default function FormFillerPage() {
       <Navbar />
       <FloatingCTA />
 
+      {/* Hero banner with painting */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden" id="demo">
+        <Image
+          src="/supreme-court.png"
+          alt="Supreme Court of Singapore painting"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <motion.p
+            className="text-xs uppercase tracking-[0.25em] text-white/80 font-mono mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Form Filler
+          </motion.p>
+          <motion.h1
+            className="text-4xl sm:text-6xl font-serif font-normal tracking-[0.05em] text-white text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            Fill Any Form in{" "}
+            <span className="text-brand-primary">Seconds</span>
+            {", "}Not Hours
+          </motion.h1>
+        </div>
+      </section>
+
       {/* Demo Video */}
-      <section className="relative pt-32 pb-24" id="demo">
+      <section className="relative py-24">
         <DotPattern className="opacity-[0.06] text-stone-400" />
         <div className="relative max-w-4xl mx-auto px-4">
-          <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center mb-6">Form Filler</p>
-          <h1 className="text-4xl sm:text-6xl font-serif font-normal tracking-[0.05em] text-stone-900 text-center mb-12">
-            Fill Any Form in{" "}
-            <AnimatedGradientText
-              colorFrom="#C9A84C"
-              colorTo="#D4AA4F"
-              className="text-4xl sm:text-6xl font-serif font-normal"
-            >
-              Seconds
-            </AnimatedGradientText>
-            {", "}Not Hours
-          </h1>
           <div className="relative w-full rounded-2xl overflow-hidden shadow-lg border border-stone-200" style={{ paddingBottom: "56.25%" }}>
             <iframe
               src="https://www.loom.com/embed/7a90c9f4ef4c49a38b65d4d7f927f1e3"
@@ -98,32 +117,6 @@ export default function FormFillerPage() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="flex justify-center py-12">
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
-      </div>
-
-      {/* Supreme Court Painting */}
-      <section className="py-24">
-        <div className="max-w-5xl mx-auto px-4">
-          <motion.div
-            className="relative w-full overflow-hidden rounded-2xl shadow-xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-50px" }}
-          >
-            <Image
-              src="/supreme-court.png"
-              alt="Supreme Court of Singapore painting"
-              width={1920}
-              height={960}
-              className="w-full h-auto"
-            />
-          </motion.div>
         </div>
       </section>
 
