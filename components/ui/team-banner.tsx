@@ -20,13 +20,13 @@ const team = [
   {
     src: "/headshots/darren.png",
     name: "Darren",
-    role: "Co-lead Developer",
+    role: "Co-lead developer",
     link: "https://www.linkedin.com/in/darren-sim-296523243/"
   },
   {
     src: "/headshots/liediana.png",
     name: "Liediana",
-    role: "Head of Finance",
+    role: "Head of finance",
     link: "https://www.linkedin.com/in/liediana-djoli705/"
   },
 ]
@@ -36,7 +36,7 @@ const awards = [
     src: "/awards/smu-lit-2025-first-place.JPG",
     alt: "Jam & Raph team winning SMU Legal Innovation and Tech 2025",
     title: "SMU Legal Innovation and Tech 2025",
-    place: "1st Place",
+    place: "1st place",
     prize: "$1,500 SGD",
     link: "https://www.linkedin.com/posts/jus-mundi_between-ai-agents-shouting-objection-and-ugcPost-7389949606601850880-QN61"
   },
@@ -44,7 +44,7 @@ const awards = [
     src: "/awards/SMU_Hult_Prize_26.jpeg",
     alt: "Jam & Raph team winning 1st Runner Up at SMU Hult Prize 2026",
     title: "SMU Hult Prize 2026",
-    place: "1st Runner Up",
+    place: "1st runner up",
     prize: "$5,000 SGD",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7425846342385668096"
   },
@@ -52,7 +52,7 @@ const awards = [
     src: "/awards/base-first-place.jpeg",
     alt: "Jam & Raph team winning BASE Hackathon",
     title: "NTU x Base Web3",
-    place: "1st Place",
+    place: "1st place",
     prize: "$1,000 SGD",
     link: "https://www.linkedin.com/posts/blockchain-at-ntu_ntu-ntublockchain-base-activity-7370449056969633792-ua_9"
   },
@@ -60,7 +60,7 @@ const awards = [
     src: "/awards/smu-lit-2024-second-place.jpeg",
     alt: "Jam & Raph team at SMU Legal Innovation and Tech 2024",
     title: "SMU Legal Innovation and Tech 2024",
-    place: "1st Runner Up",
+    place: "1st runner up",
     prize: "$2,500 SGD",
     link: "https://www.linkedin.com/posts/raphael-lim-437416213_sigmatech-generativeai-icp-activity-7228613456231288832-k94I"
   },
@@ -111,7 +111,7 @@ export function TeamBanner() {
           <div className="flex flex-col items-center gap-4 text-center mb-12">
             <div className="flex items-center gap-2">
               <Trophy className="h-5 w-5 text-brand-primary" />
-              <h3 className="text-xl md:text-2xl text-stone-900 font-serif font-normal tracking-[0.05em]">Our Hackathon Wins</h3>
+              <h3 className="text-xl md:text-2xl text-stone-900 font-serif font-normal tracking-[0.05em]">Our hackathon wins</h3>
             </div>
           </div>
         </BlurFade>
@@ -148,7 +148,7 @@ export function TeamBanner() {
 
         <BlurFade delay={0.75} inView>
           <p className="text-center text-lg font-medium text-stone-600 mt-12">
-            Total Prize Money: $10,000 SGD
+            Total prize money: $10,000 SGD
           </p>
         </BlurFade>
       </div>

@@ -10,7 +10,7 @@ import Link from "next/link"
 const features = [
   {
     icon: Lock,
-    title: "End-to-End Encryption",
+    title: "End-to-end encryption",
     description: "TLS 1.3 in transit, AES-256 at rest. All data encrypted within a SOC 2 compliant cloud environment.",
   },
   {
@@ -20,7 +20,7 @@ const features = [
   },
   {
     icon: Shield,
-    title: "Private by Default",
+    title: "Private by default",
     description: "Documents stored in private buckets with signed, expiring URLs. AI models never retain or learn from your data.",
   },
 ]
@@ -28,7 +28,7 @@ const features = [
 const protectionSections = [
   {
     icon: Lock,
-    title: "Data Protection",
+    title: "Data protection",
     items: [
       "Documents stored in private buckets with signed, expiring URLs",
       "AI models never retain or learn from your data",
@@ -48,7 +48,7 @@ const protectionSections = [
   },
   {
     icon: Users,
-    title: "Authentication & Access",
+    title: "Authentication & access",
     items: [
       "SAML SSO integration with your identity provider",
       "Role-based access control (RBAC) across all resources",
@@ -96,8 +96,8 @@ export default function SecurityPage() {
             {features.map((feature, index) => {
               const Icon = feature.icon
               return (
-                <BlurFade key={feature.title} delay={0.1 + index * 0.05} inView>
-                  <div className="bg-white border border-stone-200/60 rounded-2xl p-8 text-center">
+                <BlurFade key={feature.title} delay={0.1 + index * 0.05} inView className="flex">
+                  <div className="bg-white border border-stone-200/60 rounded-2xl p-8 text-center flex flex-col">
                     <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                       <Icon className="h-7 w-7 text-stone-700" />
                     </div>
@@ -168,7 +168,7 @@ export default function SecurityPage() {
                 <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                   <ShieldCheck className="h-7 w-7 text-stone-700" />
                 </div>
-                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Zero Trust Architecture</h3>
+                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Zero trust architecture</h3>
                 <p className="text-stone-600 leading-relaxed">
                   Every request is verified. We apply the principle of least privilege across our entire infrastructure. Backend-only service roles ensure elevated permissions are never exposed to the browser. Row Level Security (RLS) on all database tables limits access by user and role.
                 </p>
@@ -180,7 +180,7 @@ export default function SecurityPage() {
                 <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                   <Globe className="h-7 w-7 text-stone-700" />
                 </div>
-                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Data Residency</h3>
+                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Data residency</h3>
                 <p className="text-stone-600 leading-relaxed">
                   All data processing runs on SOC 2 compliant infrastructure via Supabase and AWS, with full compliance to local data sovereignty laws. We ensure your data stays where your firm needs it — with complete transparency on hosting locations and data flows.
                 </p>
@@ -196,7 +196,7 @@ export default function SecurityPage() {
           <BlurFade delay={0.1} inView>
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-6">Partnership</p>
             <h2 className="text-3xl md:text-4xl font-serif font-normal tracking-[0.05em] text-stone-900 mb-6">
-              We Work With You
+              We work with you
             </h2>
             <p className="text-stone-600 text-lg leading-relaxed mb-6">
               Security is a partnership. We work collaboratively with firms to address specific security concerns or compliance requirements — whether it&apos;s a custom security review, a DPA, or aligning with your internal policies.
@@ -212,7 +212,7 @@ export default function SecurityPage() {
       <section className="py-24">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <BlurFade delay={0.1} inView>
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-6">Get in Touch</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-6">Get in touch</p>
             <h2 className="text-3xl md:text-4xl font-serif font-normal tracking-[0.05em] text-stone-900 mb-4">
               Have security questions?
             </h2>
@@ -223,7 +223,7 @@ export default function SecurityPage() {
               href="/#contact"
               className="inline-block bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300"
             >
-              Get in Touch
+              Get in touch
             </Link>
           </BlurFade>
         </div>

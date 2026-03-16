@@ -13,14 +13,14 @@ const steps = [
   {
     icon: Upload,
     step: "1",
-    title: "Upload Template",
+    title: "Upload template",
     description:
       "Upload your form template — any DOCX file your firm uses. AI analyses the document and identifies all fillable fields automatically.",
   },
   {
     icon: FileSearch,
     step: "2",
-    title: "Add Sources",
+    title: "Add sources",
     description:
       "Upload source documents — affidavits, briefs, or contracts — containing the data to extract.",
   },
@@ -90,7 +90,7 @@ export default function FormFillerPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center mb-6">How It Works</p>
           <h2 className="text-3xl font-serif font-normal tracking-[0.05em] text-center text-stone-900 mb-16">
-            Three Simple Steps
+            Three simple steps
           </h2>
           <div className="relative">
             {/* Connecting line (desktop only) */}
@@ -134,7 +134,7 @@ export default function FormFillerPage() {
             href="/#contact"
             className="inline-block bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300"
           >
-            Book a Demo
+            Book a demo
           </a>
         </div>
       </section>

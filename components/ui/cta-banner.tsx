@@ -26,13 +26,13 @@ export function CTABanner() {
                 className="bg-white text-stone-900 hover:bg-white/90 font-medium px-8 py-3 rounded-full text-base transition-colors duration-300 cursor-pointer"
                 onClick={() => { trackCTAClick("cta_banner", "Book a Demo"); smoothScroll("contact") }}
               >
-                Book a Demo
+                Book a demo
               </button>
               <button
                 onClick={() => { trackCTAClick("cta_banner_features", "View Features"); smoothScroll("pillar") }}
                 className="border border-white/20 text-white hover:bg-white/10 cursor-pointer px-8 py-3 rounded-full text-base font-medium transition-colors duration-300"
               >
-                View Features
+                View features
               </button>
             </div>
           </div>

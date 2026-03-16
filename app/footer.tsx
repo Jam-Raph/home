@@ -42,7 +42,7 @@ export function Footer() {
             <p className="text-sm font-medium text-white">Product</p>
             <ul className="space-y-3 text-sm text-stone-400">
               <li><a href="/#pillar" className="hover:text-white transition-colors duration-300">Features</a></li>
-              <li><a href="/form-filler" className="hover:text-white transition-colors duration-300">Form Filler</a></li>
+              <li><a href="/form-filler" className="hover:text-white transition-colors duration-300">Form filler</a></li>
               <li><a href="/security" className="hover:text-white transition-colors duration-300">Security</a></li>
             </ul>
           </div>
@@ -60,8 +60,8 @@ export function Footer() {
           <div className="space-y-4">
             <p className="text-sm font-medium text-white">Legal</p>
             <ul className="space-y-3 text-sm text-stone-400">
-              <li><a href="/security" className="hover:text-white transition-colors duration-300">Security & Privacy</a></li>
-              <li><a href="mailto:jamison.teng@jamraph.com" className="hover:text-white transition-colors duration-300">Data Enquiries</a></li>
+              <li><a href="/security" className="hover:text-white transition-colors duration-300">Security & privacy</a></li>
+              <li><a href="mailto:jamison.teng@jamraph.com" className="hover:text-white transition-colors duration-300">Data enquiries</a></li>
             </ul>
           </div>
         </div>
@@ -69,7 +69,7 @@ export function Footer() {
         <Separator className="my-10 bg-white/10" />
 
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-          {["E2E Encrypted"].map((badge) => (
+          {["E2E encrypted"].map((badge) => (
             <a key={badge} href="/security" className="inline-flex items-center gap-1.5 text-xs text-stone-500 hover:text-white border border-white/10 rounded-full px-3 py-1.5 transition-colors duration-300">
               <ShieldCheck className="h-3 w-3" /> {badge}
             </a>

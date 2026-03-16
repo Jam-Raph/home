@@ -35,11 +35,11 @@ import { trackCTAClick, trackFAQOpened } from "@/lib/analytics"
 import { SectionTracker } from "@/components/ui/section-tracker"
 
 const logos = [
-  { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-16 md:w-32" },
-  { alt: "SMU Logo", src: "/logos/smu.png", width: "w-16 md:w-24" },
-  { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-16 md:w-32" },
-  { alt: "EY Logo", src: "/logos/EY.png", width: "w-8 md:w-16" },
-  { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-24 md:w-40" },
+  { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-20 md:w-36" },
+  { alt: "SMU Logo", src: "/logos/smu.png", width: "w-18 md:w-28" },
+  { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-20 md:w-36" },
+  { alt: "EY Logo", src: "/logos/EY.png", width: "w-10 md:w-18" },
+  { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-28 md:w-44" },
 ]
 
 export default function Home() {
@@ -113,7 +113,6 @@ export default function Home() {
     <div className="mx-auto flex flex-col h-full">
       {/* Navbar */}
       <Navbar/>
-      <FloatingCTA />
       <SectionTracker sectionId="hero" />
       <SectionTracker sectionId="partners" />
       <SectionTracker sectionId="pillar" />
@@ -156,13 +155,13 @@ export default function Home() {
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
                 onClick={() => { trackCTAClick("hero", "Book a Demo"); smoothScroll("contact") }}
               >
-                Book a Demo
+                Book a demo
               </button>
               <button
                 className="border border-white/30 text-white hover:bg-white/10 text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
                 onClick={() => { trackCTAClick("hero_features", "See Features"); smoothScroll("pillar") }}
               >
-                See Features
+                See features
               </button>
             </div>
           </BlurFade>
@@ -178,31 +177,23 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Partners — Infinite Logo Carousel */}
+      {/* Partners */}
       <div className="container mx-auto px-4">
-        <section className="flex flex-col gap-6 py-24 overflow-hidden" id="partners">
+        <section className="flex flex-col gap-8 py-24" id="partners">
           <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Currently working with</p>
-          <div className="relative overflow-hidden">
-            <div className="marquee-track flex items-center gap-12 md:gap-24 animate-scroll-x w-max">
-              {/* Duplicate logos for seamless loop */}
-              {[...logos, ...logos].map((logo, i) => (
-                <Image
-                  key={`${logo.alt}-${i}`}
-                  alt={logo.alt}
-                  src={logo.src}
-                  width={300}
-                  height={0}
-                  className={`${logo.width} h-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 shrink-0`}
-                />
-              ))}
-            </div>
+          <div className="grid grid-cols-3 md:grid-cols-5 gap-y-8 gap-x-8 md:gap-x-16 max-w-3xl mx-auto place-items-center">
+            {logos.map((logo) => (
+              <Image
+                key={logo.alt}
+                alt={logo.alt}
+                src={logo.src}
+                width={300}
+                height={0}
+                className={`${logo.width} h-auto`}
+              />
+            ))}
           </div>
         </section>
-      </div>
-
-      {/* Divider: Partners → Stats/Testimonial */}
-      <div className="flex justify-center py-12">
-        <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
       </div>
 
       {/* Combined Stats & Testimonial */}
@@ -321,7 +312,7 @@ export default function Home() {
           <p className="text-stone-500 text-lg leading-relaxed">
             Ready to see how Pillar can save your team hours every week?{" "}
             <button onClick={() => { trackCTAClick("mid_page", "Book a Demo"); smoothScroll("contact") }} className="text-stone-900 hover:text-stone-700 underline underline-offset-4 font-medium transition-colors cursor-pointer">
-              Book a Demo &rarr;
+              Book a demo &rarr;
             </button>
           </p>
         </div>
@@ -356,8 +347,7 @@ export default function Home() {
 
             <div className="mt-12 text-center">
               <a href="/security" className="text-sm font-medium text-white/80 hover:text-white underline underline-offset-4 transition-colors duration-300">
-                Learn more about our security &rarr;
-              </a>
+                Learn more about our security &rarr;              </a>
             </div>
           </div>
         </section>

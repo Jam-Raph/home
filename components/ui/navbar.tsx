@@ -78,7 +78,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className={`z-50 w-full max-w-3/4 px-4 py-3 md:px-5 md:py-3 rounded-full flex justify-between md:justify-center items-center gap-10 fixed top-4 left-1/2 -translate-x-1/2 transition-all duration-300 ${
+            <nav className={`z-50 w-full max-w-3/4 px-4 py-1.5 md:px-5 md:py-1.5 rounded-full flex justify-between md:justify-center items-center gap-10 fixed top-4 left-1/2 -translate-x-1/2 transition-all duration-300 ${
                 showTransparent
                     ? "bg-transparent border border-transparent shadow-none"
                     : "bg-white/50 backdrop-blur-xl border border-white/30 shadow-lg shadow-black/5"
@@ -89,10 +89,10 @@ export default function Navbar() {
                 </Link>
 
                 {/* Full nav bar */}
-                <ul className="md:flex gap-8 hidden items-center">
+                <ul className="md:flex gap-6 hidden items-center">
                     {navSections.map((section) => {
                         const isActive = activeSection === section.id
-                        const linkClasses = `relative hover:cursor-pointer transition-colors duration-300 text-[13px] uppercase tracking-wider ${
+                        const linkClasses = `relative hover:cursor-pointer transition-colors duration-300 text-[11px] uppercase tracking-wider ${
                             showTransparent
                                 ? (isActive ? "text-white" : "text-white/70 hover:text-white")
                                 : (isActive ? "text-stone-900" : "text-stone-600 hover:text-stone-900")
@@ -122,10 +122,10 @@ export default function Navbar() {
                         )
                     })}
                     <button
-                        className="hover:cursor-pointer bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-6 py-2 rounded-full transition-colors duration-300"
+                        className="hover:cursor-pointer bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium px-5 py-1.5 rounded-full transition-colors duration-300"
                         onClick={() => { trackCTAClick("navbar", "Book a Demo"); navTo("contact") }}
                     >
-                        Book a Demo
+                        Book a demo
                     </button>
                 </ul>
 
@@ -198,7 +198,7 @@ export default function Navbar() {
                             className="w-full bg-stone-900 hover:bg-stone-800 text-white font-medium py-4 rounded-full transition-colors duration-300 cursor-pointer text-lg"
                             onClick={() => { trackCTAClick("navbar_mobile", "Book a Demo"); navTo("contact") }}
                         >
-                            Book a Demo
+                            Book a demo
                         </button>
                     </div>
                 </div>
