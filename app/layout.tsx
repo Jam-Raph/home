@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@fontsource/playfair-display/300.css";
+import "@fontsource/playfair-display/400.css";
 import { Toaster } from "sonner";
 
 import "./globals.css";
