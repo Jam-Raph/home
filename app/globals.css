@@ -13,7 +13,7 @@
 }
 
 @theme inline {
-    --font-serif: var(--font-playfair), "Georgia", ui-serif, serif;
+    --font-serif: "Playfair Display", "Georgia", ui-serif, serif;
 }
 
 @theme inline {

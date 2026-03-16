@@ -1,14 +1,8 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
+import "@fontsource/playfair-display/300.css";
 import { Toaster } from "sonner";
 
 import "./globals.css";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: "300",
-  variable: "--font-playfair",
-});
 
 export const metadata: Metadata = {
   title: "Jam & Raph",
@@ -22,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} font-sans bg-white overflow-x-clip`}>
+      <body className="font-sans bg-white overflow-x-clip">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
