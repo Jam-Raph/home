@@ -360,7 +360,7 @@ export default function Home() {
           <div className="relative">
             <div className="flex flex-col items-center gap-4 text-center">
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Common Questions</p>
-              <h2 className="text-4xl md:text-5xl text-stone-900 font-sans font-normal tracking-[0.05em] leading-[1.05]">
+              <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">
                 FAQ
               </h2>
               <p className="max-w-2xl text-base md:text-lg text-stone-600 leading-relaxed">
