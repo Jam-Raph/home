@@ -38,7 +38,6 @@ const logos = [
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-16 md:w-32" },
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-8 md:w-16" },
   { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-24 md:w-40" },
-  { alt: "O&B Logo", src: "/logos/O&B.png", width: "w-16 md:w-28" },
 ]
 
 export default function Home() {
