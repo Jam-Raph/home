@@ -2,6 +2,7 @@
 
 import { BlurFade } from "./blur-fade"
 import { smoothScroll } from "@/lib/utils"
+import { trackCTAClick } from "@/lib/analytics"
 import { AnimatedGridPattern } from "./animated-grid-pattern"
 
 export function CTABanner() {
@@ -23,12 +24,12 @@ export function CTABanner() {
             <div className="flex items-center gap-4 flex-wrap justify-center">
               <button
                 className="bg-white text-stone-900 hover:bg-white/90 font-medium px-8 py-3 rounded-full text-base transition-colors duration-300 cursor-pointer"
-                onClick={() => smoothScroll("contact")}
+                onClick={() => { trackCTAClick("cta_banner", "Book a Demo"); smoothScroll("contact") }}
               >
                 Book a Demo
               </button>
               <button
-                onClick={() => smoothScroll("pillar")}
+                onClick={() => { trackCTAClick("cta_banner_features", "View Features"); smoothScroll("pillar") }}
                 className="border border-white/20 text-white hover:bg-white/10 cursor-pointer px-8 py-3 rounded-full text-base font-medium transition-colors duration-300"
               >
                 View Features

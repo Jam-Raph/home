@@ -3,6 +3,7 @@
 import { Scale, ShieldCheck, Mail, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { trackCTAClick } from "@/lib/analytics";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,7 +32,7 @@ export function Footer() {
 
             <div className="flex flex-wrap gap-2">
               <Button asChild className="bg-white text-stone-900 hover:bg-white/90 rounded-full transition-colors duration-300">
-                <a href="/#contact">Work with us</a>
+                <a href="/#contact" onClick={() => trackCTAClick("footer", "Work with us")}>Work with us</a>
               </Button>
             </div>
           </div>

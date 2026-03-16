@@ -1,6 +1,7 @@
 "use client"
 
 import { smoothScroll } from "@/lib/utils"
+import { trackCTAClick } from "@/lib/analytics"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -122,7 +123,7 @@ export default function Navbar() {
                     })}
                     <button
                         className="hover:cursor-pointer bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-6 py-2 rounded-full transition-colors duration-300"
-                        onClick={() => navTo("contact")}
+                        onClick={() => { trackCTAClick("navbar", "Book a Demo"); navTo("contact") }}
                     >
                         Book a Demo
                     </button>
@@ -195,7 +196,7 @@ export default function Navbar() {
                     <div className="p-8">
                         <button
                             className="w-full bg-stone-900 hover:bg-stone-800 text-white font-medium py-4 rounded-full transition-colors duration-300 cursor-pointer text-lg"
-                            onClick={() => navTo("contact")}
+                            onClick={() => { trackCTAClick("navbar_mobile", "Book a Demo"); navTo("contact") }}
                         >
                             Book a Demo
                         </button>

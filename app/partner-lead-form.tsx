@@ -3,6 +3,7 @@
 import * as React from "react";
 import { toast } from "sonner";
 import { CheckCircle2, Clock, Loader2 } from "lucide-react";
+import { trackFormStarted, trackFormFieldFocus, trackFormSubmitted, trackFormError } from "@/lib/analytics";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,7 @@ const benefits = [
 
 export function PartnerLeadForm() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const formStartedRef = React.useRef(false);
 
   const [form, setForm] = React.useState<PartnerLeadFormState>({
     firstName: "",
@@ -69,6 +71,7 @@ export function PartnerLeadForm() {
       });
 
       if(!res.ok) {
+        trackFormError("api_error");
         toast.error("We could not receive your message", {
           description: "Please try again in a moment or contact us at raphael.lim@jamraph.com",
           duration: 2000
@@ -76,6 +79,7 @@ export function PartnerLeadForm() {
       }
 
       else {
+        trackFormSubmitted(form.organisation);
         toast.success("Submitted!", {
           description:
             "Thanks — we've received your details and will be in touch shortly.",
@@ -91,6 +95,7 @@ export function PartnerLeadForm() {
         phone: "",
       });
     } catch {
+      trackFormError("network_error");
       toast.error("Something went wrong", {
         description: "Please try again in a moment.",
       });
@@ -129,7 +134,12 @@ export function PartnerLeadForm() {
 
             {/* Right — Form */}
             <div>
-              <form onSubmit={onSubmit} className="space-y-6">
+              <form onSubmit={onSubmit} className="space-y-6" onFocus={() => {
+                if (!formStartedRef.current) {
+                  formStartedRef.current = true;
+                  trackFormStarted();
+                }
+              }}>
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <Label htmlFor="firstName" className="text-white">
@@ -139,6 +149,7 @@ export function PartnerLeadForm() {
                       id="firstName"
                       value={form.firstName}
                       onChange={update("firstName")}
+                      onFocus={() => trackFormFieldFocus("firstName")}
                       placeholder="Jane"
                       autoComplete="given-name"
                       required
@@ -154,6 +165,7 @@ export function PartnerLeadForm() {
                       id="lastName"
                       value={form.lastName}
                       onChange={update("lastName")}
+                      onFocus={() => trackFormFieldFocus("lastName")}
                       placeholder="Tan"
                       autoComplete="family-name"
                       required
@@ -172,6 +184,7 @@ export function PartnerLeadForm() {
                       type="email"
                       value={form.email}
                       onChange={update("email")}
+                      onFocus={() => trackFormFieldFocus("email")}
                       placeholder="jane@company.com"
                       autoComplete="email"
                       required
@@ -190,6 +203,7 @@ export function PartnerLeadForm() {
                       id="phone"
                       value={form.phone}
                       onChange={update("phone")}
+                      onFocus={() => trackFormFieldFocus("phone")}
                       placeholder="+65 9123 4567"
                       autoComplete="tel"
                       className="border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
@@ -205,6 +219,7 @@ export function PartnerLeadForm() {
                     id="organisation"
                     value={form.organisation}
                     onChange={update("organisation")}
+                    onFocus={() => trackFormFieldFocus("organisation")}
                     placeholder="Pearson Hardman"
                     autoComplete="organization"
                     required
@@ -221,6 +236,7 @@ export function PartnerLeadForm() {
                     id="note"
                     value={form.note}
                     onChange={update("note")}
+                    onFocus={() => trackFormFieldFocus("note")}
                     placeholder="Tell us what you're trying to build, your timeline, and what success looks like."
                     className="min-h-[140px] border-white/25 bg-white/5 text-white placeholder:text-stone-500 focus:border-white/40 focus:ring-1 focus:ring-white/10"
                     required

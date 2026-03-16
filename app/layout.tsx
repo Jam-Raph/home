@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "@fontsource/playfair-display/400.css";
 import { Toaster } from "sonner";
+import { Suspense } from "react";
+import { PHProvider } from "./posthog-provider";
+import { PostHogPageview } from "./posthog-pageview";
 
 import "./globals.css";
 
@@ -118,8 +121,13 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
-        <Toaster richColors position="top-center" />
+        <PHProvider>
+          <Suspense fallback={null}>
+            <PostHogPageview />
+          </Suspense>
+          {children}
+          <Toaster richColors position="top-center" />
+        </PHProvider>
       </body>
     </html>
   );

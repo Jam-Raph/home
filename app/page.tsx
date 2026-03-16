@@ -31,6 +31,8 @@ import { FloatingCTA } from "@/components/ui/floating-cta"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { smoothScroll } from "@/lib/utils"
 import { AnimatedGradientText } from "@/components/ui/animated-gradient-text"
+import { trackCTAClick, trackFAQOpened } from "@/lib/analytics"
+import { SectionTracker } from "@/components/ui/section-tracker"
 
 const logos = [
   { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-16 md:w-32" },
@@ -112,6 +114,12 @@ export default function Home() {
       {/* Navbar */}
       <Navbar/>
       <FloatingCTA />
+      <SectionTracker sectionId="hero" />
+      <SectionTracker sectionId="partners" />
+      <SectionTracker sectionId="pillar" />
+      <SectionTracker sectionId="security" />
+      <SectionTracker sectionId="faq" />
+      <SectionTracker sectionId="contact" />
 
       {/* Hero — full viewport with hero-2.png background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
@@ -146,13 +154,13 @@ export default function Home() {
             <div className="mt-14 flex items-center justify-center gap-4 flex-wrap">
               <button
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
-                onClick={() => smoothScroll("contact")}
+                onClick={() => { trackCTAClick("hero", "Book a Demo"); smoothScroll("contact") }}
               >
                 Book a Demo
               </button>
               <button
                 className="border border-white/30 text-white hover:bg-white/10 text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
-                onClick={() => smoothScroll("pillar")}
+                onClick={() => { trackCTAClick("hero_features", "See Features"); smoothScroll("pillar") }}
               >
                 See Features
               </button>
@@ -312,7 +320,7 @@ export default function Home() {
         <div className="text-center py-24">
           <p className="text-stone-500 text-lg leading-relaxed">
             Ready to see how Pillar can save your team hours every week?{" "}
-            <button onClick={() => smoothScroll("contact")} className="text-stone-900 hover:text-stone-700 underline underline-offset-4 font-medium transition-colors cursor-pointer">
+            <button onClick={() => { trackCTAClick("mid_page", "Book a Demo"); smoothScroll("contact") }} className="text-stone-900 hover:text-stone-700 underline underline-offset-4 font-medium transition-colors cursor-pointer">
               Book a Demo &rarr;
             </button>
           </p>
@@ -369,7 +377,12 @@ export default function Home() {
             </div>
 
             <div className="mt-12 max-w-3xl mx-auto">
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="w-full" onValueChange={(value) => {
+                if (value) {
+                  const idx = parseInt(value.replace("item-", ""))
+                  trackFAQOpened(faqs[idx].q, idx)
+                }
+              }}>
                 {faqs.map((item, idx) => (
                   <AccordionItem
                     key={item.q}

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { smoothScroll } from "@/lib/utils"
+import { trackCTAClick } from "@/lib/analytics"
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false)
@@ -24,7 +25,7 @@ export function FloatingCTA() {
 
   return (
     <button
-      onClick={() => smoothScroll("contact")}
+      onClick={() => { trackCTAClick("floating", "Book a Demo"); smoothScroll("contact") }}
       className={`fixed bottom-6 right-6 z-40 bg-stone-900 hover:bg-stone-800 text-white font-medium rounded-full px-6 py-3 shadow-lg shadow-black/10 transition-all duration-300 cursor-pointer ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
