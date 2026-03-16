@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Playfair_Display } from "next/font/google";
 import { Toaster } from "sonner";
 
 import "./globals.css";
 
-const vogue = localFont({
-  src: [{ path: "../public/fonts/vogue/Vogue.ttf", weight: "400", style: "normal" }],
-  variable: "--font-vogue",
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: "300",
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${vogue.variable} font-sans bg-white overflow-x-clip`}>
+      <body className={`${playfair.variable} font-sans bg-white overflow-x-clip`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

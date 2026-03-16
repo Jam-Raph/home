@@ -13,7 +13,7 @@
 }
 
 @theme inline {
-    --font-serif: var(--font-vogue), "Georgia", ui-serif, serif;
+    --font-serif: var(--font-playfair), "Georgia", ui-serif, serif;
 }
 
 @theme inline {
@@ -57,7 +57,7 @@ html {
   scroll-margin-top: 80px;
 }
 
-/* Vogue serif — generous tracking for thin Vesence aesthetic */
+/* Playfair Display serif — generous tracking for thin aesthetic */
 .font-serif {
   letter-spacing: 0.03em;
 }
