@@ -150,18 +150,12 @@ export default function Home() {
             </p>
           </BlurFade>
           <BlurFade delay={0.32} inView>
-            <div className="mt-14 flex items-center justify-center gap-4 flex-wrap">
+            <div className="mt-14 flex items-center justify-center">
               <button
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
                 onClick={() => { trackCTAClick("hero", "Book a Demo"); smoothScroll("contact") }}
               >
                 Book a demo
-              </button>
-              <button
-                className="border border-white/30 text-white hover:bg-white/10 text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
-                onClick={() => { trackCTAClick("hero_features", "See Features"); smoothScroll("pillar") }}
-              >
-                See features
               </button>
             </div>
           </BlurFade>
