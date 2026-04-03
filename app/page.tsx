@@ -250,7 +250,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-4" id="pillar">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Our Product</p>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Pillar</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Our proprietary software built for everyday law firms who require practical, scalable AI — not enterprise complexity. Upload your documents, and let Pillar handle the rest.</p>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">We fill up complex forms and templates for you</p>
           </div>
 
           <div className="flex flex-col items-center h-full gap-32 mt-12">
