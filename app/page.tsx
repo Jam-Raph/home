@@ -40,7 +40,7 @@ const logos = [
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-20 md:w-36" },
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-10 md:w-18" },
   { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-28 md:w-44" },
-  { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-28 md:w-44" },
+  { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-36 md:w-56" },
 ]
 
 export default function Home() {
