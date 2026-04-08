@@ -40,6 +40,7 @@ const logos = [
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-20 md:w-36" },
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-10 md:w-18" },
   { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-28 md:w-44" },
+  { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-28 md:w-44" },
 ]
 
 export default function Home() {
@@ -175,7 +176,7 @@ export default function Home() {
       <div className="container mx-auto px-4">
         <section className="flex flex-col gap-8 py-24" id="partners">
           <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Currently working with</p>
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-y-8 gap-x-8 md:gap-x-16 max-w-3xl mx-auto place-items-center">
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-y-8 gap-x-8 md:gap-x-16 max-w-4xl mx-auto place-items-center">
             {logos.map((logo) => (
               <Image
                 key={logo.alt}
