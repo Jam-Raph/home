@@ -38,6 +38,7 @@ const logos = [
   { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-20 md:w-36" },
   { alt: "SMU Logo", src: "/logos/smu.png", width: "w-18 md:w-28" },
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-20 md:w-36" },
+  { alt: "Bizibody", src: "/logos/bizibody.png", width: "w-24 md:w-40" },
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-10 md:w-18" },
   { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-28 md:w-44" },
   { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-36 md:w-56" },
