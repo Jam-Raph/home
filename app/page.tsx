@@ -42,6 +42,7 @@ const logos = [
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-16 md:w-28" },
   { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-36 md:w-52" },
   { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-36 md:w-52" },
+  { alt: "Hanbridge Institute", src: "/logos/hanbridge.png", width: "w-28 md:w-44" },
 ]
 
 export default function Home() {
