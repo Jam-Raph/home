@@ -35,9 +35,9 @@ import { trackCTAClick, trackFAQOpened } from "@/lib/analytics"
 import { SectionTracker } from "@/components/ui/section-tracker"
 
 const supportedBy = [
-  { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-36 md:w-52" },
-  { alt: "SMU Logo", src: "/logos/smu.png", width: "w-24 md:w-36" },
-  { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-36 md:w-52" },
+  { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-24 md:w-44" },
+  { alt: "SMU Logo", src: "/logos/smu.png", width: "w-16 md:w-28" },
+  { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-24 md:w-44" },
 ]
 
 const workingWith = [
@@ -181,9 +181,9 @@ export default function Home() {
       <div className="container mx-auto px-4">
         <section className="flex flex-col gap-16 py-24" id="partners">
           <div className="flex flex-col gap-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Supported by</p>
-            <div className="flex items-center justify-center gap-12 md:gap-20 max-w-3xl mx-auto">
-              {supportedBy.map((logo) => (
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Currently working with</p>
+            <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap max-w-4xl mx-auto px-4">
+              {workingWith.map((logo) => (
                 <Image
                   key={logo.alt}
                   alt={logo.alt}
@@ -196,9 +196,9 @@ export default function Home() {
             </div>
           </div>
           <div className="flex flex-col gap-8">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Currently working with</p>
-            <div className="flex items-center justify-center gap-12 md:gap-20 flex-wrap max-w-4xl mx-auto">
-              {workingWith.map((logo) => (
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Supported by</p>
+            <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap max-w-3xl mx-auto px-4">
+              {supportedBy.map((logo) => (
                 <Image
                   key={logo.alt}
                   alt={logo.alt}
