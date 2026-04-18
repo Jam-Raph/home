@@ -43,7 +43,6 @@ const supportedBy = [
 const workingWith = [
   { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-28 md:w-44" },
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-28 md:w-44" },
-  { alt: "Bizibody", src: "/logos/bizibody.png", width: "w-32 md:w-48" },
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-16 md:w-28" },
   { alt: "Hanbridge Institute", src: "/logos/hanbridge.png", width: "w-28 md:w-44" },
 ]
