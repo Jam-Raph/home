@@ -39,9 +39,10 @@ export function Footer() {
 
           {/* Product */}
           <div className="space-y-4">
-            <p className="text-sm font-medium text-white">Product</p>
+            <p className="text-sm font-medium text-white">Offerings</p>
             <ul className="space-y-3 text-sm text-stone-400">
-              <li><a href="/#pillar" className="hover:text-white transition-colors duration-300">Features</a></li>
+              <li><a href="/#pillar" className="hover:text-white transition-colors duration-300">Pillar</a></li>
+              <li><a href="/#ai-integration" className="hover:text-white transition-colors duration-300">AI Integration</a></li>
               <li><a href="/form-filler" className="hover:text-white transition-colors duration-300">Form filler</a></li>
               <li><a href="/security" className="hover:text-white transition-colors duration-300">Security</a></li>
             </ul>
