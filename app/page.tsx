@@ -183,29 +183,23 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
         <div className="relative z-10 mx-auto px-4 text-center">
           <BlurFade delay={0.05} inView blur="3px">
-            <p className="text-xs uppercase tracking-[0.4em] text-white font-mono mb-6">AI Integration by Jam & Raph</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-white font-mono mb-6">By Jam & Raph</p>
           </BlurFade>
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
-            <h1 className="font-serif whitespace-nowrap text-white text-2xl md:text-6xl lg:text-7xl xl:text-8xl w-full">
-                Precision, Automated
+            <h1 className="font-serif text-white text-2xl md:text-6xl lg:text-7xl xl:text-8xl w-full">
+              Exploring AI safely with you
             </h1>
           </BlurFade>
           <BlurFade delay={0.25} inView>
             <p className="mt-10 text-lg sm:text-xl leading-[1.6] tracking-[0.01em] text-white max-w-2xl mx-auto">
-              Seamless AI integration into your business
+              Seamless AI integration for law firms and professional services
             </p>
           </BlurFade>
           <BlurFade delay={0.32} inView>
             <div className="mt-14 flex items-center justify-center gap-3 flex-wrap">
               <button
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
-                onClick={() => { trackCTAClick("hero", "Explore Pillar"); smoothScroll("pillar") }}
-              >
-                Explore Pillar
-              </button>
-              <button
-                className="border border-white/40 text-white hover:bg-white/10 text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
                 onClick={() => { trackCTAClick("hero", "Talk to us"); smoothScroll("contact") }}
               >
                 Talk to us
@@ -319,7 +313,7 @@ export default function Home() {
         <BlurFade delay={0.05} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">How we work</p>
-            <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Two ways to integrate AI</h2>
+            <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Two ways to bring AI into your firm</h2>
             <p className="text-stone-600 max-w-2xl leading-relaxed">Pick the path that fits how your team works today.</p>
           </div>
         </BlurFade>
@@ -347,8 +341,8 @@ export default function Home() {
                 <Workflow className="h-7 w-7 text-stone-700" />
               </div>
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-3">Path 2 &mdash; Service</p>
-              <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">AI Integration</h3>
-              <p className="text-stone-600 leading-relaxed mb-6 flex-1">A 4 &ndash; 6 week engagement to design, build, and ship production-ready AI into your team&apos;s workflow.</p>
+              <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">AI Transformation</h3>
+              <p className="text-stone-600 leading-relaxed mb-6 flex-1">A 4 &ndash; 6 week engagement to procure and implement AI into your team&apos;s workflow.</p>
               <span className="text-sm font-medium text-stone-900 underline underline-offset-4 group-hover:text-stone-600 transition-colors">How it works &rarr;</span>
             </button>
           </BlurFade>
@@ -417,7 +411,7 @@ export default function Home() {
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 2 &mdash; For every other business</p>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">AI Integration</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">A 4 &ndash; 6 week engagement to build production-ready AI into your team&apos;s workflow.</p>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">A 4 &ndash; 6 week engagement to integrate production-ready AI into your team&apos;s workflow.</p>
           </div>
 
           {/* 4-phase grid */}
