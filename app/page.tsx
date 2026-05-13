@@ -187,7 +187,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
-            <h1 className="font-serif text-white text-2xl md:text-6xl lg:text-7xl xl:text-8xl w-full">
+            <h1 className="font-serif text-white text-xl md:text-5xl lg:text-6xl xl:text-7xl w-full">
               Exploring AI safely with you
             </h1>
           </BlurFade>
