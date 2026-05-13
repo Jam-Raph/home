@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jam & Raph",
-  description: "AI-powered legal workflows, built for modern firms.",
+  description: "AI integration for modern businesses — through Pillar, our legal intelligence platform, or a bespoke engagement.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
                   name: "Jam & Raph",
                   url: "https://jamraph.com",
                   logo: "https://jamraph.com/logos/pillar-logo.png",
-                  description: "AI-powered legal workflows, built for modern firms.",
+                  description: "AI integration for modern businesses — through Pillar, our legal intelligence platform, or a bespoke engagement.",
                   foundingDate: "2024",
                   sameAs: ["https://www.linkedin.com/company/jamandraph/"],
                 },
@@ -51,6 +51,30 @@ export default function RootLayout({
                 {
                   "@type": "FAQPage",
                   mainEntity: [
+                    {
+                      "@type": "Question",
+                      name: "Do I need to be a law firm to work with Jam & Raph?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "No. Pillar is built for legal teams, but our AI Integration service works with any business looking to embed production-ready AI into their workflows.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "How does an AI Integration engagement work?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Typically a 4 – 6 week engagement covering discovery, design, build, and handoff. We map your workflows, prototype options, ship a production-ready integration, and document everything so your team fully owns the result.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What kinds of workflows are best suited for AI Integration?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Repetitive document processing, structured data extraction, knowledge retrieval, and any task where AI can save your team meaningful hours per week. We scope this together in the discovery phase.",
+                      },
+                    },
                     {
                       "@type": "Question",
                       name: "Do the AI models used retain or learn from customer data?",

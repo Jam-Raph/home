@@ -9,6 +9,12 @@ import {
   Link2,
   Database,
   ChevronDown,
+  Scale,
+  Workflow,
+  Search,
+  PenTool,
+  Code,
+  Users,
 } from "lucide-react";
 
 import {
@@ -78,7 +84,41 @@ export default function Home() {
       icon: Lock,
     },
   ];
+  const phases = [
+    {
+      icon: Search,
+      title: "Discovery",
+      description: "We map your workflows and identify where AI ships value.",
+    },
+    {
+      icon: PenTool,
+      title: "Design",
+      description: "We prototype options and validate them with your team.",
+    },
+    {
+      icon: Code,
+      title: "Build",
+      description: "We integrate customised workflows into your existing systems.",
+    },
+    {
+      icon: Users,
+      title: "Handoff",
+      description: "We document and train your team so you fully own the workflow.",
+    },
+  ];
   const faqs = [
+    {
+      q: "Do I need to be a law firm to work with Jam & Raph?",
+      a: "No. Pillar is built for legal teams, but our AI Integration service works with any business looking to embed production-ready AI into their workflows.",
+    },
+    {
+      q: "How does an AI Integration engagement work?",
+      a: "Typically a 4 – 6 week engagement covering discovery, design, build, and handoff. We map your workflows, prototype options, ship a production-ready integration, and document everything so your team fully owns the result.",
+    },
+    {
+      q: "What kinds of workflows are best suited for AI Integration?",
+      a: "Repetitive document processing, structured data extraction, knowledge retrieval, and any task where AI can save your team meaningful hours per week. We scope this together in the discovery phase.",
+    },
     {
       q: "Do the AI models used retain or learn from customer data?",
       a: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral — once a request completes, the data is discarded and never used for training.",
@@ -119,8 +159,10 @@ export default function Home() {
       {/* Navbar */}
       <Navbar/>
       <SectionTracker sectionId="hero" />
+      <SectionTracker sectionId="paths" />
       <SectionTracker sectionId="partners" />
       <SectionTracker sectionId="pillar" />
+      <SectionTracker sectionId="ai-integration" />
       <SectionTracker sectionId="security" />
       <SectionTracker sectionId="faq" />
       <SectionTracker sectionId="contact" />
@@ -141,7 +183,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
         <div className="relative z-10 mx-auto px-4 text-center">
           <BlurFade delay={0.05} inView blur="3px">
-            <p className="text-xs uppercase tracking-[0.4em] text-white font-mono mb-6">Legal Tech by Jam & Raph</p>
+            <p className="text-xs uppercase tracking-[0.4em] text-white font-mono mb-6">AI Integration by Jam & Raph</p>
           </BlurFade>
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
@@ -151,16 +193,22 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.25} inView>
             <p className="mt-10 text-lg sm:text-xl leading-[1.6] tracking-[0.01em] text-white max-w-2xl mx-auto">
-              AI-powered legal workflows, built for modern firms
+              Seamless AI integration into your business
             </p>
           </BlurFade>
           <BlurFade delay={0.32} inView>
-            <div className="mt-14 flex items-center justify-center">
+            <div className="mt-14 flex items-center justify-center gap-3 flex-wrap">
               <button
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
-                onClick={() => { trackCTAClick("hero", "Book a Demo"); smoothScroll("contact") }}
+                onClick={() => { trackCTAClick("hero", "Explore Pillar"); smoothScroll("pillar") }}
               >
-                Book a demo
+                Explore Pillar
+              </button>
+              <button
+                className="border border-white/40 text-white hover:bg-white/10 text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
+                onClick={() => { trackCTAClick("hero", "Talk to us"); smoothScroll("contact") }}
+              >
+                Talk to us
               </button>
             </div>
           </BlurFade>
@@ -266,13 +314,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Two paths overview */}
+      <section className="container mx-auto px-4 py-24" id="paths">
+        <BlurFade delay={0.05} inView>
+          <div className="flex flex-col items-center gap-4 text-center mb-16">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">How we work</p>
+            <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Two ways to integrate AI</h2>
+            <p className="text-stone-600 max-w-2xl leading-relaxed">Pick the path that fits how your team works today.</p>
+          </div>
+        </BlurFade>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <BlurFade delay={0.1} inView className="flex">
+            <button
+              onClick={() => { trackCTAClick("two_paths", "Pillar"); smoothScroll("pillar") }}
+              className="text-left w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col"
+            >
+              <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
+                <Scale className="h-7 w-7 text-stone-700" />
+              </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-3">Path 1 &mdash; Product</p>
+              <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">Pillar</h3>
+              <p className="text-stone-600 leading-relaxed mb-6 flex-1">Our legal intelligence platform.</p>
+              <span className="text-sm font-medium text-stone-900 underline underline-offset-4 group-hover:text-stone-600 transition-colors">See features &rarr;</span>
+            </button>
+          </BlurFade>
+          <BlurFade delay={0.15} inView className="flex">
+            <button
+              onClick={() => { trackCTAClick("two_paths", "AI Integration"); smoothScroll("ai-integration") }}
+              className="text-left w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col"
+            >
+              <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
+                <Workflow className="h-7 w-7 text-stone-700" />
+              </div>
+              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-3">Path 2 &mdash; Service</p>
+              <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">AI Integration</h3>
+              <p className="text-stone-600 leading-relaxed mb-6 flex-1">A 4 &ndash; 6 week engagement to design, build, and ship production-ready AI into your team&apos;s workflow.</p>
+              <span className="text-sm font-medium text-stone-900 underline underline-offset-4 group-hover:text-stone-600 transition-colors">How it works &rarr;</span>
+            </button>
+          </BlurFade>
+        </div>
+      </section>
+
       <div className="container mx-auto px-4">
         {/* Pillar Features */}
         <section className="flex flex-col gap-5 py-32">
           <div className="flex flex-col items-center gap-4" id="pillar">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Our Product</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 1 &mdash; For law firms</p>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Pillar</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">We fill up complex forms and templates for you</p>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Legal intelligence platform - form filling and article generation</p>
           </div>
 
           <div className="flex flex-col items-center h-full gap-32 mt-12">
@@ -318,7 +407,50 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider: Features → Security */}
+        {/* Divider: Pillar → AI Integration */}
+        <div className="flex justify-center py-12">
+          <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
+        </div>
+
+        {/* AI Integration section */}
+        <section className="py-24" id="ai-integration">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 2 &mdash; For every other business</p>
+            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">AI Integration</h2>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">A 4 &ndash; 6 week engagement to build production-ready AI into your team&apos;s workflow.</p>
+          </div>
+
+          {/* 4-phase grid */}
+          <div className="relative max-w-5xl mx-auto px-4 mt-20">
+            {/* Connecting line (desktop) */}
+            <div className="hidden md:block absolute top-7 left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-stone-200" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+              {phases.map((p, idx) => (
+                <BlurFade key={p.title} delay={0.1 + idx * 0.1} inView>
+                  <div className="text-center relative">
+                    <div className="h-14 w-14 rounded-full bg-stone-900 text-white flex items-center justify-center mx-auto mb-5 relative z-10">
+                      <p.icon className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-lg font-medium text-stone-900 mb-3">{p.title}</h3>
+                    <p className="text-sm text-stone-500 leading-relaxed">{p.description}</p>
+                  </div>
+                </BlurFade>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => { trackCTAClick("ai_integration", "Book a Consultation"); smoothScroll("contact") }}
+              className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300 cursor-pointer"
+            >
+              Book a consultation
+            </button>
+          </div>
+        </section>
+
+        {/* Divider: AI Integration → Security */}
         <div className="flex justify-center py-12">
           <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
         </div>
@@ -326,9 +458,9 @@ export default function Home() {
         {/* Mid-page CTA */}
         <div className="text-center py-24">
           <p className="text-stone-500 text-lg leading-relaxed">
-            Ready to see how Pillar can save your team hours every week?{" "}
-            <button onClick={() => { trackCTAClick("mid_page", "Book a Demo"); smoothScroll("contact") }} className="text-stone-900 hover:text-stone-700 underline underline-offset-4 font-medium transition-colors cursor-pointer">
-              Book a demo &rarr;
+            Whether you need Pillar off-the-shelf or a custom integration, we&apos;d love to talk.{" "}
+            <button onClick={() => { trackCTAClick("mid_page", "Talk to us"); smoothScroll("contact") }} className="text-stone-900 hover:text-stone-700 underline underline-offset-4 font-medium transition-colors cursor-pointer">
+              Talk to us &rarr;
             </button>
           </p>
         </div>

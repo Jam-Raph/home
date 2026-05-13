@@ -20,8 +20,8 @@ type PartnerLeadFormState = {
 };
 
 const benefits = [
-  "Automate repetitive legal forms in minutes",
-  "AI-powered article generation from court judgments",
+  "Pillar: AI workflows for law firms — forms, documents, articles",
+  "AI Integration: 4 – 6 week engagements to ship production-ready AI",
   "SOC 2 compliant infrastructure with private file storage",
   "Dedicated onboarding and support",
 ];
@@ -114,7 +114,7 @@ export function PartnerLeadForm() {
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-4">Contact Us</p>
               <h2 className="text-3xl md:text-4xl font-serif font-normal text-white mb-6">Work with us</h2>
               <p className="text-base text-stone-400 mb-8 leading-relaxed">
-                Share a few details about your firm and we&apos;ll reach out to schedule a personalised demo.
+                Whether you want to try Pillar or scope an AI Integration, share a few details and we&apos;ll be in touch.
               </p>
 
               <ul className="space-y-4 mb-8">

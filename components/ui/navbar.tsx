@@ -9,7 +9,8 @@ import { usePathname } from "next/navigation"
 import { useState, useEffect, useCallback } from "react"
 
 const navSections = [
-  { id: "pillar", label: "Features" },
+  { id: "pillar", label: "Pillar" },
+  { id: "ai-integration", label: "AI Integration" },
   { id: "security", label: "Security", href: "/security" },
   { id: "faq", label: "FAQ" },
 ]
@@ -32,7 +33,7 @@ export default function Navbar() {
     // Track active section with IntersectionObserver
     useEffect(() => {
         if (!isHome) return
-        const sectionIds = ["hero", "pillar", "security", "faq", "contact"]
+        const sectionIds = ["hero", "pillar", "ai-integration", "security", "faq", "contact"]
         const observers: IntersectionObserver[] = []
 
         sectionIds.forEach((id) => {
