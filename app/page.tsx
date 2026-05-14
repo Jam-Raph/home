@@ -239,7 +239,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-8">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono text-center">Supported by</p>
-            <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap max-w-3xl mx-auto px-4">
+            <div className="flex items-center justify-center gap-8 md:gap-16 flex-wrap max-w-5xl mx-auto px-4">
               {supportedBy.map((logo) => (
                 <Image
                   key={logo.alt}
