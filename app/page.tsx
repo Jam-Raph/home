@@ -44,7 +44,7 @@ const supportedBy = [
   { alt: "NVIDIA Inception Program", src: "/logos/nvidia-inception.png", width: "w-24 md:w-44" },
   { alt: "SMU Logo", src: "/logos/smu.png", width: "w-16 md:w-28" },
   { alt: "Tech Nation", src: "/logos/tech-nation.png", width: "w-24 md:w-44" },
-  { alt: "BLOCK71", src: "/logos/block71.svg", width: "w-24 md:w-44" },
+  { alt: "BLOCK71", src: "/logos/block71.jpg", width: "w-24 md:w-44" },
 ]
 
 const workingWith = [
