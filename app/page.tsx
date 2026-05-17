@@ -52,6 +52,7 @@ const workingWith = [
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-28 md:w-44" },
   { alt: "EY Logo", src: "/logos/EY.png", width: "w-16 md:w-28" },
   { alt: "Hanbridge Institute", src: "/logos/hanbridge.png", width: "w-28 md:w-44" },
+  { alt: "Oon & Bazul", src: "/logos/O&B.png", width: "w-28 md:w-44" },
 ]
 
 export default function Home() {
