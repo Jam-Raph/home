@@ -11,6 +11,8 @@ import { useState, useEffect, useCallback } from "react"
 const navSections = [
   { id: "pillar", label: "Pillar" },
   { id: "ai-integration", label: "AI Integration" },
+  { id: "features", label: "Features", href: "/features" },
+  { id: "about", label: "About", href: "/about" },
   { id: "security", label: "Security", href: "/security" },
   { id: "faq", label: "FAQ" },
 ]
@@ -86,7 +88,7 @@ export default function Navbar() {
             }`}>
                 <Link href="/" className="flex items-center gap-2">
                     <Image alt="company logo" width={24} height={0} className="h-auto w-auto md:w-[30px]" src="/J&R logo.png" />
-                    <h1 className={`font-medium text-sm md:text-base transition-colors duration-300 ${showTransparent ? "text-white" : "text-stone-900"}`}>Jam & Raph</h1>
+                    <span className={`font-medium text-sm md:text-base transition-colors duration-300 ${showTransparent ? "text-white" : "text-stone-900"}`}>Jam & Raph</span>
                 </Link>
 
                 {/* Full nav bar */}
