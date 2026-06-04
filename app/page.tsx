@@ -310,6 +310,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Team — moved up so visitors meet the team before the offerings */}
+      <div className="container mx-auto px-4">
+        <TeamBanner />
+
+        <div className="flex justify-center py-12">
+          <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
+        </div>
+      </div>
+
       {/* Two paths overview */}
       <section className="container mx-auto px-4 py-24" id="paths">
         <BlurFade delay={0.05} inView>
@@ -357,49 +366,19 @@ export default function Home() {
           <div className="flex flex-col items-center gap-4" id="pillar">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 1 &mdash; For law firms</p>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Pillar</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Legal intelligence platform - form filling and article generation</p>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Legal intelligence platform for automated form filling</p>
           </div>
 
           <div className="flex flex-col items-center h-full gap-32 mt-12">
-            <BlurFade delay={0.1} inView>
-              <TwoBox
-                title="Fill out repetitive forms in minutes, not hours"
-                description="Upload an affidavit and generate a completed B14 form in minutes. Spend your time reviewing, not filling in fields."
-                videoUrl="demos/form-b14-demo.mp4"
-                alt={false}
-                ctaHref="/form-filler"
-                theme="light"
-                />
-            </BlurFade>
-
            <BlurFade delay={0.1} inView>
              <TwoBox
               title="Fill out any form using your own templates"
               description="Upload your organisation's form templates once, then auto-fill them from any source document — affidavits, briefs, or contracts."
               videoUrl="demos/form-filler.mp4"
               ctaHref="/form-filler"
-              theme="dark"
-              />
-           </BlurFade>
-
-           <BlurFade delay={0.1} inView>
-             <TwoBox
-              title="Get better AI answers with smarter prompts"
-              description="Turn a rough question into a detailed, structured prompt — so every AI query returns more precise and actionable answers for your legal research."
-              videoUrl="demos/magic-prompt-demo-cropped.mp4"
-              alt={false}
               theme="light"
               />
            </BlurFade>
-
-            <BlurFade delay={0.1} inView>
-              <TwoBox
-              title="Generate articles from the latest court judgments"
-              description="Draft publish-ready articles from recent court judgments across Singapore — helping your firm stay visible, authoritative, and ahead of the latest legal developments."
-              videoUrl="demos/cropped-trimed-article-gen.mp4"
-              theme="dark"
-              />
-            </BlurFade>
           </div>
         </section>
 
@@ -540,12 +519,6 @@ export default function Home() {
       <CTABanner />
 
       <div className="container mx-auto px-4">
-        <TeamBanner />
-
-        <div className="flex justify-center py-12">
-          <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
-        </div>
-
         <PartnerLeadForm/>
       </div>
 

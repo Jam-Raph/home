@@ -33,6 +33,14 @@ const team = [
 
 const awards = [
   {
+    src: "/awards/bbc-2026.jpg",
+    alt: "Jam & Raph as Top 6 Finalists at the Bangkok Business Challenge 2026",
+    title: "Bangkok Business Challenge 2026 — Sasin",
+    place: "Top 6 Finalist",
+    prize: "$1,300 USD",
+    link: "https://www.linkedin.com/posts/jamandraph_bbc2026-sasin-bangkokbusinesschallenge-activity-7466869832106364929-nElj",
+  },
+  {
     src: "/awards/smu-lit-2025-first-place.JPG",
     alt: "Jam & Raph team winning SMU Legal Innovation and Tech 2025",
     title: "SMU Legal Innovation and Tech 2025",
@@ -74,7 +82,7 @@ export function TeamBanner() {
         <BlurFade delay={0.1} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Our Team</p>
-            <h2 className="text-3xl md:text-4xl text-stone-900 font-serif font-normal tracking-[0.05em]">The founding team behind Pillar</h2>
+            <h2 className="text-3xl md:text-4xl text-stone-900 font-serif font-normal tracking-[0.05em]">The team behind Jam &amp; Raph</h2>
             <p className="text-stone-600 max-w-xl leading-relaxed">Engineers and operators building practical AI tools for the legal industry.</p>
           </div>
         </BlurFade>
@@ -111,7 +119,7 @@ export function TeamBanner() {
           <div className="flex flex-col items-center gap-4 text-center mb-12">
             <div className="flex items-center gap-2">
               <Trophy className="h-5 w-5 text-brand-primary" />
-              <h3 className="text-xl md:text-2xl text-stone-900 font-serif font-normal tracking-[0.05em]">Our hackathon wins</h3>
+              <h3 className="text-xl md:text-2xl text-stone-900 font-serif font-normal tracking-[0.05em]">Awards &amp; recognition</h3>
             </div>
           </div>
         </BlurFade>
@@ -145,12 +153,6 @@ export function TeamBanner() {
             </BlurFade>
           ))}
         </div>
-
-        <BlurFade delay={0.75} inView>
-          <p className="text-center text-lg font-medium text-stone-600 mt-12">
-            Total prize money: $10,000 SGD
-          </p>
-        </BlurFade>
       </div>
     </section>
   )
