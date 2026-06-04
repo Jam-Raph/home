@@ -52,17 +52,21 @@ export function Footer() {
           <div className="space-y-4">
             <p className="text-sm font-medium text-white">Company</p>
             <ul className="space-y-3 text-sm text-stone-400">
+              <li><a href="/about" className="hover:text-white transition-colors duration-300">About</a></li>
+              <li><a href="/features" className="hover:text-white transition-colors duration-300">Features</a></li>
+              <li><a href="/faq" className="hover:text-white transition-colors duration-300">FAQ</a></li>
               <li><a href="/#contact" className="hover:text-white transition-colors duration-300">Contact</a></li>
-              <li><a href="/#faq" className="hover:text-white transition-colors duration-300">FAQ</a></li>
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Legal & resources */}
           <div className="space-y-4">
-            <p className="text-sm font-medium text-white">Legal</p>
+            <p className="text-sm font-medium text-white">Legal & resources</p>
             <ul className="space-y-3 text-sm text-stone-400">
               <li><a href="/security" className="hover:text-white transition-colors duration-300">Security & privacy</a></li>
               <li><a href="mailto:jamison.teng@jamraph.com" className="hover:text-white transition-colors duration-300">Data enquiries</a></li>
+              <li><a href="/sitemap.xml" className="hover:text-white transition-colors duration-300">Sitemap</a></li>
+              <li><a href="/llms.txt" className="hover:text-white transition-colors duration-300">llms.txt</a></li>
             </ul>
           </div>
         </div>
