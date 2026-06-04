@@ -1,0 +1,72 @@
+name: Deploy to EC2
+
+# Auto-deploys the Next.js site to the EC2 instance on every push to main.
+# Manual runs are also supported via the "Run workflow" button.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel an in-progress deploy if a newer commit lands on main.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Build & deploy on EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          port: ${{ secrets.EC2_PORT }}
+          # Fail the job (and surface logs) if any command below errors.
+          script_stop: true
+          envs: TELE_KEY,TELE_CHAT_ID,TELE_CHAT_ID_2
+          script: |
+            set -euo pipefail
+
+            # --- Config --------------------------------------------------
+            APP_DIR="${{ secrets.EC2_APP_DIR }}"   # e.g. /home/ubuntu/home
+            REPO_URL="https://github.com/Jam-Raph/home.git"
+            BRANCH="main"
+            PM2_APP="jr-home"
+
+            # Load nvm-installed node if present, so npm/pm2 are on PATH.
+            export NVM_DIR="$HOME/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+            # --- Fetch latest code --------------------------------------
+            if [ ! -d "$APP_DIR/.git" ]; then
+              echo "Cloning repository into $APP_DIR"
+              git clone "$REPO_URL" "$APP_DIR"
+            fi
+            cd "$APP_DIR"
+            git fetch --all --prune
+            git checkout "$BRANCH"
+            git reset --hard "origin/$BRANCH"
+
+            # --- Runtime env (written from GitHub secrets) --------------
+            cat > .env <<EOF
+            TELE_KEY=${{ secrets.TELE_KEY }}
+            TELE_CHAT_ID=${{ secrets.TELE_CHAT_ID }}
+            TELE_CHAT_ID_2=${{ secrets.TELE_CHAT_ID_2 }}
+            EOF
+            chmod 600 .env
+
+            # --- Install, build, (re)start ------------------------------
+            npm ci
+            npm run build
+
+            # Next.js serves on port 3000 by default (proxy via nginx).
+            if pm2 describe "$PM2_APP" > /dev/null 2>&1; then
+              pm2 reload "$PM2_APP" --update-env
+            else
+              pm2 start npm --name "$PM2_APP" -- run start
+            fi
+            pm2 save
