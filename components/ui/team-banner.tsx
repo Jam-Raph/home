@@ -36,7 +36,7 @@ const awards = [
     src: "/awards/bbc-2026.jpg",
     alt: "Jam & Raph as Top 6 Finalists at the Bangkok Business Challenge 2026",
     title: "Bangkok Business Challenge 2026 — Sasin",
-    place: "Top 6 Finalist",
+    place: "Finalist",
     prize: "$1,300 USD",
     link: "https://www.linkedin.com/posts/jamandraph_bbc2026-sasin-bangkokbusinesschallenge-activity-7466869832106364929-nElj",
   },
