@@ -9,8 +9,8 @@ import { usePathname } from "next/navigation"
 import { useState, useEffect, useCallback } from "react"
 
 const navSections = [
-  { id: "pillar", label: "Pillar" },
-  { id: "ai-integration", label: "AI Integration" },
+  { id: "workshop", label: "Workshop" },
+  { id: "advisory-build", label: "Advisory & Build" },
   { id: "security", label: "Security", href: "/security" },
   { id: "faq", label: "FAQ" },
 ]
@@ -33,7 +33,7 @@ export default function Navbar() {
     // Track active section with IntersectionObserver
     useEffect(() => {
         if (!isHome) return
-        const sectionIds = ["hero", "pillar", "ai-integration", "security", "faq", "contact"]
+        const sectionIds = ["hero", "workshop", "advisory-build", "security", "faq", "contact"]
         const observers: IntersectionObserver[] = []
 
         sectionIds.forEach((id) => {
@@ -74,7 +74,7 @@ export default function Navbar() {
     }, [drawerOpen])
 
     // Pages with dark hero backgrounds get transparent navbar at top
-    const darkHeroPages = ["/", "/form-filler"]
+    const darkHeroPages = ["/"]
     const showTransparent = darkHeroPages.includes(pathname) && atTop
 
     return (
@@ -124,9 +124,9 @@ export default function Navbar() {
                     })}
                     <button
                         className="hover:cursor-pointer bg-stone-900 hover:bg-stone-800 text-white text-xs font-medium px-5 py-1.5 rounded-full transition-colors duration-300"
-                        onClick={() => { trackCTAClick("navbar", "Book a Demo"); navTo("contact") }}
+                        onClick={() => { trackCTAClick("navbar", "Book a workshop"); navTo("contact") }}
                     >
-                        Book a demo
+                        Book a workshop
                     </button>
                 </ul>
 
@@ -197,9 +197,9 @@ export default function Navbar() {
                     <div className="p-8">
                         <button
                             className="w-full bg-stone-900 hover:bg-stone-800 text-white font-medium py-4 rounded-full transition-colors duration-300 cursor-pointer text-lg"
-                            onClick={() => { trackCTAClick("navbar_mobile", "Book a Demo"); navTo("contact") }}
+                            onClick={() => { trackCTAClick("navbar_mobile", "Book a workshop"); navTo("contact") }}
                         >
-                            Book a demo
+                            Book a workshop
                         </button>
                     </div>
                 </div>

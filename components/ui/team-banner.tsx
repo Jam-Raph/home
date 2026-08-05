@@ -23,12 +23,6 @@ const team = [
     role: "Co-lead developer",
     link: "https://www.linkedin.com/in/darren-sim-296523243/"
   },
-  {
-    src: "/headshots/liediana.png",
-    name: "Liediana",
-    role: "Head of finance",
-    link: "https://www.linkedin.com/in/liediana-djoli705/"
-  },
 ]
 
 const awards = [
@@ -83,12 +77,12 @@ export function TeamBanner() {
           <div className="flex flex-col items-center gap-4 text-center mb-16">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Our Team</p>
             <h2 className="text-3xl md:text-4xl text-stone-900 font-serif font-normal tracking-[0.05em]">The team behind Jam &amp; Raph</h2>
-            <p className="text-stone-600 max-w-xl leading-relaxed">Engineers and operators building practical AI tools for the legal industry.</p>
+            <p className="text-stone-600 max-w-xl leading-relaxed">Claude Certified Architects who run the workshops and build the workflows themselves.</p>
           </div>
         </BlurFade>
 
         {/* Team Headshots */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto mb-20">
           {team.map((member, index) => (
             <BlurFade key={member.name} delay={0.15 + index * 0.05} inView>
               <a

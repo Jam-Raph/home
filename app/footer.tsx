@@ -1,6 +1,7 @@
 "use client"
 
-import { Scale, ShieldCheck, Mail, Linkedin } from "lucide-react";
+import { ShieldCheck, Mail, Linkedin } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { trackCTAClick } from "@/lib/analytics";
@@ -16,18 +17,18 @@ export function Footer() {
           <div className="space-y-4 md:col-span-1">
             <div className="flex items-center gap-2">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-surface-dark-card">
-                <Scale className="h-5 w-5 text-brand-primary" />
+                <Image alt="Jam & Raph logo" src="/J&R logo.png" width={24} height={24} className="h-5 w-auto" />
               </div>
               <div className="leading-tight">
-                <p className="text-base font-medium text-white">Pillar</p>
+                <p className="text-base font-medium text-white">Jam & Raph</p>
                 <p className="text-sm text-stone-400">
-                  by Jam & Raph
+                  Claude Certified Architects
                 </p>
               </div>
             </div>
 
             <p className="max-w-md text-sm text-stone-400 leading-relaxed">
-              AI workflows for modern legal teams. Turn repetitive legal work into fast, reliable workflows — while keeping documents private and access-controlled.
+              A Singapore AI practice for professional services teams. We run hands-on workshops and build the workflows your team runs every day — inside the tools you already use.
             </p>
 
             <div className="flex flex-wrap gap-2">
@@ -41,9 +42,8 @@ export function Footer() {
           <div className="space-y-4">
             <p className="text-sm font-medium text-white">Offerings</p>
             <ul className="space-y-3 text-sm text-stone-400">
-              <li><a href="/#pillar" className="hover:text-white transition-colors duration-300">Pillar</a></li>
-              <li><a href="/#ai-integration" className="hover:text-white transition-colors duration-300">AI Integration</a></li>
-              <li><a href="/form-filler" className="hover:text-white transition-colors duration-300">Form filler</a></li>
+              <li><a href="/#workshop" className="hover:text-white transition-colors duration-300">Workshop</a></li>
+              <li><a href="/#advisory-build" className="hover:text-white transition-colors duration-300">Advisory & Build</a></li>
               <li><a href="/security" className="hover:text-white transition-colors duration-300">Security</a></li>
             </ul>
           </div>

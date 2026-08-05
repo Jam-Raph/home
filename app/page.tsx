@@ -1,7 +1,6 @@
 "use client"
 
 import Navbar from "@/components/ui/navbar"
-import TwoBox from "@/components/ui/two-box"
 import Image from "next/image"
 import {
   ShieldCheck,
@@ -9,11 +8,16 @@ import {
   Link2,
   Database,
   ChevronDown,
-  Scale,
-  Workflow,
-  Search,
-  PenTool,
-  Code,
+  Presentation,
+  Compass,
+  Boxes,
+  Inbox,
+  FolderOpen,
+  PenLine,
+  Save,
+  BadgeCheck,
+  Network,
+  Terminal,
   Users,
 } from "lucide-react";
 
@@ -33,10 +37,8 @@ import { CountUp, stats } from "@/components/ui/stats-banner"
 import { CTABanner } from "@/components/ui/cta-banner"
 import { TeamBanner } from "@/components/ui/team-banner"
 import { Footer } from "./footer"
-import { FloatingCTA } from "@/components/ui/floating-cta"
 import { DotPattern } from "@/components/ui/dot-pattern"
 import { smoothScroll } from "@/lib/utils"
-import { AnimatedGradientText } from "@/components/ui/animated-gradient-text"
 import { trackCTAClick, trackFAQOpened } from "@/lib/analytics"
 import { SectionTracker } from "@/components/ui/section-tracker"
 
@@ -50,13 +52,110 @@ const supportedBy = [
 const workingWith = [
   { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-28 md:w-44" },
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-28 md:w-44" },
-  { alt: "EY Logo", src: "/logos/EY.png", width: "w-16 md:w-28" },
   { alt: "Hanbridge Institute", src: "/logos/hanbridge.png", width: "w-28 md:w-44" },
   { alt: "Oon & Bazul", src: "/logos/O&B.png", width: "w-28 md:w-44" },
 ]
 
 export default function Home() {
-   const points = [
+  const architectPoints = [
+    {
+      title: "Certified by Anthropic, not self-taught",
+      description:
+        "We sat and passed Anthropic's own Claude Certified Architect exam. The way we build with Claude is the way Anthropic teaches it.",
+      icon: BadgeCheck,
+    },
+    {
+      title: "Claude Partner Network",
+      description:
+        "We're in the partner network, which means a direct line to the product team and early sight of the connector roadmap.",
+      icon: Network,
+    },
+    {
+      title: "We build on the real tools",
+      description:
+        "Claude Cowork and Claude Code, pointed at your actual matters and your actual file store — not a sandbox demo.",
+      icon: Terminal,
+    },
+    {
+      title: "Law and engineering in one room",
+      description:
+        "SMU Law and ex-GovTech engineering on the same team. We're not a reseller putting a wrapper on someone else's tool.",
+      icon: Users,
+    },
+  ];
+  const offerings = [
+    {
+      icon: Presentation,
+      eyebrow: "Start here",
+      title: "Workshop",
+      description:
+        "3-hour, hands-on AI workshop for one team, with your firm's workflows baked in.",
+      cta: "What's inside",
+      target: "workshop",
+      featured: true,
+    },
+    {
+      icon: Compass,
+      eyebrow: "Path 2",
+      title: "Advisory",
+      description:
+        "Focused engagements to design AI workflows, and stress-test where AI belongs in your operations.",
+      cta: "How it works",
+      target: "advisory-build",
+      featured: false,
+    },
+    {
+      icon: Boxes,
+      eyebrow: "Path 3",
+      title: "Build",
+      description:
+        "Fixed-scope builds of named processes, and prompt and skill packs your teams run every day.",
+      cta: "How it works",
+      target: "advisory-build",
+      featured: false,
+    },
+  ];
+  const workshopContents = [
+    {
+      title: "AI fluency",
+      description:
+        "How LLMs actually work, so you can raise the accuracy of what comes out and be confident enough to put it on an invoice.",
+    },
+    {
+      title: "Deep dive into Claude",
+      description:
+        "When a chat window is enough, and when the job needs Cowork — pointed at your SharePoint matter folder, editing in place with formatting intact.",
+    },
+    {
+      title: "Case study",
+      description:
+        "One real job end to end: an email and your firm template in, a finished letter of engagement saved back to the matter folder.",
+      linkToPractice: true,
+    },
+  ];
+  const practiceSteps = [
+    {
+      icon: Inbox,
+      title: "Scope of work lands",
+      description: "A scope of work arrives in the inbox, exactly as it does today.",
+    },
+    {
+      icon: FolderOpen,
+      title: "Template is pulled",
+      description: "Cowork pulls your letter of engagement template straight from SharePoint.",
+    },
+    {
+      icon: PenLine,
+      title: "Drafted in house style",
+      description: "The draft comes back in your firm's voice, using your resources and conventions.",
+    },
+    {
+      icon: Save,
+      title: "Saved for review",
+      description: "It lands in the matter folder for a human to check and sign off.",
+    },
+  ];
+  const points = [
     {
       title: "Private file storage (Supabase)",
       description: "Documents are stored in private buckets with no public links — only authorised users can access them.",
@@ -86,72 +185,42 @@ export default function Home() {
       icon: Lock,
     },
   ];
-  const phases = [
-    {
-      icon: Search,
-      title: "Discovery",
-      description: "We map your workflows and identify where AI ships value.",
-    },
-    {
-      icon: PenTool,
-      title: "Design",
-      description: "We prototype options and validate them with your team.",
-    },
-    {
-      icon: Code,
-      title: "Build",
-      description: "We integrate customised workflows into your existing systems.",
-    },
-    {
-      icon: Users,
-      title: "Handoff",
-      description: "We document and train your team so you fully own the workflow.",
-    },
-  ];
   const faqs = [
     {
-      q: "Do I need to be a law firm to work with Jam & Raph?",
-      a: "No. Pillar is built for legal teams, but our AI Integration service works with any business looking to embed production-ready AI into their workflows.",
+      q: "Who is the workshop for?",
+      a: "One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow — a litigation team, a corporate secretarial team, a back-office function. We build a custom Claude skill from your pre-workshop brief, so your team is working on your own material from the start, not on a generic example.",
     },
     {
-      q: "How does an AI Integration engagement work?",
-      a: "Typically a 4 – 6 week engagement covering discovery, design, build, and handoff. We map your workflows, prototype options, ship a production-ready integration, and document everything so your team fully owns the result.",
+      q: "What do we walk away with?",
+      a: "A system that runs, not a slide deck. By the end of the session your team has taken one real job end to end and has a working setup they can use the next morning. Post-workshop support is included so it doesn't stall the week after.",
     },
     {
-      q: "What kinds of workflows are best suited for AI Integration?",
-      a: "Repetitive document processing, structured data extraction, knowledge retrieval, and any task where AI can save your team meaningful hours per week. We scope this together in the discovery phase.",
+      q: "Do we need to be a law firm?",
+      a: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team — accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
+    },
+    {
+      q: "What is a Claude Certified Architect?",
+      a: "It's Anthropic's own certification for designing and deploying production Claude systems — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed, and we're part of the Claude Partner Network. In practice it means we build the way Anthropic teaches it, and we have a direct line when something breaks.",
+    },
+    {
+      q: "Can you work with our existing tools?",
+      a: "Yes — that's the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking your team to adopt yet another platform.",
     },
     {
       q: "Do the AI models used retain or learn from customer data?",
       a: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral — once a request completes, the data is discarded and never used for training.",
     },
     {
-      q: "Where does the article generator get its sources from?",
-      a: "The article generator pulls sources from eLitigation (Singapore), giving your firm coverage of the latest court judgments.",
+      q: "How do you handle PDPA?",
+      a: "PDPA-awareness is built into how we scope and configure every engagement — folder scoping, access controls, audit trails, and team training, rather than a policy bolted on at the end. We're Singapore-based and build for the systems Singapore firms actually run.",
     },
     {
-      q: "How does Pillar use my documents?",
-      a: "Documents are stored in our database (Supabase) and passed to Claude's file API for processing. They are removed after processing unless the feature requires persistent storage (e.g. Projects). Access is restricted by Row Level Security, so only authorised users can view or modify their own documents.",
+      q: "What if we need more than a workshop?",
+      a: "That's Advisory and Build. Advisory starts with a free 45-minute consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
     },
     {
-      q: "Which jurisdictions does Pillar support?",
-      a: "Our form-filling features work with any jurisdiction's templates. The article generator currently pulls judgments from eLitigation (Singapore), with more jurisdictions planned.",
-    },
-    {
-      q: "Can I use my own form templates?",
-      a: "Yes. You can upload any form template your organisation uses. Pillar's AI analyses the fields and auto-fills them from your source documents — affidavits, briefs, contracts, or any other supporting material.",
-    },
-    {
-      q: "What happens if the AI can't find a value in my source document?",
-      a: "Pillar lists any fields it couldn't extract as 'unknown fields' so you know exactly what to review and fill in manually. Nothing is silently skipped.",
-    },
-    {
-      q: "Can I query my uploaded documents with natural language?",
-      a: "Yes. Our Projects feature lets you upload documents and ask questions in plain English. Pillar uses legal-domain embeddings to find the most relevant passages and provides answers with citations back to the source.",
-    },
-    {
-      q: "Can I share templates and projects with my team?",
-      a: "Yes. Templates and projects can be shared at the organisation level, so your whole team can reuse them across cases.",
+      q: "How fast do you respond?",
+      a: "We typically respond within 24 hours.",
     },
   ];
 
@@ -161,10 +230,13 @@ export default function Home() {
       {/* Navbar */}
       <Navbar/>
       <SectionTracker sectionId="hero" />
-      <SectionTracker sectionId="paths" />
       <SectionTracker sectionId="partners" />
-      <SectionTracker sectionId="pillar" />
-      <SectionTracker sectionId="ai-integration" />
+      <SectionTracker sectionId="proof" />
+      <SectionTracker sectionId="architects" />
+      <SectionTracker sectionId="offerings" />
+      <SectionTracker sectionId="workshop" />
+      <SectionTracker sectionId="in-practice" />
+      <SectionTracker sectionId="advisory-build" />
       <SectionTracker sectionId="security" />
       <SectionTracker sectionId="faq" />
       <SectionTracker sectionId="contact" />
@@ -190,21 +262,21 @@ export default function Home() {
           <BlurFade delay={0.15} inView blur="3px">
             <div className="w-12 h-px bg-white/30 mx-auto mb-8" />
             <h1 className="font-serif text-white text-xl md:text-5xl lg:text-6xl xl:text-7xl w-full">
-              Exploring AI safely with you
+              Explore AI safely with us
             </h1>
           </BlurFade>
           <BlurFade delay={0.25} inView>
             <p className="mt-10 text-lg sm:text-xl leading-[1.6] tracking-[0.01em] text-white max-w-2xl mx-auto">
-              Seamless AI integration for law firms and professional services
+              A 3-hour, hands-on AI workshop for your team — with your firm&apos;s own workflows baked in
             </p>
           </BlurFade>
           <BlurFade delay={0.32} inView>
             <div className="mt-14 flex items-center justify-center gap-3 flex-wrap">
               <button
                 className="bg-stone-900 hover:bg-stone-800 text-white text-sm font-medium px-8 py-3 rounded-full transition-colors duration-300 cursor-pointer"
-                onClick={() => { trackCTAClick("hero", "Talk to us"); smoothScroll("contact") }}
+                onClick={() => { trackCTAClick("hero", "Book a workshop"); smoothScroll("contact") }}
               >
-                Talk to us
+                Book a workshop
               </button>
             </div>
           </BlurFade>
@@ -257,7 +329,7 @@ export default function Home() {
       </div>
 
       {/* Combined Stats & Testimonial */}
-      <section className="relative w-full bg-surface-dark-card py-32" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
+      <section id="proof" className="relative w-full bg-surface-dark-card py-32" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
         {/* Noise grain overlay */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
         <div className="container mx-auto px-4 relative">
@@ -271,9 +343,11 @@ export default function Home() {
                     <span className="text-6xl md:text-7xl font-serif font-normal text-white">
                       <CountUp target={stat.value} />
                     </span>
-                    <span className="text-2xl md:text-3xl font-medium text-brand-primary">
-                      {stat.unit}
-                    </span>
+                    {stat.unit && (
+                      <span className="text-2xl md:text-3xl font-medium text-brand-primary">
+                        {stat.unit}
+                      </span>
+                    )}
                   </div>
                   <p className="mt-3 text-sm md:text-base text-stone-400">
                     {stat.label}
@@ -290,27 +364,52 @@ export default function Home() {
           <BlurFade delay={0.2} inView>
             <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
               <p className="font-serif text-2xl md:text-3xl font-normal text-white/90 leading-[1.6] tracking-[0.01em]">
-                &ldquo;Impressive at targeting tasks that are universally burdensome for lawyers globally &mdash; more focused than existing document automation platforms&rdquo;
+                &ldquo;Delta Law found the session really helpful for bringing out Claude and LLM effectiveness&rdquo;
               </p>
-              <div className="mt-10 flex items-center gap-4">
-                <Image
-                  src="/headshots/sorcha-boyce.jpeg"
-                  alt="Sorcha Boyce"
-                  width={56}
-                  height={56}
-                  className="rounded-full object-cover w-14 h-14"
-                />
-                <div className="text-left">
-                  <p className="text-sm font-medium text-white tracking-wide uppercase">Sorcha Boyce</p>
-                  <p className="text-xs text-stone-400 mt-0.5">Legal Tech APAC Head, A&O Shearman</p>
-                </div>
+              <div className="mt-10">
+                <p className="text-sm font-medium text-white tracking-wide uppercase">Joshua</p>
+                <p className="text-xs text-stone-400 mt-1">Partner, Delta Law Corporation</p>
               </div>
             </div>
           </BlurFade>
         </div>
       </section>
 
-      {/* Team — moved up so visitors meet the team before the offerings */}
+      {/* Why us — Claude Certified Architects */}
+      <div className="container mx-auto px-4">
+        <section className="relative w-full bg-secondary-dark py-32 px-6 md:px-8 rounded-3xl overflow-hidden mt-24" id="architects">
+          <DotPattern className="opacity-[0.06] text-white/20" />
+          <div className="container mx-auto relative max-w-4xl">
+            <div className="flex flex-col items-center text-center gap-4 mb-16">
+              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Why us</p>
+              <h2 className="text-4xl md:text-5xl text-white font-serif font-normal tracking-[0.05em] leading-[1.05]">
+                A team of Claude Certified Architects
+              </h2>
+              <p className="text-stone-400 max-w-xl leading-relaxed">
+                Plenty of people will talk to you about AI. We hold Anthropic&apos;s own certification for building with Claude, and we build with it every day.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+              {architectPoints.map((p, index) => (
+                <BlurFade key={p.title} delay={0.1 + index * 0.05} inView>
+                  <div className="flex items-start gap-5">
+                    <div className="flex items-center justify-center shrink-0 w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20 mt-0.5">
+                      <p.icon className="h-5 w-5 text-brand-primary" />
+                    </div>
+                    <div>
+                      <h3 className="text-base font-medium text-white mb-2">{p.title}</h3>
+                      <p className="text-sm text-stone-400 leading-relaxed">{p.description}</p>
+                    </div>
+                  </div>
+                </BlurFade>
+              ))}
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Team */}
       <div className="container mx-auto px-4">
         <TeamBanner />
 
@@ -319,88 +418,90 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Two paths overview */}
-      <section className="container mx-auto px-4 py-24" id="paths">
+      {/* Offerings overview */}
+      <section className="container mx-auto px-4 py-24" id="offerings">
         <BlurFade delay={0.05} inView>
           <div className="flex flex-col items-center gap-4 text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">How we work</p>
-            <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Two ways to bring AI into your firm</h2>
-            <p className="text-stone-600 max-w-2xl leading-relaxed">Pick the path that fits how your team works today.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">What we offer</p>
+            <h2 className="text-4xl md:text-5xl text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Fluency first. Working systems second.</h2>
+            <p className="text-stone-600 max-w-2xl leading-relaxed">Most teams start with the workshop. Advisory and Build are there when one workflow needs more than three hours.</p>
           </div>
         </BlurFade>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          <BlurFade delay={0.1} inView className="flex">
-            <button
-              onClick={() => { trackCTAClick("two_paths", "Pillar"); smoothScroll("pillar") }}
-              className="text-left w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col"
-            >
-              <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
-                <Scale className="h-7 w-7 text-stone-700" />
-              </div>
-              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-3">Path 1 &mdash; Product</p>
-              <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">Pillar</h3>
-              <p className="text-stone-600 leading-relaxed mb-6 flex-1">Our legal intelligence platform.</p>
-              <span className="text-sm font-medium text-stone-900 underline underline-offset-4 group-hover:text-stone-600 transition-colors">See features &rarr;</span>
-            </button>
-          </BlurFade>
-          <BlurFade delay={0.15} inView className="flex">
-            <button
-              onClick={() => { trackCTAClick("two_paths", "AI Integration"); smoothScroll("ai-integration") }}
-              className="text-left w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col"
-            >
-              <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
-                <Workflow className="h-7 w-7 text-stone-700" />
-              </div>
-              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-3">Path 2 &mdash; Service</p>
-              <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">AI Transformation</h3>
-              <p className="text-stone-600 leading-relaxed mb-6 flex-1">A 4 &ndash; 6 week engagement to procure and implement AI into your team&apos;s workflow.</p>
-              <span className="text-sm font-medium text-stone-900 underline underline-offset-4 group-hover:text-stone-600 transition-colors">How it works &rarr;</span>
-            </button>
-          </BlurFade>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {offerings.map((o, idx) => (
+            <BlurFade key={o.title} delay={0.1 + idx * 0.05} inView className="flex">
+              <button
+                onClick={() => { trackCTAClick("offerings", o.title); smoothScroll(o.target) }}
+                className={`text-left w-full rounded-2xl p-8 md:p-10 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer group flex flex-col ${
+                  o.featured
+                    ? "bg-surface-warm border-2 border-brand-primary/30"
+                    : "bg-white border border-stone-200/60"
+                }`}
+              >
+                <div className={`inline-flex items-center justify-center rounded-xl p-3 mb-5 w-fit ${o.featured ? "bg-brand-primary/15" : "bg-stone-100"}`}>
+                  <o.icon className={`h-7 w-7 ${o.featured ? "text-brand-primary" : "text-stone-700"}`} />
+                </div>
+                {o.featured ? (
+                  <span className="inline-flex w-fit items-center rounded-full bg-brand-primary/15 text-brand-primary text-[10px] uppercase tracking-[0.25em] font-mono font-medium px-3 py-1 mb-3">
+                    {o.eyebrow}
+                  </span>
+                ) : (
+                  <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-3">{o.eyebrow}</p>
+                )}
+                <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">{o.title}</h3>
+                <p className="text-stone-600 leading-relaxed mb-6 flex-1">{o.description}</p>
+                <span className="text-sm font-medium text-stone-900 underline underline-offset-4 group-hover:text-stone-600 transition-colors">{o.cta} &rarr;</span>
+              </button>
+            </BlurFade>
+          ))}
         </div>
       </section>
 
       <div className="container mx-auto px-4">
-        {/* Pillar Features */}
-        <section className="flex flex-col gap-5 py-32">
-          <div className="flex flex-col items-center gap-4" id="pillar">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 1 &mdash; For law firms</p>
-            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Pillar</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Legal intelligence platform for automated form filling</p>
+        {/* Inside the workshop */}
+        <section className="flex flex-col gap-5 py-32" id="workshop">
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 1 &mdash; Start here</p>
+            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">The Workshop</h2>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Not your standard prompt engineering workshop.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">3 hours &middot; one team &middot; up to 8 people</p>
           </div>
 
-          <div className="flex flex-col items-center h-full gap-32 mt-12">
-           <BlurFade delay={0.1} inView>
-             <TwoBox
-              title="Fill out any form using your own templates"
-              description="Upload your organisation's form templates once, then auto-fill them from any source document — affidavits, briefs, or contracts."
-              videoUrl="demos/form-filler.mp4"
-              ctaHref="/form-filler"
-              theme="light"
-              />
-           </BlurFade>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-16">
+            {workshopContents.map((c, idx) => (
+              <BlurFade key={c.title} delay={0.1 + idx * 0.05} inView className="flex">
+                <div className="w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 flex flex-col">
+                  <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-4">0{idx + 1}</p>
+                  <h3 className="text-2xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">{c.title}</h3>
+                  <p className="text-stone-600 leading-relaxed flex-1">{c.description}</p>
+                  {c.linkToPractice && (
+                    <button
+                      onClick={() => { trackCTAClick("workshop", "See it step by step"); smoothScroll("in-practice") }}
+                      className="text-left text-sm font-medium text-stone-900 underline underline-offset-4 hover:text-stone-600 transition-colors cursor-pointer mt-6"
+                    >
+                      See it step by step &darr;
+                    </button>
+                  )}
+                </div>
+              </BlurFade>
+            ))}
           </div>
         </section>
 
-        {/* Divider: Pillar → AI Integration */}
-        <div className="flex justify-center py-12">
-          <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
-        </div>
-
-        {/* AI Integration section */}
-        <section className="py-24" id="ai-integration">
+        {/* In practice — one LOE, end to end */}
+        <section className="py-24" id="in-practice">
           <div className="flex flex-col items-center gap-4 text-center">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 2 &mdash; For every other business</p>
-            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">AI Integration</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">A 4 &ndash; 6 week engagement to integrate production-ready AI into your team&apos;s workflow.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">See it in practice</p>
+            <h2 className="text-4xl md:text-5xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">One letter of engagement, end to end</h2>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">AI works with your current style and resources. A human is always in the loop.</p>
           </div>
 
-          {/* 4-phase grid */}
+          {/* 4-step grid */}
           <div className="relative max-w-5xl mx-auto px-4 mt-20">
             {/* Connecting line (desktop) */}
             <div className="hidden md:block absolute top-7 left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-0.5 bg-stone-200" />
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-              {phases.map((p, idx) => (
+              {practiceSteps.map((p, idx) => (
                 <BlurFade key={p.title} delay={0.1 + idx * 0.1} inView>
                   <div className="text-center relative">
                     <div className="h-14 w-14 rounded-full bg-stone-900 text-white flex items-center justify-center mx-auto mb-5 relative z-10">
@@ -417,7 +518,68 @@ export default function Home() {
           {/* CTA */}
           <div className="mt-16 text-center">
             <button
-              onClick={() => { trackCTAClick("ai_integration", "Book a Consultation"); smoothScroll("contact") }}
+              onClick={() => { trackCTAClick("in_practice", "Book a workshop"); smoothScroll("contact") }}
+              className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300 cursor-pointer"
+            >
+              Book a workshop
+            </button>
+          </div>
+        </section>
+
+        {/* Divider: Workshop → Advisory & Build */}
+        <div className="flex justify-center py-12">
+          <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
+        </div>
+
+        {/* Advisory & Build */}
+        <section className="py-24" id="advisory-build">
+          <div className="flex flex-col items-center gap-4 text-center">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Paths 2 &amp; 3 &mdash; When you need more</p>
+            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Advisory &amp; Build</h2>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Bring us one workflow that hurts, and we&apos;ll scope it properly before anyone commits.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mt-16">
+            <BlurFade delay={0.1} inView className="flex">
+              <div className="w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 flex flex-col">
+                <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
+                  <Compass className="h-7 w-7 text-stone-700" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">Advisory</h3>
+                <p className="text-stone-600 leading-relaxed mb-6">
+                  Focused engagements to design AI workflows, and stress-test where AI belongs in your operations.
+                </p>
+                <ul className="space-y-3 text-sm text-stone-600">
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Free 45-minute consultation, no commitment</li>
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>We identify inefficiencies in your current workflow</li>
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>We discuss the IT and AI options honestly, including doing nothing</li>
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Written scope before any billable hour</li>
+                </ul>
+              </div>
+            </BlurFade>
+            <BlurFade delay={0.15} inView className="flex">
+              <div className="w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 flex flex-col">
+                <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
+                  <Boxes className="h-7 w-7 text-stone-700" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">Build</h3>
+                <p className="text-stone-600 leading-relaxed mb-6">
+                  Fixed-scope builds of named processes, and prompt and skill packs your teams can run every day.
+                </p>
+                <ul className="space-y-3 text-sm text-stone-600">
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>One named, agreed-upon process at a time</li>
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Integrated with the tools you already run</li>
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Milestone model &mdash; pay only for completed, scoped jobs</li>
+                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Optional support retainer, cancel anytime</li>
+                </ul>
+              </div>
+            </BlurFade>
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => { trackCTAClick("advisory_build", "Book a consultation"); smoothScroll("contact") }}
               className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300 cursor-pointer"
             >
               Book a consultation
@@ -425,7 +587,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider: AI Integration → Security */}
+        {/* Divider: Advisory & Build → Security */}
         <div className="flex justify-center py-12">
           <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
         </div>
@@ -433,7 +595,7 @@ export default function Home() {
         {/* Mid-page CTA */}
         <div className="text-center py-24">
           <p className="text-stone-500 text-lg leading-relaxed">
-            Whether you need Pillar off-the-shelf or a custom integration, we&apos;d love to talk.{" "}
+            Whether you want a workshop for the team or help with one workflow, we&apos;d love to talk.{" "}
             <button onClick={() => { trackCTAClick("mid_page", "Talk to us"); smoothScroll("contact") }} className="text-stone-900 hover:text-stone-700 underline underline-offset-4 font-medium transition-colors cursor-pointer">
               Talk to us &rarr;
             </button>
@@ -448,7 +610,7 @@ export default function Home() {
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Trust & Security</p>
               <h2 className="text-4xl md:text-5xl text-white font-serif font-normal tracking-[0.05em] leading-[1.05]">Security &amp; Privacy</h2>
               <p className="text-stone-400 max-w-xl leading-relaxed">
-                We&apos;re built for sensitive documents. Your data runs on a SOC 2 compliant foundation — encrypted in transit and at rest, with access restricted to authorised users only.
+                We work with sensitive matters, and we&apos;re PDPA-aware throughout. Your data runs on a SOC 2 compliant foundation — encrypted in transit and at rest, with access restricted to authorised users only.
               </p>
             </div>
 

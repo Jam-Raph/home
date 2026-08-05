@@ -16,23 +16,23 @@ export function CTABanner() {
           <div className="flex flex-col items-center text-center gap-6">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Get Started</p>
             <h2 className="text-4xl md:text-5xl font-serif font-normal text-white tracking-[0.05em]">
-              Ready to eliminate the busywork?
+              Leave with a system that runs.
             </h2>
             <p className="text-stone-400 text-base md:text-lg max-w-xl leading-relaxed">
-              Join leading law firms using Pillar to transform their legal workflows. Save hours on forms, generate articles, and keep your data secure.
+              Book a fluency workshop for your firm, or bring us one workflow that hurts.
             </p>
             <div className="flex items-center gap-4 flex-wrap justify-center">
               <button
                 className="bg-white text-stone-900 hover:bg-white/90 font-medium px-8 py-3 rounded-full text-base transition-colors duration-300 cursor-pointer"
-                onClick={() => { trackCTAClick("cta_banner", "Book a Demo"); smoothScroll("contact") }}
+                onClick={() => { trackCTAClick("cta_banner", "Book a workshop"); smoothScroll("contact") }}
               >
-                Book a demo
+                Book a workshop
               </button>
               <button
-                onClick={() => { trackCTAClick("cta_banner_features", "View Features"); smoothScroll("pillar") }}
+                onClick={() => { trackCTAClick("cta_banner_features", "See what's inside"); smoothScroll("workshop") }}
                 className="border border-white/20 text-white hover:bg-white/10 cursor-pointer px-8 py-3 rounded-full text-base font-medium transition-colors duration-300"
               >
-                View features
+                See what&apos;s inside
               </button>
             </div>
           </div>
