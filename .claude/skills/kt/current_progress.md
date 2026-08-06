@@ -1,8 +1,9 @@
 # Current progress — jr-home
 
 **Last updated:** 6 August 2026
-**Branch:** `workshop-repositioning`, merged to `main` (fast-forward) on 6 Aug at the founders'
-instruction; PR #6 closed by the merge.
+**Branch:** `main`. PR #6 (the repositioning) was merged on GitHub; the two follow-up commits
+(`fd1c225`, `b3680e3`) were merged to `main` directly as `123a9e9` on 6 Aug at the founders'
+instruction.
 **State:** everything below is committed and on `main`.
 
 ---
