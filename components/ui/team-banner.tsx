@@ -43,6 +43,14 @@ const awards = [
     link: "https://www.linkedin.com/posts/jus-mundi_between-ai-agents-shouting-objection-and-ugcPost-7389949606601850880-QN61"
   },
   {
+    src: "/awards/cambridge-hack-the-law-2026.jpg",
+    alt: "Jam & Raph team winning the Clifford Chance track at Cambridge Hack the Law 2026",
+    title: "Cambridge Hack the Law 2026 (Clifford Chance track)",
+    place: "Winner",
+    prize: "",
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7488435205951639552/",
+  },
+  {
     src: "/awards/SMU_Hult_Prize_26.jpeg",
     alt: "Jam & Raph team winning 1st Runner Up at SMU Hult Prize 2026",
     title: "SMU Hult Prize 2026",

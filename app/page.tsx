@@ -219,7 +219,7 @@ export default function Home() {
     },
     {
       q: "Do we need to be a law firm?",
-      a: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
+      a: "No. We come from a law background, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
     },
     {
       q: "What is a Claude Certified Architect?",
@@ -406,10 +406,10 @@ export default function Home() {
             <div className="flex flex-col items-center text-center gap-4 mb-16">
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Why us</p>
               <h2 className="text-4xl md:text-5xl text-white font-serif font-normal tracking-[0.05em] leading-[1.05]">
-                Claude Certified Architects and lawyers, on one team
+                Claude Certified Architects with a law background, on one team
               </h2>
               <p className="text-stone-400 max-w-xl leading-relaxed">
-                Plenty of people will talk to you about AI. We hold Anthropic&apos;s own certification for building with Claude, we come from legal practice, and we&apos;ve won legal tech competitions as the same team.
+                Plenty of people will talk to you about AI. We hold Anthropic&apos;s own certification for building with Claude, we come from a law background, and we&apos;ve won legal tech competitions as the same team.
               </p>
             </div>
 

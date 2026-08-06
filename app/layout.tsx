@@ -68,7 +68,7 @@ export default function RootLayout({
                       name: "Do we need to be a law firm?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
+                        text: "No. We come from a law background, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
                       },
                     },
                     {

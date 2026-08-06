@@ -43,10 +43,12 @@ backend, custom MCP servers — built and maintained.
 | Claim | Basis |
 |---|---|
 | Claude Certified Architects (CCA-F) | Sat and passed Anthropic's proctored certification. Use the acronym as given; do not expand the "F". |
+| Law background / SMU Law | Jamison (CEO) is **currently studying law at SMU; he is not a qualified lawyer**. Say "law background" or "SMU Law"; never "lawyer(s)" or "legal practice" for the team. |
 | 1st place, SMU Legal Innovation & Tech Competition 2025 | In the awards grid with a link. |
 | 1st runner-up, SMU Legal Innovation & Tech 2024 | Same. Claimed as "the same team" — that pairing is the moat. |
 | Bangkok Business Challenge 2026 (Sasin), Finalist | Label was corrected from "Top 6 Finalist" to "Finalist". |
 | SMU Hult Prize 2026, 1st runner-up · NTU x Base Web3, 1st place | In the awards grid. |
+| Cambridge Hack the Law 2026, Clifford Chance track: winner | In the awards grid with a link (founders' instruction, 6 Aug). **No prize money; do not invent one.** Keep the "won as the same team" moat sentence scoped to SMU LIT 2024/2025 unless the founders confirm the same pairing won at Cambridge. |
 | NVIDIA Inception, Tech Nation, BLOCK71, SMU IIE | Supporter logo row / llms.txt credentials. |
 | Clients: KGP, Delta Law, Hanbridge | Logo row. Delta Law also gives the one testimonial. |
 | Showcased at LegalTech GoWhere (MinLaw × SAL), July 2026 | llms.txt only. |
@@ -62,6 +64,7 @@ backend, custom MCP servers — built and maintained.
 | Claim | Why it went |
 |---|---|
 | **Claude Partner Network membership** | Removed 6 Aug at the founders' instruction. CCA-F is the only credential to state. |
+| **"Lawyers" on the team / "we come from legal practice"** | Corrected 6 Aug: Jamison is still studying law and is not admitted. The defensible claim is "law background". |
 | **EY** as a client | Removed 5 Aug, logo deleted. |
 | **Oon & Bazul** as a client | Removed 6 Aug. |
 | Penetration testing, vulnerability assessments | Not done; removed from `/security` rather than softened. |

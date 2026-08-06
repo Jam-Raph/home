@@ -23,8 +23,9 @@ AI product (the site says explicitly that those are products to buy, not to comm
 1. **Hero** — "Exploring AI safely with you", the reassurance frame. Not a feature claim.
 2. **Partners** — who already works with us, before any assertion about ourselves.
 3. **Proof** — 80% less admin time, workshops delivered, firms served, plus the Delta Law quote.
-4. **Architects** — the moat. Certified (CCA-F) *and* lawyers *and* competition winners *and* shipped
-   real software. Four legs, because any one alone is a claim anyone could make.
+4. **Architects** — the moat. Certified (CCA-F) *and* a law background *and* competition winners *and*
+   shipped real software. Four legs, because any one alone is a claim anyone could make. ("Law
+   background", never "lawyers" — see `pricing.md` §3.)
 5. **Team** — faces, then the awards grid as evidence for leg three.
 6. **Offerings** — three doors, Workshop featured.
 7. **Workshop → In practice** — what happens in the room, then one letter of engagement end to end so

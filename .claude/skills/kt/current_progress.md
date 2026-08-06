@@ -1,17 +1,18 @@
 # Current progress — jr-home
 
 **Last updated:** 6 August 2026
-**Branch:** `workshop-repositioning` (open as PR #6 → `main`)
-**State:** repositioning shipped to the branch; a second copy pass is in the working tree, uncommitted.
+**Branch:** `workshop-repositioning`, merged to `main` (fast-forward) on 6 Aug at the founders'
+instruction; PR #6 closed by the merge.
+**State:** everything below is committed and on `main`.
 
 ---
 
 ## Where the project is
 
 The site has been moved off the old Pillar/AI-Integration pitch and onto the three productised paths:
-**Workshop → Advisory → Build**. The structural work is done and committed; the most recent copy pass
-(Advisory/Build definition, security page rewrite, em-dash removal) is written and verified but **not
-yet committed**.
+**Workshop → Advisory → Build**. The structural work, the copy pass (Advisory/Build definition,
+security page rewrite, em-dash removal), the Jamison credential correction and the Cambridge Hack the
+Law 2026 award are all committed and merged to `main`.
 
 Read `architecture.md` for how the site is put together and `pricing.md` for what the copy is allowed
 to claim.
@@ -43,7 +44,7 @@ to claim.
 - Security & Privacy **section** removed from the home page (the `/security` page stayed).
 - CTA banner given `mt-24` so it no longer butts against the FAQ.
 
-### Uncommitted — copy pass (6 Aug)
+### Commit 3 — `5cd3e2b` copy pass: define Advisory and Build, reframe /security, drop em dashes (6 Aug)
 
 1. **"put it on an invoice" trimmed** from the AI-fluency line, page and llms.txt.
 2. **`/security` reframed for custom software.** Now: SOC 2 compliant infrastructure and industry best
@@ -62,6 +63,40 @@ to claim.
 6. **All 131 em dashes removed** from site source, rewritten to colons, commas, full stops or
    parentheses per sentence. Eyebrow separators became `&middot;`. En dashes in the llms.txt price
    ranges were left alone.
+
+### Commit 4 — `33244c1` add the kt documentation skill (6 Aug)
+
+- The five KT docs (`architecture`, `current_progress`, `todo`, `pricing`, `marketing`) moved into
+  `.claude/skills/kt/`, invocable as `/kt`.
+
+### Commit 5 — `fd1c225` Jamison credential correction + Cambridge award (6 Aug)
+
+- **Jamison is not a lawyer** (still studying law at SMU), so every claim that said or implied
+  otherwise was corrected to "law background". The `#architects` heading went from "and lawyers" to
+  "with a law background"; "we come from legal practice" became "we come from a law background" in
+  the moat subline and the law-firm FAQ (page, JSON-LD and llms.txt, kept byte-identical); the
+  llms.txt team entry now says "currently studying at SMU Law".
+- Left alone because they claim nothing about the team's credentials: "not a lawyer briefing a
+  vendor", "SMU Law and ex-GovTech engineering on one team", "Law and engineering on one team".
+- Rule added to `pricing.md` §3 (may claim "law background"; never "lawyer(s)" or "legal practice"),
+  and `marketing.md` §2 leg two updated to match.
+- Verified: `npm run build` clean; FAQ ↔ JSON-LD parity holds; greps clean for `lawyers` and
+  `legal practice` in site source.
+
+Also in `fd1c225`, the Cambridge award:
+
+- **Clifford Chance track win added to the awards grid** (`team-banner.tsx`), third card, after the
+  SMU LIT 2025 win: title "Cambridge Hack the Law 2026 (Clifford Chance track)", place "Winner",
+  LinkedIn post linked. **No prize money**, so `prize: ""` (the card's prize span renders empty).
+- Photo: founders' original (3072×4608 portrait, 8.3 MB) cropped to a 4:3 window over the faces
+  (offset 300px from the top) and resampled to 2000×1500 at ~587 KB as
+  `public/awards/cambridge-hack-the-law-2026.jpg`. A straight centre `object-cover` crop would have
+  cut the standing teammates' heads off; the pre-crop is deliberate.
+- llms.txt credentials line sharpened from "Clifford Chance Challenge, Cambridge: hackathon winner"
+  to the full event name, track, and "No cash prize" so an agent cannot invent a figure.
+- The "won as the same team" moat sentence was **not** extended to Cambridge (see `pricing.md` §3).
+- Backlog: the Clifford Chance todo item closed; the stale "commit the copy pass" item rewritten to
+  cover the actual working tree.
 
 ---
 
@@ -97,6 +132,5 @@ inspection, not re-eyeballed in a browser. The dev server started for that pass 
 
 ## Next
 
-1. Commit the copy pass and push to PR #6 (see `todo.md` for the ordered list).
-2. Decide on the two deferred items: deleting `public/logos/O&B.png`, and whether `/security` needs an
-   entry point from the home page now that its section is gone.
+1. Decide on the two deferred items: deleting `public/logos/O&B.png`, and whether `/security` needs an
+   entry point from the home page now that its section is gone (see `todo.md`).

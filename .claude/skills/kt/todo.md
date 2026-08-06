@@ -6,10 +6,6 @@ Newest first. Anything marked **defect** is a real bug with a known reproduction
 
 ## Now
 
-- [ ] **Commit and push the working-tree copy pass to PR #6.** Advisory/Build definition, `/security`
-      rewrite, and the em-dash removal are written and verified but uncommitted. PR #6 already carries
-      two commits; the description has an "Update" section that will need a third.
-
 - [ ] **Decide: delete `public/logos/O&B.png`.** Oon & Bazul was removed from the site on 6 Aug; the
       asset is unreferenced but still committed. EY's logo was deleted outright in the same situation,
       so the precedent says delete. Left in place pending a call.
@@ -38,10 +34,6 @@ Newest first. Anything marked **defect** is a real bug with a known reproduction
 ---
 
 ## Content
-
-- [ ] **Consider adding the Clifford Chance Challenge (Cambridge) to the awards grid.** It is listed in
-      llms.txt credentials but not in `team-banner.tsx`, and if the same team won it, it strengthens
-      the legal-tech-competition moat point. Confirm who won it before adding.
 
 - [ ] **Revisit the Advisory eyebrow.** It currently reads "Path 2 · Put your Claude plan to work",
       which states the Advisory/Build distinction up front but assumes the reader already has a Claude

@@ -185,7 +185,7 @@ When a client asks *"how do you do AI in legal without hallucinations?"*, we poi
 - **SMU Legal Innovation & Tech Competition 2025**: 1st place (SGD 1,500 prize)
 - **SMU Legal Innovation & Tech Competition 2024**: 1st runner-up (SGD 2,500 prize)
 - **NTU x Base Web3 Hackathon 2025**: 1st place (SGD 1,000 prize)
-- **Clifford Chance Challenge, Cambridge**: hackathon winner
+- **Cambridge Hack the Law 2026 (Clifford Chance track)**: winner; judged the best solution to the Clifford Chance problem statement. No cash prize.
 - **Tech Nation UK Expansion Discovery Programme**: selected participant
 - **BLOCK71**: Singapore startup ecosystem affiliate
 - **SMU Institute of Innovation & Entrepreneurship**: startup portfolio member
@@ -195,7 +195,7 @@ When a client asks *"how do you do AI in legal without hallucinations?"*, we poi
 
 ## Founders and team
 
-- **Jamison Teng**: Co-founder & CEO. SMU Law. Primary contact: jamison.teng@jamraph.com
+- **Jamison Teng**: Co-founder & CEO. Law background: currently studying at SMU Law. Primary contact: jamison.teng@jamraph.com
 - **Raphael Lim**: Co-founder & CTO. Engineering and AI infrastructure lead. Ex-GovTech, NUS Computer Science.
 - **Darren Sim**: Co-lead developer.
 - Plus additional team members. ~7 people total.
@@ -236,7 +236,7 @@ A: One team, up to eight people, in a single three-hour session. It works best w
 A: A system that runs, not a slide deck. By the end of the session the team has taken one real job end to end and has a working setup it can use the next morning.
 
 **Q: Do we need to be a law firm?**
-A: No. We are grounded in legal practice, but the workshop suits any admin-heavy professional-services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.
+A: No. We come from a law background, but the workshop suits any admin-heavy professional-services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.
 
 **Q: Are you Anthropic / Claude certified?**
 A: Yes. We are Claude Certified Architects (CCA-F). We sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems.
