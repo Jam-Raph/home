@@ -38,14 +38,14 @@ function CountUp({ target, duration = 1500 }: { target: number; duration?: numbe
 
 const stats = [
   {
-    value: 3,
-    unit: "hrs",
-    label: "saved per B14 application",
+    value: 80,
+    unit: "%",
+    label: "less admin time on workflows we automated",
   },
   {
-    value: 4,
-    unit: "hrs",
-    label: "saved per article draft",
+    value: 2,
+    unit: "",
+    label: "workshops delivered",
   },
   {
     value: 3,
@@ -71,9 +71,11 @@ export function StatsBanner() {
                   <span className="text-6xl md:text-7xl font-serif font-normal text-white">
                     <CountUp target={stat.value} />
                   </span>
-                  <span className="text-2xl md:text-3xl font-medium text-brand-primary">
-                    {stat.unit}
-                  </span>
+                  {stat.unit && (
+                    <span className="text-2xl md:text-3xl font-medium text-brand-primary">
+                      {stat.unit}
+                    </span>
+                  )}
                 </div>
                 <p className="mt-3 text-sm md:text-base text-stone-400">
                   {stat.label}

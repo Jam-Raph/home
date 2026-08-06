@@ -2,73 +2,76 @@ import { NextResponse } from "next/server";
 
 const content = `# jam&raph
 
-> Singapore-based AI consultancy. Claude Certified Architects, Anthropic-trained. We build custom Claude skills, install and govern MCP connectors, and ship working AI workflows for admin-heavy professional-services teams — corporate service providers, accounting and bookkeeping firms, secretarial practices, paralegal and compliance teams, and back-office operations inside larger firms. Three productised paths, priced per outcome. Singapore-grounded, PDPA-aware throughout.
+> Singapore-based AI consultancy. Claude Certified Architects (CCA-F). We run hands-on AI fluency workshops for professional-services teams, then design and build the workflows those teams run every day, inside the tools they already use. Three productised paths: Workshop, Advisory, Build. Singapore-grounded, PDPA-aware throughout.
 
 ---
 
 ## About
 
-jam&raph is an AI consultancy founded in 2025 in Singapore. We design, build, and govern production Claude workflows for admin-heavy professional services firms.
+jam&raph is an AI consultancy founded in 2025 in Singapore. We move professional-services firms from "experimenting with AI" to "using LLMs in live matters and operations."
 
-Our positioning is **practical, scalable AI — priced per outcome.** We ship working tools, not strategy decks. The first deliverable is always a runnable Claude skill or workflow, not a slide. Every engagement is scoped in writing before any billable hour begins.
+Our positioning is **fluency first, working systems second.** Every engagement ends with something the firm can actually run, not a slide deck. The first deliverable is always a working tool. Every engagement is scoped in writing before any billable hour begins.
 
-We are **Claude Certified Architects** — Anthropic-trained, with direct access to the product team, the connector roadmap, and Anthropic engineering when something breaks. We are also an **NVIDIA Inception** member.
+We are **Claude Certified Architects (CCA-F)**. We sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems. We are also an **NVIDIA Inception** member.
+
+We are not a reseller. SMU Law and ex-GovTech engineering sit on the same team, and that pairing has been tested in competition: 1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024, won as the same team.
 
 ---
 
-## What changed in May 2026
+## The problem we solve
 
-Anthropic released its enterprise connector set in May 2026. Document management, e-signature, accounting, and workflow systems now ship native Claude connectors out of the box. **The plumbing is solved.** What is left is the work that puts hours back into your team:
+The gap is implementation, not potential. Roughly **44% of legal tasks can be automated by AI today** (Minister for Law Edwin Tong SC, at the launch of MinLaw's GenAI Guide, March 2026), but most firms capture almost none of it. Subscriptions get used for summaries. The real workflows stay manual.
 
-1. **Custom Claude skills** that encode your house style, your standard documents, and the firm-specific rules and preferences your partners want Claude to follow.
-2. **Singapore back-office connections.** We install and configure official MCP servers where they exist (Xero, QuickBooks Online, the broader Anthropic connector set), and build custom MCP servers where they do not — MYOB, LEAP, Talenox, in-house spreadsheets, and firm-specific accounting or practice-management platforms.
-3. **Configuration and governance** that turn a consumer-grade install into something a managing partner or operations head can sign off on under PDPA.
+The two things that block firms:
+
+1. **Pilot and vendor fatigue.** With so many tools on the market, which is the right one for this firm and these workflows?
+2. **No integration with what they already run.** AI that lives in a separate browser tab does not change how a matter gets done. The work has to happen inside SharePoint, Outlook, Word, and the wider M365 stack.
+
+What we deliver against that: fluency with agentic tools, mainly Claude Cowork and Claude Code, applied to the firm's own matters, plus house-style prompts, firm-specific guardrails, and integrations into the systems already in place.
 
 ---
 
 ## The three paths
 
-Pick the path that fits how the team works today. Each can stand alone or feed the next.
+Pick the path that fits how the team works today. Each can stand alone or feed the next. Most teams start with the Workshop.
 
-### 01 / Workshop — S$200 per participant
+Advisory and Build start identically: a free 1-hour consult to learn the firm, interviews with the people who actually run the workflow, then a product requirements sheet once the scope is agreed. They diverge on what gets delivered: **Advisory puts the firm's existing Claude plan to work** on that workflow through skills and orientation, while **Build writes custom AI software** for the workflows Claude Cowork and Claude Code cannot perform. Both bill on a milestone model.
 
-- **3 hours, up to 8 participants**
-- **Custom Claude skill built upfront** from a pre-workshop questionnaire — ready to demo on the day
-- **1 week of post-workshop support** included
-- Defaults to one of two pre-tailored workflows if the team has no specific use case in mind:
-  - **Messaging** — auto-reply cover for WhatsApp / SMS / web chat, with disclaimers, urgency triage, and a morning brief for the responsible partner
-  - **Inbox** — Outlook intake and triage, drafts replies for human approval, flags ACRA / IRAS / regulatory deadlines
+### 01 / Workshop: S$2,800 flat rate
 
-The session covers problem scoping, rapid prototyping using Claude's visualisation tools, and the thinking behind when to use a Claude skill vs Cowork vs a guardrail.
+- **3 hours, one team, up to 8 participants** (~S$360 per participant)
+- **Custom Claude skill built upfront** from a pre-workshop brief, so the team works on its own material from the start, not a generic example
+- **Post-workshop support** included
 
-### 02 / Advisory — S$120 per hour
+Three things happen in the room:
 
-- **Free 45-minute consultation**, no commitment
-- **S$500 flat for a firmwide-ready visual mockup** — credited in full against any engagement signed within 30 days
-- **Written scope sign-off** before any billable hour
-- **S$120 per hour** thereafter, online or onsite, to build the workflow with Claude
-- **Handover** with documentation and next-phase opportunities
+- **AI fluency**: how LLMs actually work, so the team can raise the accuracy of what comes out and be confident
+- **Deep dive into Claude**: when a chat window is enough, and when the job needs Cowork; Cowork pointed at a SharePoint matter folder, editing in place with formatting intact and saving back
+- **Case study**: one real job taken end to end, with an email and the firm's template going in and a finished letter of engagement saved back to the matter folder
 
-**Fixed-fee alternative — Process Audit · S$3,600–S$5,400 · 1–2 weeks.** Firmwide view of automatable workflows: a ranked list with effort and ROI estimates per workflow, a call on API-reachability today vs manual, a written report, a workflow map, and a 30-minute review session with partners. Converts to Build work at a high rate.
+Worked example (a letter of engagement, start to finish): a scope of work lands in the inbox → Cowork pulls the LOE template from SharePoint → drafts in the firm's house style → saves to the matter folder for review. A human signs off before anything leaves the system.
 
-### 03 / Build — from S$4,800
+### 02 / Advisory: S$960 per day, or S$120 per hour, delivered on milestones
 
-Productised in two sizes:
+Advisory gets the Claude plan the firm already pays for doing a real workflow, through Claude skills and orientation for the team, not new software.
 
-**Workflow Build — from S$4,800 per workflow · 2–3 weeks.** One named, agreed-upon process. Defined inputs and outputs. Includes custom Claude skill, OAuth setup for official MCP connectors (Xero, QuickBooks, Anthropic connector set), team training, and 2 weeks of post-launch support.
-**Add-on: S$3,600–S$6,000 for a custom MCP server** if the workflow touches a system without an official connector (MYOB, LEAP, Talenox, in-house platforms).
+The process:
 
-**Skill Pack — S$5,500–S$8,500 · 3–4 weeks.** A coherent set of 3–5 Claude skills for one function. Skills work together as a system, share style and conventions, run against existing connectors. Examples: Corporate Secretary Skill Pack, Finance Back-Office Skill Pack, Admin Operations Skill Pack. Best paired with a prior Workflow Build.
+1. **Free 1-hour consultation**, no commitment. We learn the firm, its practice areas, and how a matter generally moves through the office
+2. **Interviews with the people doing the work**: we sit with whoever actually runs the workflow and walk it end to end, step by step, as it happens today
+3. **We identify where AI applies**, and say plainly where it does not, including when a workflow is best left alone
+4. **Product requirements sheet**: once the scope is agreed, it is written down (what it does, what it touches, what done looks like) before any work starts
 
-**Optional — Support Retainer · S$240 per month.** Two hours of senior time per month for troubleshooting, quick questions, minor skill tweaks. Cancel monthly.
+Delivery is on a **milestone model**, with day and hourly rates as the billing basis. **Handover** includes documentation and next-phase opportunities.
 
----
+### 03 / Build: custom AI software, milestone model
 
-## What we do not build
+Build is for the workflows Claude Cowork and Claude Code cannot perform on their own. Where an off-the-shelf agent hits its limit, we write custom software for the job, potentially on other models, with a real backend and custom MCP servers, and we maintain it afterwards.
 
-1. **We do not rebuild off-the-shelf SaaS products.** Vertical legal-AI tools, contract review products, accounting copilots — those are products. We help you decide whether to buy them.
-2. **We do not build MCP servers for systems Anthropic already ships.** Anthropic publishes those. We help install and govern them.
-3. **We do not sell autonomous agents in the first six months.** Agents need supervision, and the reliability work is not yet where a professional-services firm needs it to be.
+- **Same discovery as Advisory**: consult, interviews with the people doing the work, then a product requirements sheet, scoped for software we build and maintain
+- **Whatever stack the job needs**: other models where Claude is not the right fit, a backend, and custom MCP servers into systems with no official connector (MYOB, LEAP, Talenox, in-house platforms)
+- **Milestone model**: the client pays only for completed, scoped jobs and tasks
+- **Maintained after handover** on an optional support retainer, cancel anytime
 
 ---
 
@@ -76,13 +79,12 @@ Productised in two sizes:
 
 | Path | Price | Timeline |
 |---|---|---|
-| Workshop | S$200 per pax (up to 8) | 3 hours + 1 week support |
+| Workshop | S$2,800 flat (up to 8 pax) | 3 hours + post-workshop support |
+| Advisory · daily | S$960 per day | Per engagement |
 | Advisory · hourly | S$120 per hour | Per engagement |
-| Advisory · Process Audit | S$3,600 – S$5,400 | 1 – 2 weeks |
-| Workflow Build | from S$4,800 per workflow | 2 – 3 weeks |
-| Custom MCP add-on | + S$3,600 – S$6,000 | Per system |
-| Skill Pack | S$5,500 – S$8,500 | 3 – 4 weeks |
-| Support Retainer | S$240 per month | Monthly, cancel anytime |
+| Advisory · consultation | Free | 1 hour |
+| Build | Milestone model, per completed scoped job | Per workflow |
+| Support retainer | Optional, cancel anytime | Monthly |
 
 All figures in SGD. Anthropic seat and usage costs pass through at cost plus 10% admin.
 
@@ -100,29 +102,26 @@ All figures in SGD. Anthropic seat and usage costs pass through at cost plus 10%
 
 ---
 
-## Industries and teams we serve
+## What we do not build
 
-- **Corporate service providers** — company secretarial, incorporation, compliance
-- **Accounting and bookkeeping firms** — back-office automation, Xero / QuickBooks / MYOB workflows
-- **Secretarial practices** — document drafting, filing automation, client communications
-- **Paralegal and compliance teams** — intake, triage, regulatory deadline tracking
-- **Back-office operations inside larger firms** — admin automation that puts hours back into senior-professional time
-- **Law firms** — solos, boutiques, mid-market firms (via Pillar and bespoke engagements)
-
-We are deliberately focused on **admin-heavy professional services** — the work that is rule-bound, document-heavy, and consumes time that could be billable.
+1. **We do not rebuild off-the-shelf SaaS products.** Vertical legal-AI tools, contract review products, accounting copilots. Those are products. We help you decide whether to buy them.
+2. **We do not build MCP servers for systems Anthropic already ships.** Anthropic publishes those. We help install and govern them.
+3. **We do not sell autonomous agents in the first six months.** Agents need supervision, and the reliability work is not yet where a professional-services firm needs it to be.
 
 ---
 
-## Pillar — legal automation product
+## Industries and teams we serve
 
-In addition to consulting engagements, we run **Pillar**, a Singapore-focused legal automation SaaS. Pillar automates the highest-volume document work that juniors and paralegals currently do manually:
+- **Law firms**: solos, boutiques, and mid-market firms; litigation, corporate, and practice support
+- **Corporate service providers**: company secretarial, incorporation, compliance
+- **Accounting and bookkeeping firms**: back-office automation, Xero / QuickBooks / MYOB workflows
+- **Secretarial practices**: document drafting, filing automation, client communications
+- **Paralegal and compliance teams**: intake, triage, regulatory deadline tracking
+- **Back-office operations inside larger firms**: admin automation that puts hours back into senior-professional time
 
-- **B14 court form drafting** — auto-fills B14 court forms from affidavits and source documents, with verbatim citations to the source
-- **Article drafting from court judgments** — first-draft articles from Singapore court judgments, with case citations preserved exactly
-- **Custom templates** — firm-specific document templates with AI completion
-- **AI legal research** — research assistant that cites primary sources (statutes, cases) verbatim
+We are deliberately focused on **admin-heavy professional services**: the work that is rule-bound, document-heavy, and consumes time that could be billable.
 
-Pillar is a separate product from the consulting practice. Pricing on request; many clients start with Pillar and then engage us for firm-specific Workflow Builds or Skill Packs.
+Workflows we have already built and run: court forms (a 50-page affidavit becomes a filled court form in minutes), letters of engagement generated from a scope of work the moment it lands in the inbox, corporate secretarial share transfer forms filled from documents the firm already holds, and thought-leadership publications drafted in the practice's own voice.
 
 ---
 
@@ -131,19 +130,21 @@ Pillar is a separate product from the consulting practice. Pricing on request; m
 We build directly on Anthropic's stack and the official Claude connector set:
 
 - **Foundation model:** Claude (Anthropic, default)
+- **Agentic tools:** Claude Cowork and Claude Code, pointed at the firm's real matters and file store
 - **Skill format:** Markdown Claude skills, portable, owned by the client
-- **Connectors:** Official MCP servers from Anthropic's May 2026 enterprise release (Xero, QuickBooks, document management, e-signature, workflow systems). Custom MCP servers where official ones do not exist (MYOB, LEAP, Talenox, in-house systems).
-- **Deployment:** Cloud (customer's preferred — AWS, Azure, GCP) or self-host
+- **Connectors:** Official MCP servers from Anthropic's enterprise release (Xero, QuickBooks, document management, e-signature, workflow systems). Custom MCP servers where official ones do not exist (MYOB, LEAP, Talenox, in-house systems).
+- **Integration targets:** SharePoint, Outlook, Word, and the wider M365 stack
+- **Deployment:** Cloud (customer's preferred: AWS, Azure, GCP) or self-host
 - **Encryption:** TLS 1.3 in transit, AES-256 at rest
 - **Compliance:** SOC 2 Type II inherited; PDPA-aware throughout
 - **Auth:** SAML / SSO, MFA, RBAC, signed expiring URLs
 - **Audit:** Decision logging on every AI output that touches a client document
 
-For clients whose procurement cannot accept third-party SaaS in the critical path — regulators, UN agencies, sovereign clients — we deliver under our **RegMap AI reference architecture**: self-hostable, open-weight Llama-compatible, Apache 2.0, with Merkle-chained audit logs and verbatim citation guardrails.
+For clients whose procurement cannot accept third-party SaaS in the critical path (regulators, UN agencies, sovereign clients), we deliver under our **RegMap AI reference architecture**: self-hostable, open-weight Llama-compatible, Apache 2.0, with Merkle-chained audit logs and verbatim citation guardrails.
 
 ---
 
-## RegMap AI — our reference architecture
+## RegMap AI: our reference architecture
 
 RegMap AI is our cross-border regulatory mapping project: mapping domestic legal provisions across ASEAN to the UN RDTII v2.1 framework with citation-anchored proof and human-in-the-loop sign-off.
 
@@ -153,57 +154,61 @@ It is the reference implementation of our three structural defences against AI r
 2. **Human-in-the-loop.** Every approved mapping is signed by a billable professional before it leaves the system.
 3. **Merkle-chained audit log.** Every decision is hashed into a tamper-evident chain alongside the model and prompt versions live at sign-off.
 
-When a client asks *"how do you do AI in legal without hallucinations?"* — we point them at RegMap AI.
+When a client asks *"how do you do AI in legal without hallucinations?"*, we point them at RegMap AI.
 
 ---
 
 ## Locations and service area
 
-- **Singapore (HQ)** — primary delivery centre, SMU and BLOCK71 ecosystem
-- **United Kingdom** — Tech Nation Expansion Discovery Programme participant
-- **Service area** — Singapore, Asia Pacific, UK; remote-first with periodic on-site time for engagements outside Singapore
+- **Singapore (HQ)**: primary delivery centre, SMU and BLOCK71 ecosystem
+- **United Kingdom**: Tech Nation Expansion Discovery Programme participant
+- **Service area**: Singapore, Asia Pacific, UK; remote-first with periodic on-site time for engagements outside Singapore
 
 ---
 
 ## Why jam&raph
 
-1. **Claude Certified Architects.** Anthropic-trained team with direct access to product documentation, the connector roadmap, and Anthropic engineering. When something breaks, we have the right people on speed dial.
-2. **Hands-on, not strategy decks.** We map workflows, build skills, train your team, and write the governance docs. The first deliverable is always a working tool, not a slide.
-3. **Singapore-grounded.** We build for the back-office stack Singapore firms actually run. Official connectors where they exist, custom MCPs where they do not, PDPA-aware throughout.
-4. **Clear scope, no lock-in.** Written scope agreed before any billable hour. Fixed-price deliverables, no surprise invoices. Month-to-month retainers, cancellable anytime.
+1. **Certified by Anthropic, not self-taught.** We sat and passed Anthropic's own Claude Certified Architect exam (CCA-F). The way we build with Claude is the way Anthropic teaches it.
+2. **Law and engineering at the same table.** SMU Law and ex-GovTech engineering on one team. The person who understands the matter sits next to the person building the workflow, not a lawyer briefing a vendor. We are not a reseller putting a wrapper on someone else's tool.
+3. **We have won legal tech competitions together.** 1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024, won by the same team and judged on legal domain work rather than a generic AI demo.
+4. **We have built and deployed real solutions.** We have created and maintained bespoke AI software that runs in production: Claude Cowork and Claude Code pointed at real matters and real file stores, and custom software where those cannot reach. Not sandbox demos.
+5. **Clear scope, no lock-in.** Written scope agreed before any billable hour. Milestone-based Build work, no surprise invoices. Retainers cancellable anytime.
 
 ---
 
 ## Credentials and recognition
 
-- **Claude Certified Architects** — Anthropic-trained (2026)
-- **NVIDIA Inception** — member program for AI startups
-- **SMU Legal Innovation & Tech Competition 2025** — 1st place (SGD 1,500 prize)
-- **SMU Legal Innovation & Tech Competition 2024** — 1st runner-up (SGD 2,500 prize)
-- **SMU Hult Prize 2026** — 1st runner-up (SGD 5,000); selected for Singapore Nationals
-- **Tech Nation UK Expansion Discovery Programme** — selected participant
-- **BLOCK71** — Singapore startup ecosystem affiliate
-- **SMU Institute of Innovation & Entrepreneurship** — startup portfolio member
-- **Endorsements:** Sorcha Boyce (A&O Shearman Legal Tech)
+- **Claude Certified Architects (CCA-F)**: Anthropic-certified (2026)
+- **NVIDIA Inception**: member program for AI startups
+- **Bangkok Business Challenge 2026 (Sasin)**: Finalist (USD 1,300 prize)
+- **SMU Hult Prize 2026**: 1st runner-up (SGD 5,000); selected for Singapore Nationals
+- **SMU Legal Innovation & Tech Competition 2025**: 1st place (SGD 1,500 prize)
+- **SMU Legal Innovation & Tech Competition 2024**: 1st runner-up (SGD 2,500 prize)
+- **NTU x Base Web3 Hackathon 2025**: 1st place (SGD 1,000 prize)
+- **Clifford Chance Challenge, Cambridge**: hackathon winner
+- **Tech Nation UK Expansion Discovery Programme**: selected participant
+- **BLOCK71**: Singapore startup ecosystem affiliate
+- **SMU Institute of Innovation & Entrepreneurship**: startup portfolio member
+- **Showcased at** the LegalTech GoWhere Showcase, Ministry of Law × Singapore Academy of Law, July 2026
 
 ---
 
 ## Founders and team
 
-- **Jamison Teng** — Co-founder & CEO. SMU Law. Primary contact: jamison.teng@jamraph.com
-- **Raphael Lim** — Co-founder & CTO. Engineering and AI infrastructure lead.
-- **Darren Sim** — Co-lead developer.
-- **Liediana Djoli** — Head of finance.
-- Plus Pavan M., Jerome Teoh, and additional team members. ~7 people total.
+- **Jamison Teng**: Co-founder & CEO. SMU Law. Primary contact: jamison.teng@jamraph.com
+- **Raphael Lim**: Co-founder & CTO. Engineering and AI infrastructure lead. Ex-GovTech, NUS Computer Science.
+- **Darren Sim**: Co-lead developer.
+- Plus additional team members. ~7 people total.
 
 ---
 
-## Selected past clients
+## Selected clients
 
 - KGP
-- Delta
-- EY
+- Delta Law Corporation
 - Hanbridge Institute
+
+**Testimonial:** "Delta Law found the session really helpful for bringing out Claude and LLM effectiveness." (Joshua, Partner, Delta Law Corporation)
 
 ---
 
@@ -212,42 +217,53 @@ When a client asks *"how do you do AI in legal without hallucinations?"* — we 
 - **Founded:** 2025
 - **Team size:** ~7
 - **Headquarters:** Singapore
-- **Service model:** Three productised paths — Workshop, Advisory, Build
+- **Service model:** Three productised paths: Workshop, Advisory, Build
 - **Default foundation model:** Claude (Anthropic)
-- **Pricing transparency:** All paths priced publicly; Anthropic seat and usage costs pass through at cost plus 10% admin
-- **Typical engagement size:** S$200 (workshop) to S$8,500+ (skill pack), with custom MCP add-ons up to S$14,500 per workflow
+- **Results:** 80% less admin time on the workflows we automated in early pilots
 - **Response time:** 24 hours
 
 ---
 
 ## Frequently asked questions
 
-**Q: How much does a Claude workflow build cost?**
-A: From **S$4,800 per workflow** (2–3 weeks) for a Workflow Build. **S$5,500–S$8,500** (3–4 weeks) for a Skill Pack of 3–5 related skills. Add **S$3,600–S$6,000** if the workflow needs a custom MCP server for a system Anthropic does not yet support officially (e.g. MYOB, LEAP).
+**Q: What does the workshop cost?**
+A: **S$2,800 flat** for a 3-hour session with one team of up to 8 people, roughly S$360 per participant. We build a custom Claude skill from your pre-workshop brief beforehand, and post-workshop support is included.
+
+**Q: Who is the workshop for?**
+A: One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow: a litigation team, a corporate secretarial team, a back-office function. Because we build a custom Claude skill from the pre-workshop brief, the team works on its own material from the start rather than a generic example.
+
+**Q: What do we walk away with?**
+A: A system that runs, not a slide deck. By the end of the session the team has taken one real job end to end and has a working setup it can use the next morning.
+
+**Q: Do we need to be a law firm?**
+A: No. We are grounded in legal practice, but the workshop suits any admin-heavy professional-services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.
+
+**Q: Are you Anthropic / Claude certified?**
+A: Yes. We are Claude Certified Architects (CCA-F). We sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems.
+
+**Q: Can you work with our existing tools?**
+A: Yes, that is the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking the team to adopt yet another platform.
+
+**Q: How does Advisory work?**
+A: It starts with a **free 1-hour consultation**, no commitment. That hour is for us to learn the firm, its practice areas, and how work generally flows. We then **interview the people who actually do the workflow** and walk it end to end, which is how we identify where AI applies and where it does not, including doing nothing. Once scoped, you get a **product requirements sheet** before any work starts. Advisory then puts the Claude plan you already have to work on that workflow, through Claude skills and orientation. S$960 per day or S$120 per hour, online or onsite, delivered on a milestone model.
+
+**Q: How does Build pricing work?**
+A: On a **milestone model**: you pay only for completed, scoped jobs and tasks. Build starts where Claude Cowork and Claude Code stop: we scope the workflow the same way as Advisory (consult, interviews, product requirements sheet), then build custom AI software for it, potentially on other models, with a backend and custom MCP servers, and maintain it afterwards on an optional support retainer, cancellable anytime.
 
 **Q: How does that compare to other Singapore consultancies?**
 A: Roughly **75–90% below the Singapore market.** Hourly advisory is S$120 vs market S$400–S$550. A 1–2 week audit is S$3,600–S$5,400 vs market S$15,000–S$30,000. A three-to-five-skill pack is S$5,500–S$8,500 vs market S$45,000–S$90,000. (Sources: Pertama Partners, "AI Consultant Rates 2026", February 2026; Metronome Pricing Index, January 2026.)
 
 **Q: Do you offer a free consultation?**
-A: Yes. Every Advisory engagement starts with a **complimentary 45-minute consultation**, no commitment. A subsequent visual mockup of the proposed workflow is S$500 and is credited in full against any engagement signed within 30 days.
-
-**Q: What's the smallest engagement you take?**
-A: A 3-hour **Workshop at S$200 per participant** (up to 8 pax). The team leaves with a custom Claude skill built specifically for them, plus a week of post-workshop support.
-
-**Q: Are you Anthropic / Claude certified?**
-A: Yes. jam&raph is a Claude Certified Architects team — Anthropic-trained, with direct access to Anthropic's product team, connector roadmap, and engineering.
+A: Yes. Every Advisory and Build engagement starts with a complimentary 1-hour consultation, no commitment. It is how we learn the firm before the interview process begins.
 
 **Q: Can you build for systems that don't have official Anthropic connectors yet?**
-A: Yes. For systems without an official Anthropic MCP server — MYOB, LEAP, Talenox, in-house spreadsheets, firm-specific platforms — we build **custom MCP servers**. This is real engineering work, scoped per system, S$3,600–S$6,000 add-on.
-
-**Q: How long does an engagement take?**
-A: Workshops are 3 hours plus 1 week of support. Process Audits are 1–2 weeks. Workflow Builds are 2–3 weeks. Skill Packs are 3–4 weeks.
+A: Yes. For systems without an official Anthropic MCP server (MYOB, LEAP, Talenox, in-house spreadsheets, firm-specific platforms), we build **custom MCP servers**. This is real engineering work, scoped as its own Build milestone.
 
 **Q: Do you handle PDPA compliance?**
-A: Yes. PDPA-awareness is built into every Build engagement — folder scoping, audit trails, governance docs, and team training are all included. We are Singapore-grounded; PDPA is not bolted on.
+A: Yes. PDPA-awareness is built into how we scope and configure every engagement (folder scoping, access controls, audit trails, governance docs, and team training) rather than a policy bolted on at the end. We are Singapore-grounded; PDPA is not an afterthought.
 
-**Q: Can we cancel a Support Retainer?**
-A: Yes. Month-to-month, cancellable anytime. S$240 per month, 2 hours of senior time included.
+**Q: Do the AI models used retain or learn from our data?**
+A: No. The models we use do not retain or learn from any input or output. All processing is ephemeral: once a request completes, the data is discarded and never used for training.
 
 **Q: Will you sell us an autonomous agent?**
 A: Not in the first six months of the relationship. Agents need supervision, and the reliability work is not yet where a professional-services firm needs it to be. We will revisit when the reliability bar is met.
@@ -256,19 +272,16 @@ A: Not in the first six months of the relationship. Agents need supervision, and
 A: No. If you need a contract review product, an accounting copilot, or a vertical legal-AI tool, those are products you should buy. We help you decide whether to buy them, and we help you wire them into your workflow once you have. We do not compete with off-the-shelf SaaS.
 
 **Q: Will you build something Anthropic already ships?**
-A: No. Anthropic publishes official MCP connectors for Xero, QuickBooks Online, and a growing set of enterprise systems. We install and govern those — we do not charge to rebuild what already ships.
+A: No. Anthropic publishes official MCP connectors for Xero, QuickBooks Online, and a growing set of enterprise systems. We install and govern those. We do not charge to rebuild what already ships.
 
 **Q: Can you deploy AI inside our perimeter? We can't send data to third-party endpoints.**
 A: Yes. Our RegMap AI reference architecture is self-hostable, runs on open-weight Llama, and ships under Apache 2.0. No SaaS dependencies in the critical path. Suitable for regulators, UN agencies, and sovereign clients.
 
 **Q: How do you prevent AI hallucinations in legal or compliance work?**
-A: Three structural defences. (1) **Verbatim citation guardrail** — the AI's quote must be a byte-for-byte substring of the source document, or the output is dropped. (2) **Human-in-the-loop sign-off** — every output is reviewed by a billable professional before it leaves the system. (3) **Merkle-chained audit log** — every decision is hashed into a tamper-evident chain along with the model and prompt versions live at sign-off.
+A: Three structural defences. (1) **Verbatim citation guardrail**: the AI's quote must be a byte-for-byte substring of the source document, or the output is dropped. (2) **Human-in-the-loop sign-off**: every output is reviewed by a billable professional before it leaves the system. (3) **Merkle-chained audit log**: every decision is hashed into a tamper-evident chain along with the model and prompt versions live at sign-off.
 
 **Q: Do you serve clients outside Singapore?**
 A: Yes. Singapore is our primary delivery centre. We're actively expanding into the UK via the Tech Nation Expansion Discovery Programme. We serve clients across Asia Pacific from our Singapore base, remote-first with periodic on-site time.
-
-**Q: What's the difference between Pillar and the consulting engagements?**
-A: **Pillar** is a productised SaaS for Singapore law firms — automated B14 court forms, judgment-to-article drafting, custom templates, AI legal research. **Consulting engagements** (Workshop / Advisory / Build) are bespoke — we build custom Claude skills, install and govern MCP connectors, and ship workflows tailored to a specific firm's processes. Many clients start with Pillar and then engage us to extend it with firm-specific workflows.
 
 **Q: How fast do you respond to enquiries?**
 A: We typically respond within **24 hours**.
@@ -278,14 +291,14 @@ A: We typically respond within **24 hours**.
 ## Contact
 
 - **Website:** https://jamraph.com
-- **Email:** jamison.teng@jamraph.com
+- **Email:** jamison.teng@jamraph.com · raphael.lim@jamraph.com
 - **LinkedIn (company):** https://sg.linkedin.com/company/jamandraph
 - **LinkedIn (CEO):** https://www.linkedin.com/in/jamisonteng/
 - **Response time:** Within 24 hours
 
 ---
 
-*jam&raph · Singapore · Claude Certified Architects · NVIDIA Inception · Last updated: May 2026*
+*jam&raph · Singapore · Claude Certified Architects (CCA-F) · NVIDIA Inception · Last updated: August 2026*
 `;
 
 export async function GET() {

@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jam & Raph",
-  description: "AI integration for modern businesses — through Pillar, our legal intelligence platform, or a bespoke engagement.",
+  description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore, plus advisory and fixed-scope workflow builds.",
 };
 
 export default function RootLayout({
@@ -30,49 +30,61 @@ export default function RootLayout({
                   "@type": "Organization",
                   name: "Jam & Raph",
                   url: "https://jamraph.com",
-                  logo: "https://jamraph.com/logos/pillar-logo.png",
-                  description: "AI integration for modern businesses — through Pillar, our legal intelligence platform, or a bespoke engagement.",
+                  logo: "https://jamraph.com/J%26R%20logo.png",
+                  description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore, plus advisory and fixed-scope workflow builds.",
                   foundingDate: "2024",
                   sameAs: ["https://www.linkedin.com/company/jamandraph/"],
                 },
                 {
-                  "@type": "SoftwareApplication",
-                  name: "Pillar",
-                  applicationCategory: "LegalApplication",
-                  operatingSystem: "Web",
-                  description: "AI-powered legal workflow automation for modern law firms.",
-                  offers: {
-                    "@type": "Offer",
-                    price: "0",
-                    priceCurrency: "SGD",
-                    description: "Contact for pricing",
-                  },
+                  "@type": "Service",
+                  name: "AI Fluency Workshop",
+                  provider: { "@type": "Organization", name: "Jam & Raph" },
+                  serviceType: "AI training and workflow design",
+                  areaServed: "Singapore",
+                  description:
+                    "A 3-hour, hands-on AI workshop for one team of up to 8 people, with the firm's own workflows baked in. Covers AI fluency, a deep dive into Claude, and one real job taken end to end.",
                 },
                 {
                   "@type": "FAQPage",
                   mainEntity: [
                     {
                       "@type": "Question",
-                      name: "Do I need to be a law firm to work with Jam & Raph?",
+                      name: "Who is the workshop for?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "No. Pillar is built for legal teams, but our AI Integration service works with any business looking to embed production-ready AI into their workflows.",
+                        text: "One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow: a litigation team, a corporate secretarial team, a back-office function. We build a custom Claude skill from your pre-workshop brief, so your team is working on your own material from the start, not on a generic example.",
                       },
                     },
                     {
                       "@type": "Question",
-                      name: "How does an AI Integration engagement work?",
+                      name: "What do we walk away with?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Typically a 4 – 6 week engagement covering discovery, design, build, and handoff. We map your workflows, prototype options, ship a production-ready integration, and document everything so your team fully owns the result.",
+                        text: "A system that runs, not a slide deck. By the end of the session your team has taken one real job end to end and has a working setup they can use the next morning. Post-workshop support is included so it doesn't stall the week after.",
                       },
                     },
                     {
                       "@type": "Question",
-                      name: "What kinds of workflows are best suited for AI Integration?",
+                      name: "Do we need to be a law firm?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Repetitive document processing, structured data extraction, knowledge retrieval, and any task where AI can save your team meaningful hours per week. We scope this together in the discovery phase.",
+                        text: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "What is a Claude Certified Architect?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F), a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
+                      },
+                    },
+                    {
+                      "@type": "Question",
+                      name: "Can you work with our existing tools?",
+                      acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Yes, that's the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking your team to adopt yet another platform.",
                       },
                     },
                     {
@@ -80,63 +92,31 @@ export default function RootLayout({
                       name: "Do the AI models used retain or learn from customer data?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral — once a request completes, the data is discarded and never used for training.",
+                        text: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral: once a request completes, the data is discarded and never used for training.",
                       },
                     },
                     {
                       "@type": "Question",
-                      name: "Where does the article generator get its sources from?",
+                      name: "How do you handle PDPA?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The article generator pulls sources from eLitigation (Singapore), giving your firm coverage of the latest court judgments.",
+                        text: "PDPA-awareness is built into how we scope and configure every engagement: folder scoping, access controls, audit trails, and team training, rather than a policy bolted on at the end. We're Singapore-based and build for the systems Singapore firms actually run.",
                       },
                     },
                     {
                       "@type": "Question",
-                      name: "How does Pillar use my documents?",
+                      name: "What if we need more than a workshop?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Documents are stored in our database (Supabase) and passed to Claude's file API for processing. They are removed after processing unless the feature requires persistent storage. Access is restricted by Row Level Security, so only authorised users can view or modify their own documents.",
+                        text: "That's Advisory and Build, two separate paths that start the same way. Both begin with a free 1-hour consult to learn the firm, followed by interviews with the people who actually run the workflow, and a product requirements sheet once we've scoped what we're building. Advisory then gets the Claude plan you already have doing that workflow, through Claude skills and orientation for your team. Build is for when Claude Cowork or Claude Code can't perform the workflow at all: custom AI software, potentially on other models, with a backend and custom MCP servers, which we build and then maintain. Both run on a milestone model: you pay only for completed, scoped work.",
                       },
                     },
                     {
                       "@type": "Question",
-                      name: "Which jurisdictions does Pillar support?",
+                      name: "How fast do you respond?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Our form-filling features work with any jurisdiction's templates. The article generator currently pulls judgments from eLitigation (Singapore), with more jurisdictions planned.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "Can I use my own form templates?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Yes. You can upload any form template your organisation uses. Pillar's AI analyses the fields and auto-fills them from your source documents.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "What happens if the AI can't find a value in my source document?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Pillar lists any fields it couldn't extract as 'unknown fields' so you know exactly what to review and fill in manually. Nothing is silently skipped.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "Can I query my uploaded documents with natural language?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Yes. Our Projects feature lets you upload documents and ask questions in plain English. Pillar uses legal-domain embeddings to find the most relevant passages and provides answers with citations back to the source.",
-                      },
-                    },
-                    {
-                      "@type": "Question",
-                      name: "Can I share templates and projects with my team?",
-                      acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Yes. Templates and projects can be shared at the organisation level, so your whole team can reuse them across cases.",
+                        text: "We typically respond within 24 hours.",
                       },
                     },
                   ],
