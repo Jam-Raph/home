@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 const content = `# jam&raph
 
-> Singapore-based AI consultancy. Claude Certified Architects, part of the Claude Partner Network. We run hands-on AI fluency workshops for professional-services teams, then design and build the workflows those teams run every day — inside the tools they already use. Three productised paths: Workshop, Advisory, Build. Singapore-grounded, PDPA-aware throughout.
+> Singapore-based AI consultancy. Claude Certified Architects (CCA-F). We run hands-on AI fluency workshops for professional-services teams, then design and build the workflows those teams run every day — inside the tools they already use. Three productised paths: Workshop, Advisory, Build. Singapore-grounded, PDPA-aware throughout.
 
 ---
 
@@ -12,9 +12,9 @@ jam&raph is an AI consultancy founded in 2025 in Singapore. We move professional
 
 Our positioning is **fluency first, working systems second.** Every engagement ends with something the firm can actually run, not a slide deck. The first deliverable is always a working tool. Every engagement is scoped in writing before any billable hour begins.
 
-We are **Claude Certified Architects** — we sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems, and we are part of the **Claude Partner Network**, which gives us a direct line to the product team and the connector roadmap. We are also an **NVIDIA Inception** member.
+We are **Claude Certified Architects (CCA-F)** — we sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems. We are also an **NVIDIA Inception** member.
 
-We are not a reseller. SMU Law and ex-GovTech engineering sit on the same team.
+We are not a reseller. SMU Law and ex-GovTech engineering sit on the same team, and that pairing has been tested in competition — 1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024, won as the same team.
 
 ---
 
@@ -51,7 +51,7 @@ Worked example (a letter of engagement, start to finish): a scope of work lands 
 
 ### 02 / Advisory — S$960 per day, or S$120 per hour
 
-- **Free 45-minute consultation**, no commitment
+- **Free 1-hour consultation**, no commitment
 - We identify inefficiencies in the current workflow
 - We discuss the IT and AI options honestly, including doing nothing
 - We plan next steps
@@ -78,7 +78,7 @@ Where a workflow touches a system without an official Anthropic connector (MYOB,
 | Workshop | S$2,800 flat (up to 8 pax) | 3 hours + post-workshop support |
 | Advisory · daily | S$960 per day | Per engagement |
 | Advisory · hourly | S$120 per hour | Per engagement |
-| Advisory · consultation | Free | 45 minutes |
+| Advisory · consultation | Free | 1 hour |
 | Build | Milestone model — per completed scoped job | Per workflow |
 | Support retainer | Optional, cancel anytime | Monthly |
 
@@ -164,18 +164,17 @@ When a client asks *"how do you do AI in legal without hallucinations?"* — we 
 
 ## Why jam&raph
 
-1. **Certified by Anthropic, not self-taught.** We sat and passed Anthropic's own Claude Certified Architect exam. The way we build with Claude is the way Anthropic teaches it.
-2. **Claude Partner Network.** A direct line to the product team and early sight of the connector roadmap. When something breaks, we have the right people on speed dial.
-3. **We build on the real tools.** Claude Cowork and Claude Code, pointed at your actual matters and your actual file store — not a sandbox demo.
-4. **Law and engineering in one room.** SMU Law and ex-GovTech engineering on the same team. We are not a reseller putting a wrapper on someone else's tool.
+1. **Certified by Anthropic, not self-taught.** We sat and passed Anthropic's own Claude Certified Architect exam (CCA-F). The way we build with Claude is the way Anthropic teaches it.
+2. **Law and engineering at the same table.** SMU Law and ex-GovTech engineering on one team — the person who understands the matter sits next to the person building the workflow, not a lawyer briefing a vendor. We are not a reseller putting a wrapper on someone else's tool.
+3. **We have won legal tech competitions together.** 1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024 — the same team, judged on legal domain work rather than a generic AI demo.
+4. **We build on the real tools.** Claude Cowork and Claude Code, pointed at your actual matters and your actual file store — not a sandbox demo.
 5. **Clear scope, no lock-in.** Written scope agreed before any billable hour. Milestone-based Build work, no surprise invoices. Retainers cancellable anytime.
 
 ---
 
 ## Credentials and recognition
 
-- **Claude Certified Architects** — Anthropic-certified (2026)
-- **Claude Partner Network** — member
+- **Claude Certified Architects (CCA-F)** — Anthropic-certified (2026)
 - **NVIDIA Inception** — member program for AI startups
 - **Bangkok Business Challenge 2026 (Sasin)** — Finalist (USD 1,300 prize)
 - **SMU Hult Prize 2026** — 1st runner-up (SGD 5,000); selected for Singapore Nationals
@@ -204,7 +203,6 @@ When a client asks *"how do you do AI in legal without hallucinations?"* — we 
 - KGP
 - Delta Law Corporation
 - Hanbridge Institute
-- Oon & Bazul
 
 **Testimonial:** "Delta Law found the session really helpful for bringing out Claude and LLM effectiveness." — Joshua, Partner, Delta Law Corporation
 
@@ -237,13 +235,13 @@ A: A system that runs, not a slide deck. By the end of the session the team has 
 A: No. We are grounded in legal practice, but the workshop suits any admin-heavy professional-services team — accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.
 
 **Q: Are you Anthropic / Claude certified?**
-A: Yes. We are Claude Certified Architects — we sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems, and we are part of the Claude Partner Network.
+A: Yes. We are Claude Certified Architects (CCA-F) — we sat and passed Anthropic's own proctored certification for designing and deploying production Claude systems.
 
 **Q: Can you work with our existing tools?**
 A: Yes — that is the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking the team to adopt yet another platform.
 
 **Q: How does Advisory work?**
-A: It starts with a **free 45-minute consultation**, no commitment. We identify inefficiencies in the current workflow, discuss the IT and AI options honestly — including doing nothing — and plan next steps. Thereafter S$960 per day or S$120 per hour, online or onsite, with written scope sign-off before any billable hour.
+A: It starts with a **free 1-hour consultation**, no commitment. We identify inefficiencies in the current workflow, discuss the IT and AI options honestly — including doing nothing — and plan next steps. Thereafter S$960 per day or S$120 per hour, online or onsite, with written scope sign-off before any billable hour.
 
 **Q: How does Build pricing work?**
 A: On a **milestone model** — you pay only for completed, scoped jobs and tasks. We work one named, agreed-upon process at a time with defined inputs and outputs, integrated with the tools you already run. An optional support retainer is available afterwards, cancellable anytime.
@@ -252,7 +250,7 @@ A: On a **milestone model** — you pay only for completed, scoped jobs and task
 A: Roughly **75–90% below the Singapore market.** Hourly advisory is S$120 vs market S$400–S$550. A 1–2 week audit is S$3,600–S$5,400 vs market S$15,000–S$30,000. A three-to-five-skill pack is S$5,500–S$8,500 vs market S$45,000–S$90,000. (Sources: Pertama Partners, "AI Consultant Rates 2026", February 2026; Metronome Pricing Index, January 2026.)
 
 **Q: Do you offer a free consultation?**
-A: Yes. Every Advisory engagement starts with a complimentary 45-minute consultation, no commitment.
+A: Yes. Every Advisory engagement starts with a complimentary 1-hour consultation, no commitment.
 
 **Q: Can you build for systems that don't have official Anthropic connectors yet?**
 A: Yes. For systems without an official Anthropic MCP server — MYOB, LEAP, Talenox, in-house spreadsheets, firm-specific platforms — we build **custom MCP servers**. This is real engineering work, scoped as its own Build milestone.
@@ -296,7 +294,7 @@ A: We typically respond within **24 hours**.
 
 ---
 
-*jam&raph · Singapore · Claude Certified Architects · Claude Partner Network · NVIDIA Inception · Last updated: August 2026*
+*jam&raph · Singapore · Claude Certified Architects (CCA-F) · NVIDIA Inception · Last updated: August 2026*
 `;
 
 export async function GET() {

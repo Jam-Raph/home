@@ -43,7 +43,8 @@ export function Footer() {
             <p className="text-sm font-medium text-white">Offerings</p>
             <ul className="space-y-3 text-sm text-stone-400">
               <li><a href="/#workshop" className="hover:text-white transition-colors duration-300">Workshop</a></li>
-              <li><a href="/#advisory-build" className="hover:text-white transition-colors duration-300">Advisory & Build</a></li>
+              <li><a href="/#advisory" className="hover:text-white transition-colors duration-300">Advisory</a></li>
+              <li><a href="/#build" className="hover:text-white transition-colors duration-300">Build</a></li>
               <li><a href="/security" className="hover:text-white transition-colors duration-300">Security</a></li>
             </ul>
           </div>

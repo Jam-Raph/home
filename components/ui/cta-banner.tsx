@@ -7,7 +7,7 @@ import { AnimatedGridPattern } from "./animated-grid-pattern"
 
 export function CTABanner() {
   return (
-    <section className="relative w-full bg-secondary-dark py-32 overflow-hidden" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
+    <section className="relative w-full bg-secondary-dark py-32 mt-24 overflow-hidden" style={{ width: "100vw", marginLeft: "calc(-50vw + 50%)" }}>
       {/* Noise grain overlay */}
       <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
       <AnimatedGridPattern className="opacity-[0.05] text-brand-primary/30" numSquares={30} maxOpacity={0.1} />

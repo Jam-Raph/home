@@ -21,7 +21,7 @@ type PartnerLeadFormState = {
 
 const benefits = [
   "Workshop: 3 hours, one team, your own workflows baked in",
-  "Advisory: free 45-minute consultation, no commitment",
+  "Advisory: free 1-hour consultation, no commitment",
   "Build: fixed-scope workflows on a milestone model",
   "PDPA-aware throughout, on SOC 2 compliant infrastructure",
 ];

@@ -76,7 +76,7 @@ export default function RootLayout({
                       name: "What is a Claude Certified Architect?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "It's Anthropic's own certification for designing and deploying production Claude systems — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed, and we're part of the Claude Partner Network. In practice it means we build the way Anthropic teaches it, and we have a direct line when something breaks.",
+                        text: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F) — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
                       },
                     },
                     {
@@ -108,7 +108,7 @@ export default function RootLayout({
                       name: "What if we need more than a workshop?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "That's Advisory and Build. Advisory starts with a free 45-minute consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
+                        text: "That's Advisory and Build — two separate paths. Advisory starts with a free 1-hour consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
                       },
                     },
                     {

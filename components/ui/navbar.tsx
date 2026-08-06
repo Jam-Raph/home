@@ -10,7 +10,8 @@ import { useState, useEffect, useCallback } from "react"
 
 const navSections = [
   { id: "workshop", label: "Workshop" },
-  { id: "advisory-build", label: "Advisory & Build" },
+  { id: "advisory", label: "Advisory" },
+  { id: "build", label: "Build" },
   { id: "security", label: "Security", href: "/security" },
   { id: "faq", label: "FAQ" },
 ]
@@ -33,7 +34,7 @@ export default function Navbar() {
     // Track active section with IntersectionObserver
     useEffect(() => {
         if (!isHome) return
-        const sectionIds = ["hero", "workshop", "advisory-build", "security", "faq", "contact"]
+        const sectionIds = ["hero", "workshop", "advisory", "build", "faq", "contact"]
         const observers: IntersectionObserver[] = []
 
         sectionIds.forEach((id) => {

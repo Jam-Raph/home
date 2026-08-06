@@ -3,10 +3,6 @@
 import Navbar from "@/components/ui/navbar"
 import Image from "next/image"
 import {
-  ShieldCheck,
-  Lock,
-  Link2,
-  Database,
   ChevronDown,
   Presentation,
   Compass,
@@ -16,9 +12,17 @@ import {
   PenLine,
   Save,
   BadgeCheck,
-  Network,
+  Trophy,
   Terminal,
   Users,
+  Clock,
+  Search,
+  Scale,
+  FileText,
+  Target,
+  Plug,
+  Milestone,
+  LifeBuoy,
 } from "lucide-react";
 
 import {
@@ -53,7 +57,6 @@ const workingWith = [
   { alt: "KGP Logo", src: "/logos/KGP.png", width: "w-28 md:w-44" },
   { alt: "Delta Logo", src: "/logos/Delta.png", width: "w-28 md:w-44" },
   { alt: "Hanbridge Institute", src: "/logos/hanbridge.png", width: "w-28 md:w-44" },
-  { alt: "Oon & Bazul", src: "/logos/O&B.png", width: "w-28 md:w-44" },
 ]
 
 export default function Home() {
@@ -61,14 +64,20 @@ export default function Home() {
     {
       title: "Certified by Anthropic, not self-taught",
       description:
-        "We sat and passed Anthropic's own Claude Certified Architect exam. The way we build with Claude is the way Anthropic teaches it.",
+        "We sat and passed Anthropic's own Claude Certified Architect exam (CCA-F). The way we build with Claude is the way Anthropic teaches it.",
       icon: BadgeCheck,
     },
     {
-      title: "Claude Partner Network",
+      title: "Law and engineering at the same table",
       description:
-        "We're in the partner network, which means a direct line to the product team and early sight of the connector roadmap.",
-      icon: Network,
+        "SMU Law and ex-GovTech engineering on one team. The person who understands the matter sits next to the person building the workflow — not a lawyer briefing a vendor.",
+      icon: Users,
+    },
+    {
+      title: "We've won legal tech competitions together",
+      description:
+        "1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024 — the same team, judged on legal work rather than a generic AI demo.",
+      icon: Trophy,
     },
     {
       title: "We build on the real tools",
@@ -76,11 +85,57 @@ export default function Home() {
         "Claude Cowork and Claude Code, pointed at your actual matters and your actual file store — not a sandbox demo.",
       icon: Terminal,
     },
+  ];
+  const advisoryPoints = [
     {
-      title: "Law and engineering in one room",
+      title: "Free 1-hour consultation",
       description:
-        "SMU Law and ex-GovTech engineering on the same team. We're not a reseller putting a wrapper on someone else's tool.",
-      icon: Users,
+        "No commitment. We spend the hour on how the work actually moves today, before anyone talks about tools.",
+      icon: Clock,
+    },
+    {
+      title: "We find where the time goes",
+      description:
+        "We identify the inefficiencies in your current workflow — the real ones, not the ones a vendor deck assumes.",
+      icon: Search,
+    },
+    {
+      title: "Honest options, including doing nothing",
+      description:
+        "We walk through the IT and AI options and say plainly when a workflow isn't worth automating yet.",
+      icon: Scale,
+    },
+    {
+      title: "Written scope before any billable hour",
+      description:
+        "The scope, the deliverable, and the cost are agreed in writing before we start. Handover comes with documentation.",
+      icon: FileText,
+    },
+  ];
+  const buildPoints = [
+    {
+      title: "One named process at a time",
+      description:
+        "One agreed process with defined inputs and outputs — not an open-ended transformation programme.",
+      icon: Target,
+    },
+    {
+      title: "Integrated with the tools you already run",
+      description:
+        "SharePoint, Outlook, Word, and the wider M365 stack. We build custom connectors where an official one doesn't exist.",
+      icon: Plug,
+    },
+    {
+      title: "Milestone model",
+      description:
+        "You pay only for completed, scoped jobs — for the work that lands, not for time spent.",
+      icon: Milestone,
+    },
+    {
+      title: "Optional support retainer",
+      description:
+        "Keep it running after handover, with someone to call when something changes. Cancel anytime.",
+      icon: LifeBuoy,
     },
   ];
   const offerings = [
@@ -101,7 +156,7 @@ export default function Home() {
       description:
         "Focused engagements to design AI workflows, and stress-test where AI belongs in your operations.",
       cta: "How it works",
-      target: "advisory-build",
+      target: "advisory",
       featured: false,
     },
     {
@@ -111,7 +166,7 @@ export default function Home() {
       description:
         "Fixed-scope builds of named processes, and prompt and skill packs your teams run every day.",
       cta: "How it works",
-      target: "advisory-build",
+      target: "build",
       featured: false,
     },
   ];
@@ -155,36 +210,6 @@ export default function Home() {
       description: "It lands in the matter folder for a human to check and sign off.",
     },
   ];
-  const points = [
-    {
-      title: "Private file storage (Supabase)",
-      description: "Documents are stored in private buckets with no public links — only authorised users can access them.",
-      icon: Lock,
-    },
-    {
-      title: "Expiring access",
-      description: "Files are served via signed URLs that expire automatically, preventing stale or shared links from being reused.",
-      icon: Link2,
-    },
-    {
-      title: "Backend-only privileges",
-      description:
-        "Elevated permissions run on our backend using a service role — never exposed to the browser or client-side code.",
-      icon: ShieldCheck,
-    },
-    {
-      title: "Database controls",
-      description:
-        "We apply Row Level Security (RLS) on relevant tables to limit access by user/role.",
-      icon: Database,
-    },
-    {
-      title: "End-to-end encryption",
-      description:
-        "TLS 1.3 in transit and AES-256 at rest. All data is encrypted within a SOC 2 compliant cloud environment via Supabase and AWS.",
-      icon: Lock,
-    },
-  ];
   const faqs = [
     {
       q: "Who is the workshop for?",
@@ -200,7 +225,7 @@ export default function Home() {
     },
     {
       q: "What is a Claude Certified Architect?",
-      a: "It's Anthropic's own certification for designing and deploying production Claude systems — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed, and we're part of the Claude Partner Network. In practice it means we build the way Anthropic teaches it, and we have a direct line when something breaks.",
+      a: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F) — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
     },
     {
       q: "Can you work with our existing tools?",
@@ -216,7 +241,7 @@ export default function Home() {
     },
     {
       q: "What if we need more than a workshop?",
-      a: "That's Advisory and Build. Advisory starts with a free 45-minute consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
+      a: "That's Advisory and Build — two separate paths. Advisory starts with a free 1-hour consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
     },
     {
       q: "How fast do you respond?",
@@ -236,8 +261,8 @@ export default function Home() {
       <SectionTracker sectionId="offerings" />
       <SectionTracker sectionId="workshop" />
       <SectionTracker sectionId="in-practice" />
-      <SectionTracker sectionId="advisory-build" />
-      <SectionTracker sectionId="security" />
+      <SectionTracker sectionId="advisory" />
+      <SectionTracker sectionId="build" />
       <SectionTracker sectionId="faq" />
       <SectionTracker sectionId="contact" />
 
@@ -267,7 +292,7 @@ export default function Home() {
           </BlurFade>
           <BlurFade delay={0.25} inView>
             <p className="mt-10 text-lg sm:text-xl leading-[1.6] tracking-[0.01em] text-white max-w-2xl mx-auto">
-              A 3-hour, hands-on AI workshop for your team — with your firm&apos;s own workflows baked in
+              Seamless AI integration for law firms and professional services
             </p>
           </BlurFade>
           <BlurFade delay={0.32} inView>
@@ -383,10 +408,10 @@ export default function Home() {
             <div className="flex flex-col items-center text-center gap-4 mb-16">
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Why us</p>
               <h2 className="text-4xl md:text-5xl text-white font-serif font-normal tracking-[0.05em] leading-[1.05]">
-                A team of Claude Certified Architects
+                Claude Certified Architects and lawyers, on one team
               </h2>
               <p className="text-stone-400 max-w-xl leading-relaxed">
-                Plenty of people will talk to you about AI. We hold Anthropic&apos;s own certification for building with Claude, and we build with it every day.
+                Plenty of people will talk to you about AI. We hold Anthropic&apos;s own certification for building with Claude, we come from legal practice, and we&apos;ve won legal tech competitions as the same team.
               </p>
             </div>
 
@@ -526,68 +551,95 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Divider: Workshop → Advisory & Build */}
+        {/* Divider: Workshop → Advisory */}
         <div className="flex justify-center py-12">
           <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
         </div>
 
-        {/* Advisory & Build */}
-        <section className="py-24" id="advisory-build">
-          <div className="flex flex-col items-center gap-4 text-center">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Paths 2 &amp; 3 &mdash; When you need more</p>
-            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Advisory &amp; Build</h2>
+        {/* Advisory */}
+        <section className="py-24" id="advisory">
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 2 &mdash; Before you build</p>
+            <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3">
+              <Compass className="h-7 w-7 text-stone-700" />
+            </div>
+            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Advisory</h2>
             <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Bring us one workflow that hurts, and we&apos;ll scope it properly before anyone commits.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">Free 1-hour consult &middot; online or onsite</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mt-16">
-            <BlurFade delay={0.1} inView className="flex">
-              <div className="w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 flex flex-col">
-                <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
-                  <Compass className="h-7 w-7 text-stone-700" />
+          <div className="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            {advisoryPoints.map((p, idx) => (
+              <BlurFade key={p.title} delay={0.1 + idx * 0.05} inView>
+                <div className="flex items-start gap-5">
+                  <div className="flex items-center justify-center shrink-0 w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20 mt-0.5">
+                    <p.icon className="h-5 w-5 text-brand-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-medium text-stone-900 mb-2">{p.title}</h3>
+                    <p className="text-sm text-stone-600 leading-relaxed">{p.description}</p>
+                  </div>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">Advisory</h3>
-                <p className="text-stone-600 leading-relaxed mb-6">
-                  Focused engagements to design AI workflows, and stress-test where AI belongs in your operations.
-                </p>
-                <ul className="space-y-3 text-sm text-stone-600">
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Free 45-minute consultation, no commitment</li>
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>We identify inefficiencies in your current workflow</li>
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>We discuss the IT and AI options honestly, including doing nothing</li>
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Written scope before any billable hour</li>
-                </ul>
-              </div>
-            </BlurFade>
-            <BlurFade delay={0.15} inView className="flex">
-              <div className="w-full bg-white border border-stone-200/60 rounded-2xl p-8 md:p-10 flex flex-col">
-                <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-5 w-fit">
-                  <Boxes className="h-7 w-7 text-stone-700" />
-                </div>
-                <h3 className="text-2xl md:text-3xl font-serif font-normal tracking-[0.03em] text-stone-900 mb-4">Build</h3>
-                <p className="text-stone-600 leading-relaxed mb-6">
-                  Fixed-scope builds of named processes, and prompt and skill packs your teams can run every day.
-                </p>
-                <ul className="space-y-3 text-sm text-stone-600">
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>One named, agreed-upon process at a time</li>
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Integrated with the tools you already run</li>
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Milestone model &mdash; pay only for completed, scoped jobs</li>
-                  <li className="flex items-start gap-3"><span className="text-brand-primary mt-0.5">&mdash;</span>Optional support retainer, cancel anytime</li>
-                </ul>
-              </div>
-            </BlurFade>
+              </BlurFade>
+            ))}
           </div>
 
           {/* CTA */}
           <div className="mt-16 text-center">
             <button
-              onClick={() => { trackCTAClick("advisory_build", "Book a consultation"); smoothScroll("contact") }}
+              onClick={() => { trackCTAClick("advisory", "Book a free consultation"); smoothScroll("contact") }}
               className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300 cursor-pointer"
             >
-              Book a consultation
+              Book a free consultation
             </button>
           </div>
         </section>
 
-        {/* Divider: Advisory & Build → Security */}
+        {/* Divider: Advisory → Build */}
+        <div className="flex justify-center py-12">
+          <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
+        </div>
+
+        {/* Build */}
+        <section className="py-24" id="build">
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 3 &mdash; When it&apos;s time to build</p>
+            <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3">
+              <Boxes className="h-7 w-7 text-stone-700" />
+            </div>
+            <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Build</h2>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Fixed-scope builds of named processes, and prompt and skill packs your teams can run every day.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">Milestone model &middot; no lock-in</p>
+          </div>
+
+          <div className="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+            {buildPoints.map((p, idx) => (
+              <BlurFade key={p.title} delay={0.1 + idx * 0.05} inView>
+                <div className="flex items-start gap-5">
+                  <div className="flex items-center justify-center shrink-0 w-10 h-10 rounded-lg bg-brand-primary/10 border border-brand-primary/20 mt-0.5">
+                    <p.icon className="h-5 w-5 text-brand-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-medium text-stone-900 mb-2">{p.title}</h3>
+                    <p className="text-sm text-stone-600 leading-relaxed">{p.description}</p>
+                  </div>
+                </div>
+              </BlurFade>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => { trackCTAClick("build", "Scope a build"); smoothScroll("contact") }}
+              className="bg-stone-900 hover:bg-stone-800 text-white px-8 py-3 rounded-full text-base font-medium transition-colors duration-300 cursor-pointer"
+            >
+              Scope a build
+            </button>
+          </div>
+        </section>
+
+        {/* Divider: Build → mid-page CTA */}
         <div className="flex justify-center py-12">
           <div className="w-px h-24 bg-gradient-to-b from-transparent via-stone-300 to-transparent" />
         </div>
@@ -601,41 +653,6 @@ export default function Home() {
             </button>
           </p>
         </div>
-
-        {/* Security & Privacy — Minimal centered layout */}
-        <section className="relative w-full bg-secondary-dark py-32 px-6 md:px-8 rounded-3xl overflow-hidden" id="security">
-          <DotPattern className="opacity-[0.06] text-white/20" />
-          <div className="container mx-auto relative max-w-3xl">
-            <div className="flex flex-col items-center text-center gap-4 mb-16">
-              <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Trust & Security</p>
-              <h2 className="text-4xl md:text-5xl text-white font-serif font-normal tracking-[0.05em] leading-[1.05]">Security &amp; Privacy</h2>
-              <p className="text-stone-400 max-w-xl leading-relaxed">
-                We work with sensitive matters, and we&apos;re PDPA-aware throughout. Your data runs on a SOC 2 compliant foundation — encrypted in transit and at rest, with access restricted to authorised users only.
-              </p>
-            </div>
-
-            <div className="space-y-10">
-              {points.map((p, index) => (
-                <BlurFade key={p.title} delay={0.1 + index * 0.05} inView>
-                  <div className="flex items-start gap-5">
-                    <div className="flex items-center justify-center shrink-0 w-10 h-10 rounded-lg bg-white/5 border border-white/10 mt-0.5">
-                      <p.icon className="h-5 w-5 text-white/60" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-medium text-white mb-2">{p.title}</h3>
-                      <p className="text-sm text-stone-400 leading-relaxed">{p.description}</p>
-                    </div>
-                  </div>
-                </BlurFade>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <a href="/security" className="text-sm font-medium text-white/80 hover:text-white underline underline-offset-4 transition-colors duration-300">
-                Learn more about our security &rarr;              </a>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ */}
         <section id="faq" className="py-32 relative">
