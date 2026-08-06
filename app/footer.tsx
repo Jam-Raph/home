@@ -28,7 +28,7 @@ export function Footer() {
             </div>
 
             <p className="max-w-md text-sm text-stone-400 leading-relaxed">
-              A Singapore AI practice for professional services teams. We run hands-on workshops and build the workflows your team runs every day — inside the tools you already use.
+              A Singapore AI practice for professional services teams. We run hands-on workshops and build the workflows your team runs every day, inside the tools you already use.
             </p>
 
             <div className="flex flex-wrap gap-2">

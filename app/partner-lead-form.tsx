@@ -21,8 +21,8 @@ type PartnerLeadFormState = {
 
 const benefits = [
   "Workshop: 3 hours, one team, your own workflows baked in",
-  "Advisory: free 1-hour consultation, no commitment",
-  "Build: fixed-scope workflows on a milestone model",
+  "Advisory: free 1-hour consult, then we interview your team",
+  "Build: custom AI software on a milestone model",
   "PDPA-aware throughout, on SOC 2 compliant infrastructure",
 ];
 
@@ -82,7 +82,7 @@ export function PartnerLeadForm() {
         trackFormSubmitted(form.organisation);
         toast.success("Submitted!", {
           description:
-            "Thanks — we've received your details and will be in touch shortly.",
+            "Thanks, we've received your details and will be in touch shortly.",
         });
       }
 
@@ -109,7 +109,7 @@ export function PartnerLeadForm() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="rounded-3xl bg-secondary-dark p-10 md:p-20" id="contact">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
-            {/* Left — Benefits */}
+            {/* Left: Benefits */}
             <div className="flex flex-col justify-center">
               <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-4">Contact Us</p>
               <h2 className="text-3xl md:text-4xl font-serif font-normal text-white mb-6">Work with us</h2>
@@ -132,7 +132,7 @@ export function PartnerLeadForm() {
               </div>
             </div>
 
-            {/* Right — Form */}
+            {/* Right: Form */}
             <div>
               <form onSubmit={onSubmit} className="space-y-6" onFocus={() => {
                 if (!formStartedRef.current) {

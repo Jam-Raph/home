@@ -17,12 +17,10 @@ import {
   Users,
   Clock,
   Search,
-  Scale,
+  MessagesSquare,
   FileText,
-  Target,
-  Plug,
+  Server,
   Milestone,
-  LifeBuoy,
 } from "lucide-react";
 
 import {
@@ -70,72 +68,72 @@ export default function Home() {
     {
       title: "Law and engineering at the same table",
       description:
-        "SMU Law and ex-GovTech engineering on one team. The person who understands the matter sits next to the person building the workflow — not a lawyer briefing a vendor.",
+        "SMU Law and ex-GovTech engineering on one team. The person who understands the matter sits next to the person building the workflow, not a lawyer briefing a vendor.",
       icon: Users,
     },
     {
       title: "We've won legal tech competitions together",
       description:
-        "1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024 — the same team, judged on legal work rather than a generic AI demo.",
+        "1st place at the SMU Legal Innovation & Tech Competition 2025 and 1st runner-up in 2024, won by the same team and judged on legal work rather than a generic AI demo.",
       icon: Trophy,
     },
     {
-      title: "We build on the real tools",
+      title: "We have built and deployed real solutions",
       description:
-        "Claude Cowork and Claude Code, pointed at your actual matters and your actual file store — not a sandbox demo.",
+        "We've created and maintained bespoke AI software that runs in production: Claude Cowork and Claude Code pointed at real matters and real file stores, and custom software where those can't reach.",
       icon: Terminal,
     },
   ];
   const advisoryPoints = [
     {
-      title: "Free 1-hour consultation",
+      title: "It starts with a free 1-hour consult",
       description:
-        "No commitment. We spend the hour on how the work actually moves today, before anyone talks about tools.",
+        "No commitment. The hour is for us to learn the firm: your practice areas, how you work, and how a matter generally moves through the office.",
       icon: Clock,
     },
     {
-      title: "We find where the time goes",
+      title: "Then we interview the people doing the work",
       description:
-        "We identify the inefficiencies in your current workflow — the real ones, not the ones a vendor deck assumes.",
+        "We sit with whoever actually runs the workflow and walk it end to end, step by step, exactly as it happens today.",
+      icon: MessagesSquare,
+    },
+    {
+      title: "We identify where AI applies",
+      description:
+        "From the interviews we mark the steps AI can take on, and say plainly where it can't, including when the answer is to leave a workflow alone.",
       icon: Search,
     },
     {
-      title: "Honest options, including doing nothing",
+      title: "You get a product requirements sheet",
       description:
-        "We walk through the IT and AI options and say plainly when a workflow isn't worth automating yet.",
-      icon: Scale,
-    },
-    {
-      title: "Written scope before any billable hour",
-      description:
-        "The scope, the deliverable, and the cost are agreed in writing before we start. Handover comes with documentation.",
+        "Once we've scoped what we're building, it's written down before any work starts: what it does, what it touches, and what done looks like.",
       icon: FileText,
     },
   ];
   const buildPoints = [
     {
-      title: "One named process at a time",
+      title: "For when Cowork and Claude Code can't do it",
       description:
-        "One agreed process with defined inputs and outputs — not an open-ended transformation programme.",
-      icon: Target,
+        "Some workflows don't fit an off-the-shelf agent. That's the line where Build starts: custom software, written for the job.",
+      icon: Boxes,
     },
     {
-      title: "Integrated with the tools you already run",
+      title: "Same discovery, aimed at software",
       description:
-        "SharePoint, Outlook, Word, and the wider M365 stack. We build custom connectors where an official one doesn't exist.",
-      icon: Plug,
+        "The same consult, interviews, and product requirements sheet as Advisory, scoped for something we build and then maintain.",
+      icon: Search,
     },
     {
-      title: "Milestone model",
+      title: "Whatever stack the job needs",
       description:
-        "You pay only for completed, scoped jobs — for the work that lands, not for time spent.",
+        "Other models where Claude isn't the right fit, a real backend, and custom MCP servers into systems with no official connector: MYOB, LEAP, Talenox, in-house platforms.",
+      icon: Server,
+    },
+    {
+      title: "Milestone model, maintained after",
+      description:
+        "You pay per completed, scoped milestone, for the work that lands rather than for time spent. We keep it running afterwards on an optional retainer, cancel anytime.",
       icon: Milestone,
-    },
-    {
-      title: "Optional support retainer",
-      description:
-        "Keep it running after handover, with someone to call when something changes. Cancel anytime.",
-      icon: LifeBuoy,
     },
   ];
   const offerings = [
@@ -154,7 +152,7 @@ export default function Home() {
       eyebrow: "Path 2",
       title: "Advisory",
       description:
-        "Focused engagements to design AI workflows, and stress-test where AI belongs in your operations.",
+        "We interview your team, find where AI fits, and get your existing Claude plan running the workflow.",
       cta: "How it works",
       target: "advisory",
       featured: false,
@@ -164,7 +162,7 @@ export default function Home() {
       eyebrow: "Path 3",
       title: "Build",
       description:
-        "Fixed-scope builds of named processes, and prompt and skill packs your teams run every day.",
+        "Custom AI software for the workflows Claude Cowork and Claude Code can't do on their own.",
       cta: "How it works",
       target: "build",
       featured: false,
@@ -174,12 +172,12 @@ export default function Home() {
     {
       title: "AI fluency",
       description:
-        "How LLMs actually work, so you can raise the accuracy of what comes out and be confident enough to put it on an invoice.",
+        "How LLMs actually work, so you can raise the accuracy of what comes out and be confident.",
     },
     {
       title: "Deep dive into Claude",
       description:
-        "When a chat window is enough, and when the job needs Cowork — pointed at your SharePoint matter folder, editing in place with formatting intact.",
+        "When a chat window is enough, and when the job needs Cowork, pointed at your SharePoint matter folder, editing in place with formatting intact.",
     },
     {
       title: "Case study",
@@ -213,7 +211,7 @@ export default function Home() {
   const faqs = [
     {
       q: "Who is the workshop for?",
-      a: "One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow — a litigation team, a corporate secretarial team, a back-office function. We build a custom Claude skill from your pre-workshop brief, so your team is working on your own material from the start, not on a generic example.",
+      a: "One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow: a litigation team, a corporate secretarial team, a back-office function. We build a custom Claude skill from your pre-workshop brief, so your team is working on your own material from the start, not on a generic example.",
     },
     {
       q: "What do we walk away with?",
@@ -221,27 +219,27 @@ export default function Home() {
     },
     {
       q: "Do we need to be a law firm?",
-      a: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team — accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
+      a: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
     },
     {
       q: "What is a Claude Certified Architect?",
-      a: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F) — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
+      a: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F), a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
     },
     {
       q: "Can you work with our existing tools?",
-      a: "Yes — that's the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking your team to adopt yet another platform.",
+      a: "Yes, that's the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking your team to adopt yet another platform.",
     },
     {
       q: "Do the AI models used retain or learn from customer data?",
-      a: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral — once a request completes, the data is discarded and never used for training.",
+      a: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral: once a request completes, the data is discarded and never used for training.",
     },
     {
       q: "How do you handle PDPA?",
-      a: "PDPA-awareness is built into how we scope and configure every engagement — folder scoping, access controls, audit trails, and team training, rather than a policy bolted on at the end. We're Singapore-based and build for the systems Singapore firms actually run.",
+      a: "PDPA-awareness is built into how we scope and configure every engagement: folder scoping, access controls, audit trails, and team training, rather than a policy bolted on at the end. We're Singapore-based and build for the systems Singapore firms actually run.",
     },
     {
       q: "What if we need more than a workshop?",
-      a: "That's Advisory and Build — two separate paths. Advisory starts with a free 1-hour consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
+      a: "That's Advisory and Build, two separate paths that start the same way. Both begin with a free 1-hour consult to learn the firm, followed by interviews with the people who actually run the workflow, and a product requirements sheet once we've scoped what we're building. Advisory then gets the Claude plan you already have doing that workflow, through Claude skills and orientation for your team. Build is for when Claude Cowork or Claude Code can't perform the workflow at all: custom AI software, potentially on other models, with a backend and custom MCP servers, which we build and then maintain. Both run on a milestone model: you pay only for completed, scoped work.",
     },
     {
       q: "How fast do you respond?",
@@ -266,7 +264,7 @@ export default function Home() {
       <SectionTracker sectionId="faq" />
       <SectionTracker sectionId="contact" />
 
-      {/* Hero — full viewport with hero-2.png background */}
+      {/* Hero: full viewport with hero-2.png background */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" id="hero">
         <Image
           src="/hero-2.png"
@@ -400,7 +398,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why us — Claude Certified Architects */}
+      {/* Why us: Claude Certified Architects */}
       <div className="container mx-auto px-4">
         <section className="relative w-full bg-secondary-dark py-32 px-6 md:px-8 rounded-3xl overflow-hidden mt-24" id="architects">
           <DotPattern className="opacity-[0.06] text-white/20" />
@@ -486,7 +484,7 @@ export default function Home() {
         {/* Inside the workshop */}
         <section className="flex flex-col gap-5 py-32" id="workshop">
           <div className="flex flex-col items-center gap-4">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 1 &mdash; Start here</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 1 &middot; Start here</p>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">The Workshop</h2>
             <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Not your standard prompt engineering workshop.</p>
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">3 hours &middot; one team &middot; up to 8 people</p>
@@ -513,7 +511,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* In practice — one LOE, end to end */}
+        {/* In practice: one LOE, end to end */}
         <section className="py-24" id="in-practice">
           <div className="flex flex-col items-center gap-4 text-center">
             <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">See it in practice</p>
@@ -559,13 +557,13 @@ export default function Home() {
         {/* Advisory */}
         <section className="py-24" id="advisory">
           <div className="flex flex-col items-center gap-4">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 2 &mdash; Before you build</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 2 &middot; Put your Claude plan to work</p>
             <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3">
               <Compass className="h-7 w-7 text-stone-700" />
             </div>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Advisory</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Bring us one workflow that hurts, and we&apos;ll scope it properly before anyone commits.</p>
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">Free 1-hour consult &middot; online or onsite</p>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Bring us one workflow that hurts. We&apos;ll interview the people who run it, then get the Claude plan you already pay for doing the job, with the skills and orientation your team needs to keep it going.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">Free 1-hour consult &middot; milestone model</p>
           </div>
 
           <div className="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
@@ -603,13 +601,13 @@ export default function Home() {
         {/* Build */}
         <section className="py-24" id="build">
           <div className="flex flex-col items-center gap-4">
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 3 &mdash; When it&apos;s time to build</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono">Path 3 &middot; When it&apos;s time to build</p>
             <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3">
               <Boxes className="h-7 w-7 text-stone-700" />
             </div>
             <h2 className="text-5xl md:text-7xl text-center text-stone-900 font-serif font-normal tracking-[0.05em] leading-[1.05]">Build</h2>
-            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">Fixed-scope builds of named processes, and prompt and skill packs your teams can run every day.</p>
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">Milestone model &middot; no lock-in</p>
+            <p className="text-stone-600 text-center max-w-2xl leading-relaxed">When Claude Cowork or Claude Code can&apos;t perform the workflow, we build the software that can, and we maintain it afterwards.</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-mono mt-2">Custom AI software &middot; milestone model</p>
           </div>
 
           <div className="max-w-4xl mx-auto mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">

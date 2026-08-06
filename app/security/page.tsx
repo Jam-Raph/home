@@ -9,61 +9,61 @@ import Link from "next/link"
 
 const features = [
   {
-    icon: Lock,
-    title: "End-to-end encryption",
-    description: "TLS 1.3 in transit, AES-256 at rest. All data encrypted within a SOC 2 compliant cloud environment.",
+    icon: ShieldCheck,
+    title: "SOC 2 compliant infrastructure",
+    description: "Everything we build runs on SOC 2 compliant cloud infrastructure, encrypted with TLS 1.3 in transit and AES-256 at rest.",
   },
   {
     icon: Key,
-    title: "SAML & SSO",
-    description: "Enterprise authentication with single sign-on through your identity provider. Centralised access management for your entire team.",
+    title: "Your identity, your access rules",
+    description: "Single sign-on through your identity provider, role-based access, and MFA, configured to the access rules your firm already runs.",
   },
   {
     icon: Shield,
     title: "Private by default",
-    description: "Documents stored in private buckets with signed, expiring URLs. AI models never retain or learn from your data.",
+    description: "The models we use never retain or learn from your data. Processing is ephemeral: once a request completes, the data is gone.",
   },
 ]
 
 const protectionSections = [
   {
-    icon: Lock,
-    title: "Data protection",
-    items: [
-      "Documents stored in private buckets with signed, expiring URLs",
-      "AI models never retain or learn from your data",
-      "All processing is ephemeral — data is not persisted beyond sessions",
-      "Logical data isolation per tenant",
-    ],
-  },
-  {
     icon: Server,
-    title: "Infrastructure",
+    title: "Deployment and ownership",
     items: [
-      "Built on SOC 2 compliant infrastructure via Supabase and AWS",
-      "Automated backups with point-in-time recovery",
-      "24/7 uptime monitoring and incident response",
-      "Regular vulnerability assessments and penetration testing",
+      "Deployed into your own cloud tenancy, or hosted and maintained by us, decided at scoping rather than assumed",
+      "You own the software we write for you and the data it touches",
+      "Handover comes with documentation, so the system is not dependent on us to stay understood",
+      "Third-party services are named in the product requirements sheet before we build, never introduced quietly",
     ],
   },
   {
     icon: Users,
-    title: "Authentication & access",
+    title: "Authentication and access",
     items: [
-      "SAML SSO integration with your identity provider",
-      "Role-based access control (RBAC) across all resources",
+      "SAML SSO through your identity provider, where your stack supports it",
+      "Role-based access control (RBAC) across the systems we build",
       "Multi-factor authentication (MFA) support",
-      "Comprehensive audit logging for all access events",
+      "Least privilege throughout: elevated permissions stay on the backend and are never exposed to the browser",
+    ],
+  },
+  {
+    icon: Lock,
+    title: "Data handling",
+    items: [
+      "Encrypted in transit (TLS 1.3) and at rest (AES-256)",
+      "Access scoped to the folders and matters a workflow actually needs",
+      "AI models never retain or learn from your data; processing is ephemeral",
+      "PDPA-aware by design: folder scoping and access rules are set during scoping, not bolted on at the end",
     ],
   },
   {
     icon: FileCheck,
-    title: "Compliance",
+    title: "Audit and human sign-off",
     items: [
-      "SOC 2 compliant foundation through Supabase and AWS",
-      "Data processing agreements available on request",
-      "Configurable data retention policies",
-      "Incident response plan with defined SLAs",
+      "Decision logging on AI output that touches a client document",
+      "Access events are logged and reviewable",
+      "A billable professional signs off before anything leaves the system",
+      "Model and prompt versions are recorded alongside the decision they produced",
     ],
   },
 ]
@@ -78,12 +78,12 @@ export default function SecurityPage() {
         <DotPattern className="opacity-[0.06] text-stone-400" />
         <div className="relative container mx-auto px-4 text-center max-w-3xl">
           <BlurFade delay={0.05} inView>
-            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-6">Trust & Security</p>
+            <p className="text-xs uppercase tracking-[0.25em] text-stone-400 font-medium font-mono mb-6">Trust &amp; Security</p>
             <h1 className="text-5xl sm:text-7xl font-serif font-normal tracking-[0.05em] text-stone-900">
               Built on Trust.<br />Secure by Design.
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-stone-500 max-w-2xl mx-auto leading-relaxed">
-              Law firms trust us with their most sensitive work. We earn that trust through rigorous security practices, a zero-compromise approach to data protection, and full transparency on how your data is stored and processed.
+              We write custom software for firms handling their most sensitive work. It runs on SOC 2 compliant infrastructure and follows industry best practices. How it is deployed, where it runs, and who can reach what are agreed with you at scoping rather than handed down.
             </p>
           </BlurFade>
         </div>
@@ -111,16 +111,16 @@ export default function SecurityPage() {
         </div>
       </section>
 
-      {/* How We Protect Your Data */}
+      {/* How we build it */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <BlurFade delay={0.1} inView>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-serif font-normal tracking-[0.05em] text-stone-900">
-                How We Protect Your Data
+                How We Build It
               </h2>
               <p className="mt-4 text-stone-500 text-lg max-w-2xl mx-auto leading-relaxed">
-                Security is not a feature we added — it is the foundation everything is built on. Every layer of our stack is designed to protect your documents and your clients.
+                Security is not a feature we add at the end. It is decided while the workflow is still being scoped. These are the defaults every engagement starts from.
               </p>
             </div>
           </BlurFade>
@@ -168,9 +168,9 @@ export default function SecurityPage() {
                 <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                   <ShieldCheck className="h-7 w-7 text-stone-700" />
                 </div>
-                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Zero trust architecture</h3>
+                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Least privilege, by default</h3>
                 <p className="text-stone-600 leading-relaxed">
-                  Every request is verified. We apply the principle of least privilege across our entire infrastructure. Backend-only service roles ensure elevated permissions are never exposed to the browser. Row Level Security (RLS) on all database tables limits access by user and role.
+                  Software we write gets the narrowest access that lets the workflow run: the folders it needs, the systems it needs, and nothing else. Elevated permissions stay on the backend, never in the browser. When a workflow needs more reach, that is a scoping decision you make, in writing.
                 </p>
               </div>
             </BlurFade>
@@ -180,9 +180,9 @@ export default function SecurityPage() {
                 <div className="inline-flex items-center justify-center rounded-xl bg-stone-100 p-3 mb-4">
                   <Globe className="h-7 w-7 text-stone-700" />
                 </div>
-                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Data residency</h3>
+                <h3 className="text-2xl font-serif font-normal text-stone-900 mb-3">Where it runs is your call</h3>
                 <p className="text-stone-600 leading-relaxed">
-                  All data processing runs on SOC 2 compliant infrastructure via Supabase and AWS, with full compliance to local data sovereignty laws. We ensure your data stays where your firm needs it — with complete transparency on hosting locations and data flows.
+                  Some firms want the software inside their own cloud tenancy, under their own procurement and data sovereignty rules. Others would rather we host and maintain it. Both are normal. We settle it at scoping and tell you plainly which services sit in the path and where the data goes.
                 </p>
               </div>
             </BlurFade>
@@ -199,10 +199,10 @@ export default function SecurityPage() {
               We work with you
             </h2>
             <p className="text-stone-600 text-lg leading-relaxed mb-6">
-              Security is a partnership. We work collaboratively with firms to address specific security concerns or compliance requirements — whether it&apos;s a custom security review, a DPA, or aligning with your internal policies.
+              Security is a partnership. We work collaboratively with firms to address specific security concerns or compliance requirements, whether it&apos;s a custom security review, a DPA, or aligning with your internal policies.
             </p>
             <p className="text-stone-500 leading-relaxed">
-              We conduct regular vulnerability assessments and continuously update our processes and systems to adapt to evolving threats and industry standards. Our security posture is never static.
+              If your IT or compliance team has requirements of their own, bring them into the scoping conversation. It is far easier to build to them than to retrofit them.
             </p>
           </BlurFade>
         </div>
@@ -217,7 +217,7 @@ export default function SecurityPage() {
               Have security questions?
             </h2>
             <p className="text-stone-500 text-lg mb-8 leading-relaxed">
-              We&apos;re happy to discuss our security architecture or answer questions from your IT and compliance teams.
+              We&apos;re happy to walk your IT and compliance teams through how a build is deployed, what it can reach, and what gets logged.
             </p>
             <Link
               href="/#contact"

@@ -9,7 +9,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Jam & Raph",
-  description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore — plus advisory and fixed-scope workflow builds.",
+  description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore, plus advisory and fixed-scope workflow builds.",
 };
 
 export default function RootLayout({
@@ -31,7 +31,7 @@ export default function RootLayout({
                   name: "Jam & Raph",
                   url: "https://jamraph.com",
                   logo: "https://jamraph.com/J%26R%20logo.png",
-                  description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore — plus advisory and fixed-scope workflow builds.",
+                  description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore, plus advisory and fixed-scope workflow builds.",
                   foundingDate: "2024",
                   sameAs: ["https://www.linkedin.com/company/jamandraph/"],
                 },
@@ -52,7 +52,7 @@ export default function RootLayout({
                       name: "Who is the workshop for?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow — a litigation team, a corporate secretarial team, a back-office function. We build a custom Claude skill from your pre-workshop brief, so your team is working on your own material from the start, not on a generic example.",
+                        text: "One team, up to eight people, in a single three-hour session. It works best when the room shares a workflow: a litigation team, a corporate secretarial team, a back-office function. We build a custom Claude skill from your pre-workshop brief, so your team is working on your own material from the start, not on a generic example.",
                       },
                     },
                     {
@@ -68,7 +68,7 @@ export default function RootLayout({
                       name: "Do we need to be a law firm?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team — accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
+                        text: "No. We're grounded in legal practice, but the workshop suits any admin-heavy professional services team: accounting, corporate secretarial, compliance, or a back-office function inside a larger firm. If the work is rule-bound and document-heavy, it fits.",
                       },
                     },
                     {
@@ -76,7 +76,7 @@ export default function RootLayout({
                       name: "What is a Claude Certified Architect?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F) — a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
+                        text: "It's Anthropic's own certification for designing and deploying production Claude systems (CCA-F), a proctored exam covering agent architecture, orchestration, and deployment. We sat it and passed. In practice it means we build the way Anthropic teaches it, rather than the way a vendor deck describes it.",
                       },
                     },
                     {
@@ -84,7 +84,7 @@ export default function RootLayout({
                       name: "Can you work with our existing tools?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Yes — that's the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking your team to adopt yet another platform.",
+                        text: "Yes, that's the point. We integrate with what you already run: SharePoint, Outlook, Word, and the wider M365 stack. The aim is to move you from experimenting with AI to using it in live matters and operations, without asking your team to adopt yet another platform.",
                       },
                     },
                     {
@@ -92,7 +92,7 @@ export default function RootLayout({
                       name: "Do the AI models used retain or learn from customer data?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral — once a request completes, the data is discarded and never used for training.",
+                        text: "No. The models we use do not retain or learn from any input or output. All processing is ephemeral: once a request completes, the data is discarded and never used for training.",
                       },
                     },
                     {
@@ -100,7 +100,7 @@ export default function RootLayout({
                       name: "How do you handle PDPA?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "PDPA-awareness is built into how we scope and configure every engagement — folder scoping, access controls, audit trails, and team training, rather than a policy bolted on at the end. We're Singapore-based and build for the systems Singapore firms actually run.",
+                        text: "PDPA-awareness is built into how we scope and configure every engagement: folder scoping, access controls, audit trails, and team training, rather than a policy bolted on at the end. We're Singapore-based and build for the systems Singapore firms actually run.",
                       },
                     },
                     {
@@ -108,7 +108,7 @@ export default function RootLayout({
                       name: "What if we need more than a workshop?",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "That's Advisory and Build — two separate paths. Advisory starts with a free 1-hour consultation where we identify inefficiencies in your current workflow, discuss the IT and AI options, and plan next steps. Build is fixed-scope work on named processes, on a milestone model — you pay only for completed, scoped jobs, with an optional support retainer after.",
+                        text: "That's Advisory and Build, two separate paths that start the same way. Both begin with a free 1-hour consult to learn the firm, followed by interviews with the people who actually run the workflow, and a product requirements sheet once we've scoped what we're building. Advisory then gets the Claude plan you already have doing that workflow, through Claude skills and orientation for your team. Build is for when Claude Cowork or Claude Code can't perform the workflow at all: custom AI software, potentially on other models, with a backend and custom MCP servers, which we build and then maintain. Both run on a milestone model: you pay only for completed, scoped work.",
                       },
                     },
                     {
