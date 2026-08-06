@@ -2,6 +2,20 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Start here
+
+Full project documentation lives in the **`kt` skill** (`.claude/skills/kt/`). Invoke `/kt`, or read:
+
+- `architecture.md` — how the site is put together, the section contract, and the **three-places rule**
+  for content (page copy ↔ JSON-LD ↔ llms.txt)
+- `current_progress.md` — running build log; read before starting any session
+- `todo.md` — backlog and known defects
+- `pricing.md` — the claims register: what the copy may and may not assert
+- `marketing.md` — positioning, funnel, and house style
+
+Two standing rules: FAQ text must stay byte-identical between `app/page.tsx` and the JSON-LD in
+`app/layout.tsx`; and no claim goes on the site without a source (see `pricing.md`).
+
 ## Commands
 
 ```bash
