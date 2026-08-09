@@ -33,6 +33,9 @@ const awards = [
     place: "Finalist",
     prize: "$1,300 USD",
     link: "https://www.linkedin.com/posts/jamandraph_bbc2026-sasin-bangkokbusinesschallenge-activity-7466869832106364929-nElj",
+    linkLabel: "LinkedIn post",
+    altLink: "",
+    altLinkLabel: "",
   },
   {
     src: "/awards/smu-lit-2025-first-place.JPG",
@@ -40,7 +43,10 @@ const awards = [
     title: "SMU Legal Innovation and Tech 2025",
     place: "1st place",
     prize: "$1,500 SGD",
-    link: "https://www.linkedin.com/posts/jus-mundi_between-ai-agents-shouting-objection-and-ugcPost-7389949606601850880-QN61"
+    link: "https://www.linkedin.com/posts/jus-mundi_between-ai-agents-shouting-objection-and-ugcPost-7389949606601850880-QN61",
+    linkLabel: "LinkedIn post",
+    altLink: "",
+    altLinkLabel: "",
   },
   {
     src: "/awards/cambridge-hack-the-law-2026.jpg",
@@ -48,7 +54,10 @@ const awards = [
     title: "Cambridge Hack the Law 2026 (Clifford Chance track)",
     place: "Winner",
     prize: "",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7488435205951639552/",
+    link: "https://hackthelaw-cambridge.com/hackathon-2026/",
+    linkLabel: "Organiser's winners page",
+    altLink: "https://www.linkedin.com/feed/update/urn:li:activity:7488435205951639552/",
+    altLinkLabel: "LinkedIn post",
   },
   {
     src: "/awards/SMU_Hult_Prize_26.jpeg",
@@ -56,7 +65,10 @@ const awards = [
     title: "SMU Hult Prize 2026",
     place: "1st runner up",
     prize: "$5,000 SGD",
-    link: "https://www.linkedin.com/feed/update/urn:li:activity:7425846342385668096"
+    link: "https://www.linkedin.com/feed/update/urn:li:activity:7425846342385668096",
+    linkLabel: "LinkedIn post",
+    altLink: "",
+    altLinkLabel: "",
   },
   {
     src: "/awards/base-first-place.jpeg",
@@ -64,7 +76,10 @@ const awards = [
     title: "NTU x Base Web3",
     place: "1st place",
     prize: "$1,000 SGD",
-    link: "https://www.linkedin.com/posts/blockchain-at-ntu_ntu-ntublockchain-base-activity-7370449056969633792-ua_9"
+    link: "https://www.linkedin.com/posts/blockchain-at-ntu_ntu-ntublockchain-base-activity-7370449056969633792-ua_9",
+    linkLabel: "LinkedIn post",
+    altLink: "",
+    altLinkLabel: "",
   },
   {
     src: "/awards/smu-lit-2024-second-place.jpeg",
@@ -72,7 +87,10 @@ const awards = [
     title: "SMU Legal Innovation and Tech 2024",
     place: "1st runner up",
     prize: "$2,500 SGD",
-    link: "https://www.linkedin.com/posts/raphael-lim-437416213_sigmatech-generativeai-icp-activity-7228613456231288832-k94I"
+    link: "https://www.linkedin.com/posts/raphael-lim-437416213_sigmatech-generativeai-icp-activity-7228613456231288832-k94I",
+    linkLabel: "LinkedIn post",
+    altLink: "",
+    altLinkLabel: "",
   },
 ]
 
@@ -129,12 +147,7 @@ export function TeamBanner() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-5 max-w-5xl mx-auto">
           {awards.map((award, index) => (
             <BlurFade key={award.title} delay={0.35 + index * 0.1} inView>
-              <a
-                href={award.link}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-2xl bg-surface-warm/50 border border-transparent hover:border-stone-200 transition-all duration-300 block overflow-hidden"
-              >
+              <div className="group relative rounded-2xl bg-surface-warm/50 border border-transparent hover:border-stone-200 transition-all duration-300 overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
                     src={award.src}
@@ -150,8 +163,31 @@ export function TeamBanner() {
                     <span className="text-xs text-stone-400 ml-auto">{award.prize}</span>
                   </div>
                   <p className="font-serif font-medium text-stone-900 text-sm leading-normal">{award.title}</p>
+                  <div className="mt-3 flex items-center gap-2 text-xs">
+                    <a
+                      href={award.link}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-stone-500 underline decoration-stone-300 underline-offset-4 group-hover:text-brand-primary group-hover:decoration-brand-primary transition-colors duration-300 after:absolute after:inset-0"
+                    >
+                      {award.linkLabel}
+                    </a>
+                    {award.altLink && (
+                      <>
+                        <span className="text-stone-300" aria-hidden="true">&middot;</span>
+                        <a
+                          href={award.altLink}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="relative z-10 text-stone-500 underline decoration-stone-300 underline-offset-4 hover:text-brand-primary hover:decoration-brand-primary transition-colors duration-300"
+                        >
+                          {award.altLinkLabel}
+                        </a>
+                      </>
+                    )}
+                  </div>
                 </div>
-              </a>
+              </div>
             </BlurFade>
           ))}
         </div>

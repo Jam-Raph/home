@@ -107,6 +107,7 @@ drift in this repo.
 | FAQ question + answer | `app/page.tsx` `faqs[]` **and** `app/layout.tsx` JSON-LD `FAQPage.mainEntity[]` | **Byte-identical.** Nine entries. A mismatch means the structured data claims something the page does not say. |
 | Positioning, offer descriptions, prices | `app/page.tsx` / `app/security/page.tsx` **and** `app/llms.txt/route.ts` | Consistent in substance. llms.txt may carry more (it holds the prices the page deliberately omits). |
 | Site description | `app/layout.tsx` `metadata.description` **and** the Organization JSON-LD node | Same string in both. |
+| Awards | `components/ui/team-banner.tsx` `awards[]` **and** `app/layout.tsx` Organization `award[]` (**and** the credentials list in `app/llms.txt/route.ts`) | Each JSON-LD string is exactly `${place}, ${title}` from the grid entry, in grid order. Adding an award means adding it in all three. |
 
 Parity check that has caught real drift:
 
@@ -194,7 +195,7 @@ or parentheses; use `&middot;` for the eyebrow and meta-line separators.
 
 ## 10. Assets
 
-`public/` — `logos/` (client and supporter marks), `headshots/` (three, team grid), `awards/` (five,
+`public/` — `logos/` (client and supporter marks), `headshots/` (three, team grid), `awards/` (six,
 team banner), `hero-2.png` (hero painting), `fonts/`. Unreferenced but retained: `hero.jpg`,
 `jamraph-hero.mp4`, `border-fade.svg`, `logos/bizibody.png`, `logos/O&B.png` (Oon & Bazul, removed from
 the site August 2026).

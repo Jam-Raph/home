@@ -1,9 +1,10 @@
 # Current progress — jr-home
 
-**Last updated:** 6 August 2026
+**Last updated:** 9 August 2026
 **Branch:** `main`. PR #6 (the repositioning) was merged on GitHub; the two follow-up commits
 (`fd1c225`, `b3680e3`) were merged to `main` directly as `123a9e9` on 6 Aug at the founders'
-instruction.
+instruction. Commit 6 (Cambridge organiser link) was likewise pushed straight to `main` on 9 Aug at
+the founders' instruction.
 **State:** everything below is committed and on `main`.
 
 ---
@@ -98,6 +99,54 @@ Also in `fd1c225`, the Cambridge award:
 - The "won as the same team" moat sentence was **not** extended to Cambridge (see `pricing.md` §3).
 - Backlog: the Clifford Chance todo item closed; the stale "commit the copy pass" item rewritten to
   cover the actual working tree.
+
+---
+
+## Commit 6 — Cambridge organiser link, visible award links, JSON-LD awards (9 Aug)
+
+Founders supplied the official organiser page, <https://hackthelaw-cambridge.com/hackathon-2026/>,
+and asked for it on the site and **visible**. Fetched and verified before use: it carries a "Winner
+of Clifford Chance Challenge" card for team **SIGMA TECH** (project "Sigma"), roster Jamison Teng
+Jun Hao, Raphael Lim Ming Yang, En Hao Tew, Qirui Huang. It also **independently confirms the
+no-cash-prize rule**: only overall 1st/2nd/3rd and Audience Favourite carry money
+(£10,000/£5,000/£2,500/£2,500); challenge winners get none. `pricing.md` §3 updated accordingly, so
+that claim now has a real source rather than only the 6 Aug founders' instruction.
+
+- **Every award card now has a visible, named link.** Before this, all six cards were whole-card
+  anchors with no affordance at all that anything was clickable. Each entry gained `linkLabel`,
+  `altLink` and `altLinkLabel`; the five non-Cambridge cards use `linkLabel: "LinkedIn post"` with
+  the two alt fields empty, matching the file's existing `prize: ""` idiom so the array stays
+  homogeneous and TypeScript infers `string`.
+- **Cambridge keeps both links** (founders' choice): the organiser page is primary, the LinkedIn
+  post secondary, separated by a `&middot;` written as a JSX text node.
+- **Stretched-link pattern**, because the card was already an `<a>` and a second link inside it
+  would have been a nested anchor. The wrapper became a `group relative` `<div>`; the primary link
+  is a real labelled `<a>` carrying `after:absolute after:inset-0`, so it still covers the whole
+  card; the secondary sits above that overlay with `relative z-10`. Verified in-browser via
+  `elementFromPoint`: photo, title and padding all resolve to the organiser page, the "LinkedIn
+  post" label resolves to the post, and `document.querySelectorAll('a a').length` is 0.
+- Affordance is an underline (`decoration-stone-300 underline-offset-4`) going gold on
+  `group-hover`. Underline is the only universal link signal that introduces **no blue** and no new
+  glyph; the site uses no arrow glyphs anywhere.
+- **JSON-LD gap closed.** The Organization node had no `award` property, so all six grid claims had
+  zero structured-data representation. Added `award[]`, each string exactly `${place}, ${title}`
+  from the grid in grid order, so it is a greppable mirror rather than a second hand-written copy.
+  Rule recorded in `architecture.md` §6.
+- The organiser URL was deliberately **not** added to `sameAs`: that property means a page
+  identifying *this* entity, and the organiser page is about a hackathon that lists jam&raph as one
+  winner among many, under a different name. `subjectOf` fails the same "about" test. Schema.org's
+  `award` is Text-only, so the URL cannot live there; it lives in page copy and llms.txt instead,
+  which satisfies the three-places rule because that rule governs the claim, not the URL.
+- llms.txt credentials line gained `Organiser's results page: <url>` after "No cash prize."
+
+Verified: `npm run build` clean; `npm run lint` still **exactly 13**; FAQ parity 9/9; `grep '—'`
+0 hits; all six cards measured 506px tall so the grid stays even; below ~300px card width the label
+text wraps to a second line inside the padding box rather than clipping.
+
+Left for the founders (see `pricing.md` §3 and `todo.md`): whether the confirmed Jamison+Raphael
+pairing unlocks the "won as the same team" sentence, whether "SIGMA TECH" needs reconciling with
+"jam&raph" anywhere in copy, and whether the organiser page's "Anthropic's Claude Code" mention may
+be claimed.
 
 ---
 

@@ -33,6 +33,14 @@ export default function RootLayout({
                   logo: "https://jamraph.com/J%26R%20logo.png",
                   description: "Claude Certified Architects running hands-on AI workshops for professional services teams in Singapore, plus advisory and fixed-scope workflow builds.",
                   foundingDate: "2024",
+                  award: [
+                    "Finalist, Bangkok Business Challenge 2026 (Sasin)",
+                    "1st place, SMU Legal Innovation and Tech 2025",
+                    "Winner, Cambridge Hack the Law 2026 (Clifford Chance track)",
+                    "1st runner up, SMU Hult Prize 2026",
+                    "1st place, NTU x Base Web3",
+                    "1st runner up, SMU Legal Innovation and Tech 2024",
+                  ],
                   sameAs: ["https://www.linkedin.com/company/jamandraph/"],
                 },
                 {

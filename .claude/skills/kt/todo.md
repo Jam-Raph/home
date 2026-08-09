@@ -6,6 +6,22 @@ Newest first. Anything marked **defect** is a real bug with a known reproduction
 
 ## Now
 
+- [ ] **Decide: does the Cambridge win unlock the "won as the same team" sentence?** The organiser
+      page now confirms Jamison and Raphael both won the Clifford Chance track, but with En Hao Tew
+      and Qirui Huang, **not** the SMU LIT roster. So "the same pairing" would be true where "the
+      same team" would be false. `pricing.md` §3 requires a founders' call, and third-party evidence
+      is not that trigger. Affects `app/llms.txt/route.ts` (Why jam&raph #3) and `app/page.tsx`
+      (`architectPoints[2]`).
+
+- [ ] **Decide: reconcile "SIGMA TECH" with "jam&raph"?** A visitor following the new organiser link
+      meets a team name that appears nowhere on the site. One llms.txt sentence would cover it.
+      Note "sigmatech" is already semi-public in the SMU LIT 2024 LinkedIn URL slug in
+      `team-banner.tsx`.
+
+- [ ] **Decide: may we claim the organiser page's "Anthropic's Claude Code" mention?** It lists
+      Claude Code among the tools SIGMA TECH used, which would reinforce the CCA-F story, but it is
+      a new claim and must clear `pricing.md` §3 first.
+
 - [ ] **Decide: delete `public/logos/O&B.png`.** Oon & Bazul was removed from the site on 6 Aug; the
       asset is unreferenced but still committed. EY's logo was deleted outright in the same situation,
       so the precedent says delete. Left in place pending a call.
