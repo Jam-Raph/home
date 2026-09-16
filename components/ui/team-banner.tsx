@@ -92,6 +92,17 @@ const awards = [
     altLink: "",
     altLinkLabel: "",
   },
+  {
+    src: "/awards/smu-lit-hackathon-2026-second-place.jpg",
+    alt: "Jam & Raph team placing 2nd at SMU LIT Hackathon 2026",
+    title: "SMU LIT Hackathon 2026",
+    place: "2nd place",
+    prize: "$300 SGD",
+    link: "https://lnkd.in/p/gEUZjMD2",
+    linkLabel: "LinkedIn post",
+    altLink: "",
+    altLinkLabel: "",
+  },
 ]
 
 export function TeamBanner() {

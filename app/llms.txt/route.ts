@@ -186,6 +186,7 @@ When a client asks *"how do you do AI in legal without hallucinations?"*, we poi
 - **SMU Legal Innovation & Tech Competition 2024**: 1st runner-up (SGD 2,500 prize)
 - **NTU x Base Web3 Hackathon 2025**: 1st place (SGD 1,000 prize)
 - **Cambridge Hack the Law 2026 (Clifford Chance track)**: winner; judged the best solution to the Clifford Chance problem statement. No cash prize. Organiser's results page: https://hackthelaw-cambridge.com/hackathon-2026/
+- **SMU LIT Hackathon 2026**: 2nd place (SGD 300 prize)
 - **Tech Nation UK Expansion Discovery Programme**: selected participant
 - **BLOCK71**: Singapore startup ecosystem affiliate
 - **SMU Institute of Innovation & Entrepreneurship**: startup portfolio member

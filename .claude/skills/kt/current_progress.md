@@ -1,10 +1,11 @@
 # Current progress — jr-home
 
-**Last updated:** 9 August 2026
+**Last updated:** 16 September 2026
 **Branch:** `main`. PR #6 (the repositioning) was merged on GitHub; the two follow-up commits
 (`fd1c225`, `b3680e3`) were merged to `main` directly as `123a9e9` on 6 Aug at the founders'
 instruction. Commit 6 (Cambridge organiser link) was likewise pushed straight to `main` on 9 Aug at
-the founders' instruction.
+the founders' instruction. Commit 7 (SMU LIT Hackathon 2026 award) was built on 11 Sep but sat
+uncommitted until 16 Sep, when it was pushed straight to `main` at the founders' instruction.
 **State:** everything below is committed and on `main`.
 
 ---
@@ -147,6 +148,30 @@ Left for the founders (see `pricing.md` §3 and `todo.md`): whether the confirme
 pairing unlocks the "won as the same team" sentence, whether "SIGMA TECH" needs reconciling with
 "jam&raph" anywhere in copy, and whether the organiser page's "Anthropic's Claude Code" mention may
 be claimed.
+
+---
+
+## Commit 7 — SMU LIT Hackathon 2026 award (11 Sep)
+
+Raphael supplied a photo (team on stage, second-prize cheque for SGD $300) and the LinkedIn post link
+(<https://lnkd.in/p/gEUZjMD2>).
+
+- **Seventh card added to the awards grid** (`team-banner.tsx`), appended after SMU LIT 2024: title
+  "SMU LIT Hackathon 2026", place "2nd place", prize "$300 SGD", LinkedIn post linked. Named "SMU LIT
+  Hackathon" (not "SMU Legal Innovation & Tech Competition", the 2024/2025 entries' name) because
+  that's what the event's own stage signage and prize cheque call it; treated as a distinct event in
+  `pricing.md` §3 rather than assumed to be the same competition under a new name.
+- Photo: source image was already 1600×1200 (exactly 4:3), so no crop was needed before saving as
+  `public/awards/smu-lit-hackathon-2026-second-place.jpg`.
+- JSON-LD `award[]` in `app/layout.tsx` gained `"2nd place, SMU LIT Hackathon 2026"` at the end,
+  matching grid order per the `${place}, ${title}` mirror rule.
+- `llms.txt` credentials list gained `**SMU LIT Hackathon 2026**: 2nd place (SGD 300 prize)`, placed
+  after Cambridge to keep all award lines grouped before the non-award program credentials (Tech
+  Nation, BLOCK71, SMU IIE, Showcased).
+- `pricing.md` §3 gained a row for the claim, with the source link and the same-event caution above.
+
+Verified: `npm run build` clean; `npm run lint` still exactly 13 pre-existing problems; grep for `—`
+0 hits in site source.
 
 ---
 

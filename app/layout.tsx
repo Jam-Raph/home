@@ -40,6 +40,7 @@ export default function RootLayout({
                     "1st runner up, SMU Hult Prize 2026",
                     "1st place, NTU x Base Web3",
                     "1st runner up, SMU Legal Innovation and Tech 2024",
+                    "2nd place, SMU LIT Hackathon 2026",
                   ],
                   sameAs: ["https://www.linkedin.com/company/jamandraph/"],
                 },
