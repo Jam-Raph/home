@@ -205,9 +205,7 @@ When a client asks *"how do you do AI in legal without hallucinations?"*, we poi
 
 ## Selected clients
 
-- KGP
 - Delta Law Corporation
-- Hanbridge Institute
 
 **Testimonial:** "Delta Law found the session really helpful for bringing out Claude and LLM effectiveness." (Joshua, Partner, Delta Law Corporation)
 
